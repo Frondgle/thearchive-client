@@ -1,6 +1,6 @@
 {
-  "name": "clerk-auth-template",
-  "author": "Eric Frey",
+  "name": "thearchive-client",
+  "author": "AJ Gonzalez and Eric Frey",
   "version": "0.1.0",
   "private": true,
   "scripts": {
