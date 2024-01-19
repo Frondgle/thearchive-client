@@ -5,7 +5,11 @@ function NavBar() {
   return (
     <nav className={`navbar navbar-expand-lg ${styles.navbar}`}>
       <div className="container-fluid">
-        <Link className="navbar-brand" passHref href="/">
+        <Link
+          className={`navbar-brand ${styles.navbarBrand}`}
+          passHref
+          href="/"
+        >
           Stay Gold, Cowboy 🤠
         </Link>
         <button
@@ -19,7 +23,8 @@ function NavBar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        {/* {TODO: Design Navbar Component} */}
+        {/* <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link passHref href="/" className="nav-link">
@@ -27,7 +32,7 @@ function NavBar() {
               </Link>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </nav>
   );

@@ -17,8 +17,7 @@ export default function Home() {
   }, [])
   return (
     <>
-      <h1 className="mb-3">Home Page</h1>
-      <div className="d-flex flex-wrap justify-content-center">
+      <div className="d-flex flex-wrap justify-content-center mt-5">
         {art.map((artObj) => <ArtCard key={artObj.pic} artObj={artObj} />)}
       </div>
     </>
