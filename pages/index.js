@@ -2,14 +2,10 @@
 import React from 'react';
 import getArt from "@/api/artData";
 import ArtCard from "@/components/ArtCard/ArtCard";
-// import Image from "next/image";
-// import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [art, setArt] = useState([]);
-
-  // const router = useRouter();
   // const { user } = useUser(); TODO: comment this line in to use Clerk Auth
   useEffect(() => {
     getArt().then(setArt);
