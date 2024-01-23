@@ -1,6 +1,6 @@
 // import { useUser } from "@clerk/nextjs"; TODO: comment this line in to use Clerk Auth 
 import React from 'react';
-import getArt from "@/api/artData";
+import { getArt } from "@/api/artData";
 import ArtCard from "@/components/ArtCard/ArtCard";
 import { useEffect, useState } from "react";
 

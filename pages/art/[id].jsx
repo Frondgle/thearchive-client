@@ -1,13 +1,27 @@
+import { getSingleArt } from '@/api/artData';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Image } from 'react-bootstrap';
 
 export default function ViewArtPage() {
+  const [artObj, setArtObj] = useState({});
   const router = useRouter();
   const { id } = router.query;
+  const cloudinaryURL = process.env.NEXT_PUBLIC_CLOUDINARY_URL;
+
+  useEffect(() => {
+    if (id) getSingleArt(id).then(setArtObj);
+  }, [id]);
   return (
-    <>
-      <h1>View Art Page</h1>
-      <h2>{id}</h2>
-    </>
+    <div className="d-flex flex-column align-items-center mt-5">
+      <h2>{artObj.title || 'Untitled'}</h2>
+      <Image
+        src={`${cloudinaryURL}${artObj.pic}`}
+        alt={artObj.description}
+        // className={`${styles.cardImg}`}
+        height={600}
+        width={600}
+      />
+    </div>
   );
 }
