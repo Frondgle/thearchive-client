@@ -20,3 +20,15 @@
   color: #5c7cc7;
   text-decoration: none;
 }
+
+.logo {
+  margin: 1rem 0 0 2rem;
+  width: 90px;
+  height: 90px;
+}
+
+.logo:hover {
+  cursor: pointer;
+  filter: drop-shadow(0 0 3px rgb(223, 228, 224));
+  transition: all 0.5s ease-in-out;
+}

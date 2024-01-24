@@ -1,16 +1,21 @@
+import { Image } from 'react-bootstrap';
 import styles from './navbar.module.css';
 import Link from 'next/link';
 
 function NavBar() {
   return (
-    <nav className={`navbar navbar-expand-lg ${styles.navbar}`}>
+    <nav className={`navbar navbar-expand-lg mb-3 ${styles.navbar}`}>
       <div className="container-fluid">
         <Link
           className={`navbar-brand ${styles.navbarBrand}`}
           passHref
           href="/"
         >
-          Stay Gold, Cowboy 🤠
+          <Image
+            src="/images/hat.png"
+            alt="Golden Cowboy Hat"
+            className={styles.logo}
+          />
         </Link>
         <button
           className="navbar-toggler"
