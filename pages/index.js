@@ -17,5 +17,5 @@ export default function Home() {
         {art.map((artObj) => <ArtCard key={artObj.pic} artObj={artObj} />)}
       </div>
     </>
-  )
+  );
 }
