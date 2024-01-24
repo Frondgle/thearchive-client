@@ -9,7 +9,6 @@ export default function Home() {
   // const { user } = useUser(); TODO: comment this line in to use Clerk Auth
   useEffect(() => {
     getArt().then(setArt);
-    console.log(art);
   }, [])
   return (
     <>
