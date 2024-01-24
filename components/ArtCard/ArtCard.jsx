@@ -16,7 +16,12 @@ export default function ArtCard({ artObj }) {
         width={300}
         onClick={() => router.push(`/art/${artObj.id}`)}
       />
-      <div className={styles.caption}>Caption of Details</div>
+      <div className={styles.captionWrap}>
+        <div className={styles.caption}>
+          <h5>{artObj.title || 'Untitled'}</h5>
+          <p style={{ fontSize: '0.8rem' }}>{artObj.description}</p>
+        </div>
+      </div>
     </div>
   );
 }
