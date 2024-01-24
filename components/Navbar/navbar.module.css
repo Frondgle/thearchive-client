@@ -1,6 +1,8 @@
 .navbar {
   /* background-color: #2fac66; */
   background: none;
+  position: sticky;
+  top: 0;
 }
 
 .navbarBrand {
