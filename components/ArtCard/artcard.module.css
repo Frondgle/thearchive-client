@@ -1,9 +1,39 @@
+.cardWrap {
+  position: relative;
+}
+
 .cardImg {
   cursor: pointer;
   margin: 1rem;
   transition: transform 0.5s ease-in-out;
+  filter: drop-shadow(0 0 10px rgb(11, 20, 13));
 }
 
-.cardImg:hover {
+.cardWrap:hover .cardImg {
   transform: scale(1.1);
+}
+
+/* .cardImg:hover {
+  transform: scale(1.1);
+} */
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.caption {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+
+.cardWrap:hover .caption {
+  visibility: visible;
+  opacity: 1;
 }
