@@ -1,9 +1,9 @@
 .cardWrap {
   position: relative;
+  cursor: pointer;
 }
 
 .cardImg {
-  cursor: pointer;
   margin: 1rem;
   transition: transform 0.5s ease-in-out;
   filter: drop-shadow(0 0 10px rgb(11, 20, 13));
