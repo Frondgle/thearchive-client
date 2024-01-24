@@ -13,7 +13,7 @@ export default function Home() {
   }, [])
   return (
     <>
-      <div className="d-flex flex-wrap justify-content-center mt-5">
+      <div className="d-flex flex-wrap justify-content-center mt-5" style={{ width: '100%' }}>
         {art.map((artObj) => <ArtCard key={artObj.pic} artObj={artObj} />)}
       </div>
     </>

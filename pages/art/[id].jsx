@@ -2,6 +2,7 @@ import { getSingleArt } from '@/api/artData';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Image } from 'react-bootstrap';
+import styles from './ViewArtPage.module.css';
 
 export default function ViewArtPage() {
   const [artObj, setArtObj] = useState({});
@@ -18,9 +19,7 @@ export default function ViewArtPage() {
       <Image
         src={`${cloudinaryURL}${artObj.pic}`}
         alt={artObj.description}
-        // className={`${styles.cardImg}`}
-        height={600}
-        width={600}
+        className={styles.artImage}
       />
     </div>
   );
