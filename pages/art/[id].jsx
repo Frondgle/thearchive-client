@@ -27,14 +27,14 @@ export default function ViewArtPage() {
       >
         <h3>{artObj.title}</h3>
         <h5>{artObj.description}</h5>
-        <p>style</p>
-        <p>location</p>
-        <p>color</p>
-        <p>frame_type</p>
-        <p>mods</p>
-        <p>date_created</p>
-        <p>film_type</p>
-        <p>malfunction</p>
+        <p>{artObj.style}</p>
+        <p>{artObj.location}</p>
+        <p>{artObj.color ? 'Color' : 'Black & White'}</p>
+        <p>{artObj.frame_type}</p>
+        <p>{artObj.mods ? 'Modified' : 'Unmodified'}</p>
+        <p>{new Date(artObj.date_created).toLocaleDateString()}</p>
+        <p>{artObj.film_type}</p>
+        <p>{artObj.malfunction ? 'Malfunction' : 'No Malfunction'}</p>
       </div>
     </div>
   );
