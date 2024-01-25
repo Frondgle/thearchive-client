@@ -1,34 +1,48 @@
-# Clerk Next.js Auth Template
+# The Sonatore Archive Server
+In loving memory of Alex Cheng
+emosurrealism lives on
 
-## Getting Started
-### Use Template
-#### 1. To get started, click the GREEN "Use this Template" button at the top of the repo
-<img width="915" alt="Screen Shot 2022-07-06 at 12 54 01 PM" src="https://user-images.githubusercontent.com/29741570/177612998-4aac9237-5a1e-4f13-8ae0-468587521564.png">
+### [server-side code](https://github.com/Frondgle/thearchive-server)
 
-#### 2. Make sure YOUR github account is selected in the dropdown and name your project
-<img width="763" alt="Screen Shot 2022-07-06 at 12 54 48 PM" src="https://user-images.githubusercontent.com/107942776/271834571-ab927aa9-bbcc-4301-a37c-1c985434b325.png">
+### Tech and Frameworks Used
+<div align="center">  
 
-#### 3. Clone your new repo to your local machine
-#### 4. Go to the **NEXT** section
+### Tech and Frameworks Used
+<div align="center">  
+<a href="https://reactjs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/react-original-wordmark.svg" alt="React" height="50" /></a>  
+<a href="https://getbootstrap.com/docs/3.4/javascript/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/bootstrap-plain.svg" alt="Bootstrap" height="50" /></a>  
+<a href="https://www.w3schools.com/css/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" /></a>  
+<a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /></a>  
+<a href="https://www.javascript.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="50" /></a>  
+<a href="https://nextjs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/nextjs.png" alt="NextJS" height="50" /></a>  
+<a href="https://www.figma.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/figma-icon.svg" alt="Figma" height="50" /></a>  
+</div>
 
-## Starting the Project
-1. [Create](https://dashboard.clerk.com/sign-up) or [Sign In](https://dashboard.clerk.com/sign-in) to [Clerk](clerk.com) Account.
-1. [Create a Clerk project](https://dashboard.clerk.com/apps/new). 
-1. Rename the `.env.sample` to  `.env`.
-1. Copy over all of your Clerk API keys into the `.env` file.
-1. Open the `package.json` file and change the `name` property to the name of your application, and `author` to  your name.
-1. From your command line, be in the root directory and run ```npm install``` OR ```npm i``` for short.
-1. To start your application, run `npm run dev`.
-1. Open [http://localhost:3000](http://localhost:3000) with your browser.
+<div align="center">
+<img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint" />
+<img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E" alt="Prettier" />
+</div>
 
+<div align="center">  
+<a href ="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white"><img style="margin:10px" src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" /></a>  
+</div>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+* Media stored on Cloudinary
+
+#### Concept and Aesthetic driven by
+* Daley 
+* Jorge
+### Dev Contributors:
+* [A.J. Gonzalez](https://github.com/gonzalez-aj)
+* [Eric L Frey](https://github.com/ericlfrey)
+* [Clerk](clerk.com) Next.js Auth Template by Eric L Frey
 
 ## Learn More about Clerk
 
 - [Clerk Next.js Documentation](https://clerk.com/docs/references/nextjs/overview) - More info on customizing the Clerk Auth products.
-        
+
 ## Learn More about Next.js
+
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
