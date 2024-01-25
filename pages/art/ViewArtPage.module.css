@@ -1,3 +1,8 @@
 .artImage {
-  height: 90vh;
+  height: 75vh;
+}
+
+.detailsWrap {
+  color: #5c7cc7;
+  padding: 2rem;
 }

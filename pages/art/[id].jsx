@@ -14,13 +14,28 @@ export default function ViewArtPage() {
     if (id) getSingleArt(id).then(setArtObj);
   }, [id]);
   return (
-    <div className="d-flex flex-column align-items-center mt-5">
-      <h2>{artObj.title || 'Untitled'}</h2>
+    <div className="d-flex justify-content-between">
+      {/* <h2>{artObj.title || 'Untitled'}</h2> */}
       <Image
         src={`${cloudinaryURL}${artObj.pic}`}
         alt={artObj.description}
         className={styles.artImage}
       />
+      <div
+        className={`${styles.detailsWrap}`}
+        style={{ border: '1px green solid', width: '100%' }}
+      >
+        <h3>{artObj.title}</h3>
+        <h5>{artObj.description}</h5>
+        <p>style</p>
+        <p>location</p>
+        <p>color</p>
+        <p>frame_type</p>
+        <p>mods</p>
+        <p>date_created</p>
+        <p>film_type</p>
+        <p>malfunction</p>
+      </div>
     </div>
   );
 }
