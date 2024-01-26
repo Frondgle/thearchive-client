@@ -34,8 +34,23 @@ export default function ViewArtPage() {
   return (
     <div className="d-flex flex-column">
       <Pagination className="d-flex justify-content-center">
-        {prevId && <Pagination.Prev onClick={() => handlePagination(prevId)} />}
-        {nextId && <Pagination.Next onClick={() => handlePagination(nextId)} />}
+        {prevId ? (
+          <Pagination.Prev
+            onClick={() => handlePagination(prevId)}
+            className={styles.pagination}
+          />
+        ) : (
+          <Pagination.Prev className={styles.pagination} disabled />
+        )}
+
+        {nextId ? (
+          <Pagination.Next
+            className={styles.pagination}
+            onClick={() => handlePagination(nextId)}
+          />
+        ) : (
+          <Pagination.Next className={styles.pagination} disabled />
+        )}
       </Pagination>
       <div className="d-flex">
         <Image
