@@ -1,4 +1,4 @@
-import { getSingleArt } from '@/api/artData';
+import { getSingleArt } from '../../api/artData';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Image } from 'react-bootstrap';
@@ -9,6 +9,7 @@ export default function ViewArtPage() {
   const router = useRouter();
   const { id } = router.query;
   const cloudinaryURL = process.env.NEXT_PUBLIC_CLOUDINARY_URL;
+  const imageUrl = artObj.pic ? `${cloudinaryURL}${artObj.pic}` : '';
 
   useEffect(() => {
     if (id) getSingleArt(id).then(setArtObj);
@@ -16,7 +17,7 @@ export default function ViewArtPage() {
   return (
     <div className="d-flex">
       <Image
-        src={`${cloudinaryURL}${artObj.pic}`}
+        src={imageUrl}
         alt={artObj.description}
         className={styles.artImage}
       />
