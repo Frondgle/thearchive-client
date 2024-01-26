@@ -14,27 +14,32 @@ export default function ViewArtPage() {
     if (id) getSingleArt(id).then(setArtObj);
   }, [id]);
   return (
-    <div className="d-flex justify-content-between">
-      {/* <h2>{artObj.title || 'Untitled'}</h2> */}
+    <div className="d-flex justify-content-between w-100">
       <Image
         src={`${cloudinaryURL}${artObj.pic}`}
         alt={artObj.description}
         className={styles.artImage}
       />
+
       <div
-        className={`${styles.detailsWrap}`}
-        style={{ border: '1px green solid', width: '100%' }}
+        className={`${styles.detailsWrap} d-flex flex-column justify-content-between`}
       >
-        <h3>{artObj.title}</h3>
-        <h5>{artObj.description}</h5>
-        <p>{artObj.style}</p>
-        <p>{artObj.location}</p>
-        <p>{artObj.color ? 'Color' : 'Black & White'}</p>
-        <p>{artObj.frame_type}</p>
+        <h5>
+          <i>{artObj.title || 'Untitled'} - </i>
+          {artObj.date_created
+            ? new Date(artObj.date_created).getFullYear()
+            : 'Undated'}
+        </h5>
+        <hr />
+        <p>
+          {artObj.style} | {artObj.location || 'Location unknown'} |{' '}
+          {artObj.color ? 'Color' : 'Black & White'}
+        </p>
+        <p>{artObj.frame_type} Frame</p>
         <p>{artObj.mods ? 'Modified' : 'Unmodified'}</p>
-        <p>{new Date(artObj.date_created).toLocaleDateString()}</p>
         <p>{artObj.film_type}</p>
         <p>{artObj.malfunction ? 'Malfunction' : 'No Malfunction'}</p>
+        <h5>{artObj.description}</h5>
       </div>
     </div>
   );
