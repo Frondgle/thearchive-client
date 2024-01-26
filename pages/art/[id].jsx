@@ -38,6 +38,7 @@ export default function ViewArtPage() {
             {artObj.style} | {artObj.location || 'Location unknown'} |{' '}
             {artObj.color ? 'Color' : 'Black & White'}
           </p>
+          <hr />
         </div>
         <div>
           <p className={styles.info}>
