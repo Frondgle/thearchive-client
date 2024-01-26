@@ -6,6 +6,7 @@ body {
     linear-gradient(336deg, rgba(255, 0, 0, 1), rgba(0, 0, 255, 0) 70.71%);
   color: #DADADB;
   min-height: 100vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .auth-form {
