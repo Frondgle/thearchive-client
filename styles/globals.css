@@ -4,7 +4,7 @@ body {
   background: linear-gradient(217deg, rgba(232, 166, 210, 0.9), rgba(255, 0, 0, 0) 70.71%),
     linear-gradient(127deg, rgba(76, 183, 222, 1), rgba(0, 255, 0, 0) 70.71%),
     linear-gradient(336deg, rgba(255, 0, 0, 1), rgba(0, 0, 255, 0) 70.71%);
-  color: #183f98;
+  color: #DADADB;
   min-height: 100vh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
