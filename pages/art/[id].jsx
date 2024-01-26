@@ -14,7 +14,7 @@ export default function ViewArtPage() {
     if (id) getSingleArt(id).then(setArtObj);
   }, [id]);
   return (
-    <div className="d-flex justify-content-between w-100">
+    <div className="d-flex">
       <Image
         src={`${cloudinaryURL}${artObj.pic}`}
         alt={artObj.description}
@@ -24,22 +24,31 @@ export default function ViewArtPage() {
       <div
         className={`${styles.detailsWrap} d-flex flex-column justify-content-between`}
       >
-        <h5>
-          <i>{artObj.title || 'Untitled'} - </i>
-          {artObj.date_created
-            ? new Date(artObj.date_created).getFullYear()
-            : 'Undated'}
-        </h5>
-        <hr />
-        <p>
-          {artObj.style} | {artObj.location || 'Location unknown'} |{' '}
-          {artObj.color ? 'Color' : 'Black & White'}
-        </p>
-        <p>{artObj.frame_type} Frame</p>
-        <p>{artObj.mods ? 'Modified' : 'Unmodified'}</p>
-        <p>{artObj.film_type}</p>
-        <p>{artObj.malfunction ? 'Malfunction' : 'No Malfunction'}</p>
-        <h5>{artObj.description}</h5>
+        <div>
+          <h5>
+            <i>{artObj.title || 'Untitled'} - </i>
+            {artObj.date_created
+              ? new Date(artObj.date_created).getFullYear()
+              : 'Undated'}
+          </h5>
+          <hr />
+          <p>- {artObj.description}</p>
+          <hr />
+          <p className={styles.info}>
+            {artObj.style} | {artObj.location || 'Location unknown'} |{' '}
+            {artObj.color ? 'Color' : 'Black & White'}
+          </p>
+        </div>
+        <div>
+          <p className={styles.info}>
+            {artObj.frame_type} Frame | {artObj.film_type}
+          </p>
+          <hr />
+          <p className={styles.info}>
+            {artObj.mods ? 'Modified' : 'Unmodified'} |{' '}
+            {artObj.malfunction ? 'Malfunction' : 'No Malfunction'}
+          </p>
+        </div>
       </div>
     </div>
   );
