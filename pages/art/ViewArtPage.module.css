@@ -1,6 +1,5 @@
 .artImage {
   height: 75vh;
-  /* box-shadow: 0 0 5px 5px rgba(4, 27, 8, 0.4); */
   filter: drop-shadow(0 0 10px rgb(11, 20, 13));
   border-radius: 2.5px;
 }

@@ -33,5 +33,24 @@ const getSingleArt = (id) => new Promise((resolve, reject) => {
     });
 });
 
+const getArtIDs = () => new Promise((resolve, reject) => {
+  fetch(`${dbURL}/art`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        const artIDs = data.map(a => a.id)
+        resolve(artIDs)
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
 
-export { getArt, getSingleArt };
+
+export { getArt, getSingleArt, getArtIDs };
