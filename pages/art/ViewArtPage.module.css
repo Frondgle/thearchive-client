@@ -1,0 +1,21 @@
+.artImage {
+  height: 75vh;
+  /* box-shadow: 0 0 5px 5px rgba(4, 27, 8, 0.4); */
+  filter: drop-shadow(0 0 10px rgb(11, 20, 13));
+  border-radius: 2.5px;
+}
+
+.detailsWrap {
+  color: #183f98;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  width: 50%;
+  height: 100%;
+  margin-left: 1rem;
+  border-radius: 2.5px;
+}
+
+.info {
+  font-size: .8rem;
+  margin-bottom: 1rem;
+}

@@ -1,3 +1,36 @@
 .navbar {
-  background-color: #2fac66;
+  /* background-color: #2fac66; */
+  background: none;
+  position: sticky;
+  top: 0;
+}
+
+.navbarBrand {
+  color: #5c7cc7;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbarBrand:hover {
+  color: #7e92c3;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.navbarBrand:focus {
+  color: #5c7cc7;
+  text-decoration: none;
+}
+
+.logo {
+  margin: 1rem 0 0 2rem;
+  width: 90px;
+  height: 90px;
+}
+
+.logo:hover {
+  cursor: pointer;
+  filter: drop-shadow(0 0 3px rgb(223, 228, 224));
+  transition: all 0.5s ease-in-out;
 }
