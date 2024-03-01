@@ -47,9 +47,11 @@ export default function ViewArtPage() {
 
           <div className={`${styles.detailsWrap} d-flex flex-column justify-content-between`}>
             <div>
+              <p style={{ fontSize: '0.8rem' }}>{artObj.code || ''}</p>
+              <hr />
               <h5>
-                <i>{artObj.title || 'Untitled'} - </i>
-                {artObj.date_created ? new Date(artObj.date_created).getFullYear() : 'Undated'}
+                <i>{artObj.title || ''} </i>
+                {artObj.date_created ? ` - (${new Date(artObj.date_created).getFullYear()})` : '(Undated)'}
               </h5>
               <hr />
               <p>- {artObj.description}</p>
