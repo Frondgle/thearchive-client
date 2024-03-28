@@ -1,5 +1,7 @@
 .salmon {
-  color: salmon;
-  font-size: 2rem;
-  margin-top: 4rem;
+  display: flex;
+  justify-content: flex-end;
+  color: hsla(222, 73%, 35%, 0.9);
+  font-size: 1rem;
+  margin: 4rem 3rem 1.5rem 4rem;
 }
