@@ -47,7 +47,7 @@ export default function ViewArtPage() {
 
           <div className={`${styles.detailsWrap} d-flex flex-column justify-content-between`}>
             <div>
-              <p style={{ fontSize: '0.8rem' }}>{artObj.code || ''}</p>
+              <p style={{ fontSize: '1rem' }}>{artObj.code || ''}</p>
               <hr />
               <h5>
                 <i>{artObj.title || ''} </i>
