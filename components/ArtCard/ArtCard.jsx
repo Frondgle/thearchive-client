@@ -15,7 +15,7 @@ export default function ArtCard({ artObj }) {
           <h5>
             <i>{artObj.title || ''}</i>
           </h5>
-          <p style={{ fontSize: '0.8rem' }}>{artObj.description}</p>
+          <p className={styles.description}>{artObj.description}</p>
         </div>
       </div>
     </div>

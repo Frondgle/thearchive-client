@@ -49,3 +49,7 @@
   padding: 1rem 2rem;
   overflow-y: auto;
 }
+
+.description {
+  font-size: 0.8rem;
+}
