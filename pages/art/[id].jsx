@@ -54,7 +54,7 @@ export default function ViewArtPage() {
                 {artObj.date_created ? ` - (${new Date(artObj.date_created).getFullYear()})` : '(Undated)'}
               </h5>
               <hr />
-              <p>- {artObj.description}</p>
+              <p>{artObj.description}</p>
               <hr />
               <p className={styles.info}>
                 {artObj.style} | {artObj.location || 'Location unknown'} | {artObj.color ? 'Color' : 'Black & White'}
