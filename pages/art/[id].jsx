@@ -34,7 +34,7 @@ export default function ViewArtPage() {
   return (
     <>
       <Head>
-        <title>{`The Sonatore Archive | ${artObj.title || 'Untitled'}`}</title>
+        <title>{`The Sonatore Archive | ${artObj.code || 'Untitled'}`}</title>
       </Head>
       <div className="d-flex flex-column">
         <Pagination className="d-flex justify-content-center">
@@ -51,7 +51,7 @@ export default function ViewArtPage() {
               <hr />
               <h5>
                 <i>{artObj.title || ''} </i>
-                {artObj.date_created ? ` - (${new Date(artObj.date_created).getFullYear()})` : '(Undated)'}
+                {artObj.date_created ? ` - (${new Date(artObj.date_created).getFullYear()})` : '(Unknown Date)'}
               </h5>
               <hr />
               <p>{artObj.description}</p>
