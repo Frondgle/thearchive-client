@@ -10,14 +10,24 @@ import { Pagination } from 'react-bootstrap';
 export default function Home() {
   const [art, setArt] = useState([]);
   const [arrLength, setArrLength] = useState([]);
-
-
+  const [currentIndexStart, setCurrentIndexStart] = useState(0);
+  const [currentArr, setCurrentArr] = useState([]);
   // const { user } = useUser(); TODO: comment this line in to use Clerk Auth
+
+  const setCurrentArray = () => setCurrentArr(art.slice(currentIndexStart, currentIndexStart + 6));
+
   useEffect(() => {
     getArt().then(setArt);
+    setCurrentArray();
     const lengthArr = new Array(Math.ceil((art.length / 6)));
     setArrLength(lengthArr.fill(0));
-  }, [])
+  }, [art, art.length])
+
+  const handlePagination = (e) => {
+    setCurrentIndexStart((Number(e.target.innerText) - 1) * 6);
+    setCurrentArray();
+  }
+
   return (
     <>
       <Head>
@@ -26,13 +36,19 @@ export default function Home() {
       <Pagination>
         <Pagination.First />
         <Pagination.Prev />
-        {arrLength.map((_, idx) => <Pagination.Item key={idx}>{idx + 1}</Pagination.Item>)}
-        {/* <Pagination.Item>{1}</Pagination.Item> */}
+        {arrLength.map((_, idx) => (
+          <Pagination.Item
+            key={idx}
+            onClick={handlePagination}
+          >
+            {idx + 1}
+          </Pagination.Item>
+        ))}
         <Pagination.Next />
         <Pagination.Last />
       </Pagination>
       <div className="d-flex flex-wrap justify-content-center" >
-        {art.map((artObj) => <ArtCard key={artObj.pic} artObj={artObj} />)}
+        {currentArr.map((artObj) => <ArtCard key={artObj.pic} artObj={artObj} />)}
       </div>
     </>
   );
