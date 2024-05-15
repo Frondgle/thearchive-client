@@ -21,7 +21,7 @@ export default function Home() {
     setCurrentArray();
     const lengthArr = new Array(Math.ceil((art.length / 6)));
     setArrLength(lengthArr.fill(0));
-  }, [art, art.length])
+  }, [art, art.length]);
 
   const handlePagination = (e) => {
     setCurrentIndexStart((Number(e.target.innerText) - 1) * 6);
@@ -39,7 +39,7 @@ export default function Home() {
           setCurrentArray();
         }} />
         <Pagination.Prev
-          {...currentIndexStart === 0 && { disabled: true }}
+          {...(currentIndexStart === 0 ? { disabled: true } : {})}
           onClick={() => setCurrentIndexStart(currentIndexStart - 6)}
         />
         {arrLength.map((_, idx) => (
@@ -52,7 +52,7 @@ export default function Home() {
           </Pagination.Item>
         ))}
         <Pagination.Next
-          {...currentIndexStart === ((arrLength.length - 1) * 6) && { disabled: true }}
+          {...(currentIndexStart === ((arrLength.length - 1) * 6) ? { disabled: true } : {})}
           onClick={() => setCurrentIndexStart(currentIndexStart + 6)}
         />
         <Pagination.Last onClick={() => {
