@@ -38,7 +38,10 @@ export default function Home() {
           setCurrentIndexStart(0);
           setCurrentArray();
         }} />
-        <Pagination.Prev />
+        <Pagination.Prev
+          {...currentIndexStart === 0 && { disabled: true }}
+          onClick={() => setCurrentIndexStart(currentIndexStart - 6)}
+        />
         {arrLength.map((_, idx) => (
           <Pagination.Item
             key={idx}
@@ -48,7 +51,10 @@ export default function Home() {
             {idx + 1}
           </Pagination.Item>
         ))}
-        <Pagination.Next />
+        <Pagination.Next
+          {...currentIndexStart === ((arrLength.length - 1) * 6) && { disabled: true }}
+          onClick={() => setCurrentIndexStart(currentIndexStart + 6)}
+        />
         <Pagination.Last onClick={() => {
           setCurrentIndexStart((arrLength.length - 1) * 6);
           setCurrentArray();
