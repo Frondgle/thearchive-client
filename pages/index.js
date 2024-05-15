@@ -34,18 +34,25 @@ export default function Home() {
         <title>The Sonatore Archive</title>
       </Head>
       <Pagination>
-        <Pagination.First />
+        <Pagination.First onClick={() => {
+          setCurrentIndexStart(0);
+          setCurrentArray();
+        }} />
         <Pagination.Prev />
         {arrLength.map((_, idx) => (
           <Pagination.Item
             key={idx}
             onClick={handlePagination}
+            {...(currentIndexStart / 6 === idx && { active: true })}
           >
             {idx + 1}
           </Pagination.Item>
         ))}
         <Pagination.Next />
-        <Pagination.Last />
+        <Pagination.Last onClick={() => {
+          setCurrentIndexStart((arrLength.length - 1) * 6);
+          setCurrentArray();
+        }} />
       </Pagination>
       <div className="d-flex flex-wrap justify-content-center" >
         {currentArr.map((artObj) => <ArtCard key={artObj.pic} artObj={artObj} />)}
