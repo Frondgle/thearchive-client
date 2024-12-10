@@ -89,6 +89,7 @@ export default function Home() {
       <Head>
         <title>The Sonatore Archive</title>
       </Head>
+      
       <Pagination>{renderPaginationItems()}</Pagination>
       <div className="d-flex flex-wrap justify-content-center">
         {currentArt.map((artObj, index) => (
