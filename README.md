@@ -37,3 +37,18 @@ emosurrealism lives on
 #### Learn More about Next.js
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+#### Steps to deploy changes
+- git checkout -b branch-name
+- make changes to branch-name
+- git add .
+- git commit -m "message"
+- git push origin branch-name
+- cmd click GitHub link
+- bypass rules and merge (for now)
+- git checkout main
+- git pull origin main
+- git fetch origin deploy (if you don't have deploy branch yet)
+- git checkout deploy
+- git merge main
+- git push origin deploy
