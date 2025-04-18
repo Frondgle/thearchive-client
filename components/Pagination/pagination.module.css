@@ -1,0 +1,84 @@
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    margin-top: 20px;
+}
+
+.polaroidPaginationItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50px;
+    height: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    background-image: url('/images/filmroll.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    opacity: 0.6;
+}
+
+.polaroidPaginationItem.active {
+    border: 2px solid #007bff;
+    color: #007bff;
+    opacity: 1;
+}
+
+.polaroidPaginationItem:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.polaroidPaginationItem span {
+    position: relative;
+    z-index: 1;
+    font-size: 16px;
+    font-weight: 550;
+}
+
+.paginationButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff; 
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    opacity: 0.7;
+}
+
+.paginationIcon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    background-color: fff;
+}
+
+.paginationButton:hover .paginationIcon {
+    background-color: #fff;
+    color: #fff;
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.paginationButton:disabled .paginationIcon {
+    background-color: rgba(224, 224, 224, 0.8); /* Slightly transparent gray for disabled state */
+    color: #999;
+    cursor: not-allowed;
+    opacity: 0.3;
+}
