@@ -1,20 +1,82 @@
+/* Container for the entire page */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Art content layout */
+.artContent {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Art image styles */
 .artImage {
   height: 75vh;
   filter: drop-shadow(0 0 10px rgb(11, 20, 13));
   border-radius: 2.5px;
 }
 
+/* Parent container for detailsWrap and pagination */
+.detailsColumn {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Add space between detailsWrap and pagination */
+  width: 50%; /* Adjust width as needed */
+  margin-left: 1rem; /* Space between the column and the image */
+}
+
+/* Details section */
 .detailsWrap {
   color: #183f98;
   padding: 2rem;
   background-color: rgba(0, 0, 0, 0.05);
-  width: 50%;
-  height: 100%;
-  margin-left: 1rem;
   border-radius: 2.5px;
 }
 
-.info {
-  font-size: .8rem;
-  margin-bottom: 1rem;
+/* Pagination styles */
+.pagination {
+  display: flex;
+  justify-content: center; /* Center pagination buttons horizontally */
+  align-items: center; /* Center pagination buttons vertically */
+  margin-top: 20px; /* Add spacing above pagination */
+}
+
+.paginationButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff; 
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  opacity: 0.7;
+}
+
+.paginationButton:hover .paginationIcon {
+  background-color: #fff;
+  color: #fff;
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.paginationButton:disabled {
+  background-color: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.paginationIcon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
 }

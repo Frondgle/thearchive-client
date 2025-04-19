@@ -37,38 +37,52 @@ export default function ViewArtPage() {
         <title>{`The Sonatore Archive | ${artObj.code || 'Untitled'}`}</title>
       </Head>
       <div className="d-flex flex-column">
-        <Pagination className="d-flex justify-content-center">
-          {prevId ? <Pagination.Prev onClick={() => handlePagination(prevId)} /> : <Pagination.Prev disabled />}
-
-          {nextId ? <Pagination.Next onClick={() => handlePagination(nextId)} /> : <Pagination.Next disabled />}
-        </Pagination>
         <div className="d-flex">
           <Image src={imageUrl} alt={artObj.description} className={styles.artImage} />
-
-          <div className={`${styles.detailsWrap} d-flex flex-column justify-content-between`}>
-            <div>
-              <p>{artObj.code || ''}</p>
-              <hr />
-              <h5>
-                <i>{artObj.title || ''} </i>
-                {artObj.date_created ? ` - (${new Date(artObj.date_created).getFullYear()})` : '(Unknown Date)'}
-              </h5>
-              <hr />
-              <p>{artObj.description}</p>
-              <hr />
-              <p className={styles.info}>
-                {artObj.style} | {artObj.location || 'Location unknown'} | {artObj.color ? 'Color' : 'Black & White'}
-              </p>
-              <hr />
+          <div className={`${styles.detailsColumn} d-flex flex-column`}>
+            <div className={`${styles.detailsWrap}`}>
+              <div>
+                <p>{artObj.code || ''}</p>
+                <hr />
+                <h5>
+                  <i>{artObj.title || ''} </i>
+                  {artObj.date_created ? ` - (${new Date(artObj.date_created).getFullYear()})` : '(Unknown Date)'}
+                </h5>
+                <hr />
+                <p>{artObj.description}</p>
+                <hr />
+                <p className={styles.info}>
+                  {artObj.style} | {artObj.location || 'Location unknown'} | {artObj.color ? 'Color' : 'Black & White'}
+                </p>
+                <hr />
+              </div>
+              <div>
+                <p className={styles.info}>
+                  {artObj.frame_type} Frame | {artObj.film_type}
+                </p>
+                <hr />
+                <p className={styles.info}>
+                  {artObj.mods ? 'Modified' : 'Unmodified'} | {artObj.malfunction ? 'Malfunction' : 'No Malfunction'}
+                </p>
+              </div>
             </div>
-            <div>
-              <p className={styles.info}>
-                {artObj.frame_type} Frame | {artObj.film_type}
-              </p>
-              <hr />
-              <p className={styles.info}>
-                {artObj.mods ? 'Modified' : 'Unmodified'} | {artObj.malfunction ? 'Malfunction' : 'No Malfunction'}
-              </p>
+
+            {/* Pagination */}
+            <div className={styles.pagination}>
+              <button
+                className={styles.paginationButton}
+                onClick={() => handlePagination(prevId)}
+                disabled={!prevId}
+              >
+                <img src="/images/Left.png" alt="Left" className={styles.paginationIcon} width={40} />
+              </button>
+              <button
+                className={styles.paginationButton}
+                onClick={() => handlePagination(nextId)}
+                disabled={!nextId}
+              >
+                <img src="/images/Right.png" alt="Right" className={styles.paginationIcon} width={40} />
+              </button>
             </div>
           </div>
         </div>
