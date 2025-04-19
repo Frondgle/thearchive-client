@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './pagination.module.css';
 
 export default function Pagination({ totalPages, currentPage, onPageChange }) {
-  const maxVisiblePages = 5; // Maximum number of polaroids to show at a time
+  const maxVisiblePages = 5;
 
   const getVisiblePages = () => {
     const start = Math.max(0, currentPage - Math.floor(maxVisiblePages / 2));
@@ -30,7 +30,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }) {
       {/* First Page Button */}
       <button
         className={styles.paginationButton}
-        onClick={() => onPageChange(0)} // Go to the first page
+        onClick={() => onPageChange(0)}
         disabled={currentPage === 0}
       >
         <img src="/images/First.png" alt="First" className={styles.paginationIcon} width={40} />
@@ -39,7 +39,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }) {
       {/* Previous Page Button */}
       <button
         className={styles.paginationButton}
-        onClick={() => onPageChange(currentPage - 1)} // Go back one page
+        onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 0}
       >
         <img src="/images/Left.png" alt="Left" className={styles.paginationIcon} width={40} />
@@ -55,7 +55,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }) {
       {/* Next Page Button */}
       <button
         className={styles.paginationButton}
-        onClick={() => onPageChange(currentPage + 1)} // Go forward one page
+        onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages - 1}
       >
         <img src="/images/Right.png" alt="Right" className={styles.paginationIcon} width={40} />
@@ -64,7 +64,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }) {
       {/* Last Page Button */}
       <button
         className={styles.paginationButton}
-        onClick={() => onPageChange(totalPages - 1)} // Go to the last page
+        onClick={() => onPageChange(totalPages - 1)}
         disabled={currentPage === totalPages - 1}
       >
         <img src="/images/Last.png" alt="Last" className={styles.paginationIcon} width={40} />
