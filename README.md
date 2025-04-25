@@ -29,6 +29,7 @@ emosurrealism lives on
 #### Dev Contributors:
 * [A.J. Gonzalez](https://github.com/gonzalez-aj)
 * [Eric L Frey](https://github.com/ericlfrey)
+* [Charles Bridgers IV](https://github.com/SeaForeEx)
 * [Clerk](clerk.com) Next.js Auth Template by Eric L Frey
 
 #### Learn More about Clerk

@@ -21,14 +21,10 @@
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.6);
 }
 
-/* Card Hover effect */
 .cardWrap:hover .cardImg {
   transform: scale(1.1);
 }
 
-/*  */
-
-/* Caption Effect */
 .captionWrap {
   visibility: hidden;
   opacity: 0;
@@ -40,8 +36,6 @@
   opacity: 1;
 }
 
-/*  */
-
 .caption {
   display: flex;
   flex-direction: column;
@@ -52,4 +46,8 @@
 
 .description {
   font-size: 0.8rem;
+}
+
+.code .title .description {
+  color: #DADADB;
 }
