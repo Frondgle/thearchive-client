@@ -1,7 +1,7 @@
 import { getArtIDs, getSingleArt } from '../../api/artData';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import { Image, Pagination } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import styles from './ViewArtPage.module.css';
 import Head from 'next/head';
 
@@ -19,14 +19,11 @@ export default function ViewArtPage() {
   }, [id]);
 
   // Pagination Logic
-  // Find index of current ID in the array
   const currentIndex = artIDs.indexOf(Number(id));
 
-  // Calculate previous and next IDs
   const prevId = currentIndex > 0 ? artIDs[currentIndex - 1] : null;
   const nextId = currentIndex < artIDs.length - 1 ? artIDs[currentIndex + 1] : null;
 
-  // Function to handle pagination
   const handlePagination = (pageId) => {
     if (pageId !== null) router.push(`/art/${pageId}`);
   };

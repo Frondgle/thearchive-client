@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { getArt } from '@/api/artData';
 import ArtCard from '@/components/ArtCard/ArtCard';
 import Pagination from '@/components/Pagination/Pagination';
+import styles from './index.module.css';
 
 export default function Home() {
   const [art, setArt] = useState([]);
@@ -30,7 +31,7 @@ export default function Home() {
         <title>The Sonatore Archive</title>
       </Head>
       
-      <div className="d-flex flex-wrap justify-content-center mb-5">
+      <div className={styles.artContainer}>
         {currentArt.map((artObj, index) => (
           <ArtCard key={index} artObj={artObj} />
         ))}
