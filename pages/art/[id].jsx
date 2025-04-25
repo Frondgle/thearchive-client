@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import styles from './ViewArtPage.module.css';
 import Head from 'next/head';
+import Image from 'next/image';
 
 export default function ViewArtPage() {
   const [artObj, setArtObj] = useState({});
@@ -69,14 +70,14 @@ export default function ViewArtPage() {
                 onClick={() => handlePagination(prevId)}
                 disabled={!prevId}
               >
-                <img src="/images/Left.png" alt="Left" className={styles.paginationIcon} width={40} />
+                <Image src="/images/Left.png" alt="Left" className={styles.paginationIcon} width={40} height={20} />
               </button>
               <button
                 className={styles.paginationButton}
                 onClick={() => handlePagination(nextId)}
                 disabled={!nextId}
               >
-                <img src="/images/Right.png" alt="Right" className={styles.paginationIcon} width={40} />
+                <Image src="/images/Right.png" alt="Right" className={styles.paginationIcon} width={40} height={20} />
               </button>
             </div>
           </div>
