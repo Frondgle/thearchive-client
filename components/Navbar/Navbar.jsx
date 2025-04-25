@@ -22,7 +22,7 @@ function NavBar() {
                 <img src="https://cdn-icons-png.flaticon.com/512/10806/10806558.png" width={70} alt="cow skull t" />
               </div>
               <div className={styles.titleText}>
-                he Sonatore Archive
+                he Sonatore Archive is DOPE!
               </div>
             </div>
           </Link>
