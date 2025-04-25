@@ -1,26 +1,25 @@
 .navbar {
-  /* background-color: #2fac66; */
   background: none;
   position: sticky;
   top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
 }
 
-.navbarBrand {
-  color: #5c7cc7;
-  font-size: 1.5rem;
+.title {
+  color: #dedfe3;
+  font-size: 1.75rem;
   font-weight: 600;
   text-decoration: none;
+  font-family: "Tsukimi Rounded", sans-serif;
 }
 
-.navbarBrand:hover {
-  color: #7e92c3;
+.title:hover {
+  color: #edef87;
   text-decoration: none;
   transition: all 0.5s ease-in-out;
-}
-
-.navbarBrand:focus {
-  color: #5c7cc7;
-  text-decoration: none;
 }
 
 .logo {
@@ -33,4 +32,14 @@
   cursor: pointer;
   filter: drop-shadow(0 0 3px rgb(223, 228, 224));
   transition: all 0.5s ease-in-out;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.a {
+  text-decoration: none;
 }
