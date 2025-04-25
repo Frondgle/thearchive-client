@@ -1,7 +1,6 @@
 import { getArtIDs, getSingleArt } from '../../api/artData';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import { Image } from 'react-bootstrap';
 import styles from './ViewArtPage.module.css';
 import Head from 'next/head';
 
@@ -20,7 +19,6 @@ export default function ViewArtPage() {
 
   // Pagination Logic
   const currentIndex = artIDs.indexOf(Number(id));
-
   const prevId = currentIndex > 0 ? artIDs[currentIndex - 1] : null;
   const nextId = currentIndex < artIDs.length - 1 ? artIDs[currentIndex + 1] : null;
 
@@ -33,11 +31,11 @@ export default function ViewArtPage() {
       <Head>
         <title>{`The Sonatore Archive | ${artObj.code || 'Untitled'}`}</title>
       </Head>
-      <div className="d-flex flex-column">
-        <div className="d-flex">
-          <Image src={imageUrl} alt={artObj.description} className={styles.artImage} />
-          <div className={`${styles.detailsColumn} d-flex flex-column`}>
-            <div className={`${styles.detailsWrap}`}>
+      <div className={styles.container}>
+        <div className={styles.artContent}>
+          <img src={imageUrl} alt={artObj.description} className={styles.artImage} />
+          <div className={styles.detailsColumn}>
+            <div className={styles.detailsWrap}>
               <div>
                 <p>{artObj.code || ''}</p>
                 <hr />
