@@ -10,7 +10,14 @@ function NavBar() {
             <img src="/images/hat.png" alt="Golden Cowboy Hat" className={styles.logo} />
           </Link>
           <Link href="/" className={styles.title} passHref>
-            The Sonatore Archive
+            <div className={styles.skullAndText}>
+              <div className={styles.skull}>
+                <img src="https://cdn-icons-png.flaticon.com/512/10806/10806558.png" width={70} alt="cow skull t" />
+              </div>
+              <div className={styles.titleText}>
+                he Sonatore Archive
+              </div>
+            </div>
           </Link>
         </div>
       </div>
