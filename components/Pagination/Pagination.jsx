@@ -27,7 +27,6 @@ export default function Pagination({ totalPages, currentPage, onPageChange }) {
 
   return (
     <div className={styles.paginationContainer}>
-      {/* First Page Button */}
       <button
         className={styles.paginationButton}
         onClick={() => onPageChange(0)}
@@ -36,7 +35,6 @@ export default function Pagination({ totalPages, currentPage, onPageChange }) {
         <img src="/images/First.png" alt="First" className={styles.paginationIcon} width={40} />
       </button>
 
-      {/* Previous Page Button */}
       <button
         className={styles.paginationButton}
         onClick={() => onPageChange(currentPage - 1)}
@@ -47,12 +45,10 @@ export default function Pagination({ totalPages, currentPage, onPageChange }) {
 
       <div style={{ marginRight: '5px' }}></div>
 
-      {/* Polaroid Page Numbers */}
       {renderPageNumbers()}
 
       <div style={{ marginRight: '5px' }}></div>
 
-      {/* Next Page Button */}
       <button
         className={styles.paginationButton}
         onClick={() => onPageChange(currentPage + 1)}
@@ -61,7 +57,6 @@ export default function Pagination({ totalPages, currentPage, onPageChange }) {
         <img src="/images/Right.png" alt="Right" className={styles.paginationIcon} width={40} />
       </button>
 
-      {/* Last Page Button */}
       <button
         className={styles.paginationButton}
         onClick={() => onPageChange(totalPages - 1)}
