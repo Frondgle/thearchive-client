@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Space+Grotesk:wght@300..700&family=Tsukimi+Rounded&display=swap');
+
 body {
   background-color: #262627;
   background-size: cover;
-  background: linear-gradient(217deg, rgba(232, 166, 210, 0.9), rgba(255, 0, 0, 0) 70.71%),
+  /* background: linear-gradient(217deg, rgba(232, 166, 210, 0.9), rgba(255, 0, 0, 0) 70.71%),
     linear-gradient(127deg, rgba(76, 183, 222, 1), rgba(0, 255, 0, 0) 70.71%),
-    linear-gradient(336deg, rgb(218, 84, 84), rgba(0, 0, 255, 0) 70.71%);
+    linear-gradient(336deg, rgb(218, 84, 84), rgba(0, 0, 255, 0) 70.71%); */
+  background-image: url('/images/purplegalaxybg.avif');
   color: #DADADB;
   min-height: 100vh;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Space Grotesk", sans-serif;
+
+  background-repeat: no-repeat;
 }
 
 .auth-form {
