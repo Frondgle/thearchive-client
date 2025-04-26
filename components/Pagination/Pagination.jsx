@@ -33,7 +33,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }) {
         onClick={() => onPageChange(0)}
         disabled={currentPage === 0}
       >
-        <Image src="/images/First.png" alt="First" className={styles.paginationIcon} width={40} height={20} />
+        <img src="/images/First.png" alt="First" className={styles.paginationIcon} width={40} height={20} />
       </button>
 
       <button
@@ -41,7 +41,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }) {
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 0}
       >
-        <Image src="/images/Left.png" alt="Left" className={styles.paginationIcon} width={40} height={20} />
+        <img src="/images/Left.png" alt="Left" className={styles.paginationIcon} width={40} height={20} />
       </button>
 
       <div style={{ marginRight: '5px' }}></div>
@@ -55,7 +55,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }) {
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages - 1}
       >
-        <Image src="/images/Right.png" alt="Right" className={styles.paginationIcon} width={40} height={20} />
+        <img src="/images/Right.png" alt="Right" className={styles.paginationIcon} width={40} height={20} />
       </button>
 
       <button
@@ -63,7 +63,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }) {
         onClick={() => onPageChange(totalPages - 1)}
         disabled={currentPage === totalPages - 1}
       >
-        <Image src="/images/Last.png" alt="Last" className={styles.paginationIcon} width={40} height={20} />
+        <img src="/images/Last.png" alt="Last" className={styles.paginationIcon} width={40} height={20} />
       </button>
     </div>
   );
