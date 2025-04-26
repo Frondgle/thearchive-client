@@ -70,14 +70,14 @@ export default function ViewArtPage() {
                 onClick={() => handlePagination(prevId)}
                 disabled={!prevId}
               >
-                <Image src="/images/Left.png" alt="Left" className={styles.paginationIcon} width={40} height={20} />
+                <img src="/images/Left.png" alt="Left" className={styles.paginationIcon} width={40} height={20} />
               </button>
               <button
                 className={styles.paginationButton}
                 onClick={() => handlePagination(nextId)}
                 disabled={!nextId}
               >
-                <Image src="/images/Right.png" alt="Right" className={styles.paginationIcon} width={40} height={20} />
+                <img src="/images/Right.png" alt="Right" className={styles.paginationIcon} width={40} height={20} />
               </button>
             </div>
           </div>
