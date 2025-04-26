@@ -1,6 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '@/styles/globals.css'
-import { ClerkProvider } from '@clerk/nextjs' // TODO: comment in to add Clerk Auth
+// import { ClerkProvider } from '@clerk/nextjs' TODO: comment in to add Clerk Auth
 import '@/styles/globals.css';
 import NavBar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
