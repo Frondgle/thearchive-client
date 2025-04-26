@@ -1,15 +1,15 @@
 .footer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  color: hsla(220, 24%, 93%, 0.9);
-  font-size: 1rem;
-  margin: 4rem 3rem 1.5rem 4rem;
-  text-shadow: 0 0 3px rgb(200, 181, 208);
-}
-
-.copyright {
-  font: 1rem sans-serif;
-  margin-right: 0.15rem;
-  font-size: 1rem;
-}
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: hsla(220, 24%, 93%, 0.9);
+    font-size: 1rem;
+    margin: 4rem 3rem 1.5rem 4rem;
+    text-shadow: 0 0 3px rgb(200, 181, 208);
+  }
+  
+  .copyright {
+    font: 1rem sans-serif;
+    margin-right: 0.15rem;
+    font-size: 1rem;
+  }
