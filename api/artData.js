@@ -7,15 +7,17 @@ const getArt = () => new Promise((resolve, reject) => {
       'Content-Type': 'application/json',
     },
   })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data) {
-        resolve(data);
-      } else {
-        resolve([]);
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} ${response.statusText}`);
       }
+      return response.json();
     })
-    .catch(reject);
+    .then((data) => resolve(data))
+    .catch((error) => {
+      console.error('Error fetching art:', error);
+      reject(error);
+    });
 });
 
 const getSingleArt = (id) => new Promise((resolve, reject) => {
