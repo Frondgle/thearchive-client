@@ -4,10 +4,7 @@ const nextConfig = {
   images: {
     domains: ['res.cloudinary.com'], // Allow images from Cloudinary
   },
-  experimental: {
-    outputStandalone: true, // Enable standalone output for deployment
-  },
-  // Add custom headers for static files if needed
+  output: 'standalone', // Use the new standalone output configuration
   async headers() {
     return [
       {
