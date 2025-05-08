@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /info.php
+Disallow: /config.json
+Disallow: /.env
+Disallow: /telescope/requests
+Disallow: /server-status
+Disallow: /.git/
+Disallow: /_all_dbs
+Disallow: /login.action
