@@ -15,6 +15,7 @@ export default function ArtCard({ artObj }) {
         className={styles.cardImg}
         height={300}
         width={300}
+        fetchPriority='high'
       />
       <div className={styles.captionWrap}>
         <div className={styles.caption}>
