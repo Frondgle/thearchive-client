@@ -9,13 +9,14 @@ export default function ArtCard({ artObj }) {
 
   return (
     <div className={styles.cardWrap} onClick={() => router.push(`/art/${artObj.id}`)}>
-      <Image
-        src={`${cloudinaryURL}${artObj.pic}`}
-        alt="art card"
-        className={styles.cardImg}
-        height={300}
-        width={300}
-      />
+        <Image
+          src={`${cloudinaryURL}${artObj.pic}`}
+          alt="art card"
+          className={styles.cardImg}
+          height={300}
+          width={300}
+        />
+
       <div className={styles.captionWrap}>
         <div className={styles.caption}>
           <p>{artObj.code || ''}</p>
