@@ -55,3 +55,11 @@
   align-items: center;
   gap: 1rem;
 }
+
+/* Media query for mobile screens */
+@media (max-width: 753px) {
+  .titleText {
+    margin-top: 35px;
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+}
