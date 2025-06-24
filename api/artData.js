@@ -1,4 +1,5 @@
 const dbURL = process.env.NEXT_PUBLIC_HEROKU_URL;
+console.log('API Base URL:', dbURL);
 
 const getArt = () => new Promise((resolve, reject) => {
   fetch(`${dbURL}/art`, {
