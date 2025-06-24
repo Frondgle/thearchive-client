@@ -82,3 +82,28 @@
   height: 20px;
   opacity: 0.7;
 }
+
+/* Media query for mobile screens */
+/* max-width based on asus zenbook fold (853) */
+@media (max-width: 915px) {
+  .artContent {
+    display: flex;
+    flex-direction: column; /* Stack the image and caption vertically */
+    align-items: center; /* Center-align the items */
+    position: static; /* Remove absolute positioning */
+  }
+
+  .artImage {
+    width: 90%; /* Make the image take up 90% of the screen width */
+    max-width: 400px; /* Set a maximum width for larger devices */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 60vh; /* Ensure the image doesn't become too small */
+    margin: 0; /* Remove extra margin */
+  }
+
+  .detailsColumn {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0; /* Remove extra margin */
+  }
+}
