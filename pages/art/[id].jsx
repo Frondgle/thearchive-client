@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import styles from './ViewArtPage.module.css';
 import Head from 'next/head';
-import Image from 'next/image';
 
 export default function ViewArtPage() {
   const [artObj, setArtObj] = useState({});
@@ -78,6 +77,11 @@ export default function ViewArtPage() {
                 disabled={!nextId}
               >
                 <img src="/images/Right.png" alt="Right" className={styles.paginationIcon} width={40} height={20} />
+              </button>
+            </div>
+            <div className={styles.homeButton}>
+              <button className={styles.homeButtonLink} onClick={() => router.push('/')}>
+                <img src="/images/home-emoji.png" alt="Home" className={styles.homeButtonIcon} />
               </button>
             </div>
           </div>
