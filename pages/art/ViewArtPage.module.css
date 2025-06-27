@@ -83,27 +83,46 @@
   opacity: 0.7;
 }
 
+.homeButtonIcon {
+  width: 40px;
+  background: transparent;
+}
+
+.homeButtonLink {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.homeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
 /* Media query for mobile screens */
 /* max-width based on asus zenbook fold (853) */
 @media (max-width: 915px) {
   .artContent {
     display: flex;
-    flex-direction: column; /* Stack the image and caption vertically */
-    align-items: center; /* Center-align the items */
-    position: static; /* Remove absolute positioning */
+    flex-direction: column;
+    align-items: center;
+    position: static;
   }
 
   .artImage {
-    width: 90%; /* Make the image take up 90% of the screen width */
-    max-width: 400px; /* Set a maximum width for larger devices */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 60vh; /* Ensure the image doesn't become too small */
-    margin: 0; /* Remove extra margin */
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    max-height: 60vh;
+    margin: 0;
   }
 
   .detailsColumn {
-    width: 100%; /* Make the image responsive */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0; /* Remove extra margin */
+    width: 90%;
+    height: auto;
+    margin: 0;
   }
 }

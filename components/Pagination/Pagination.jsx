@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './pagination.module.css';
-import Image from 'next/image';
 
 export default function Pagination({ totalPages, currentPage, onPageChange }) {
   const maxVisiblePages = 5;
@@ -19,7 +18,9 @@ export default function Pagination({ totalPages, currentPage, onPageChange }) {
         className={`${styles.polaroidPaginationItem} ${
           currentPage === page ? styles.active : ''
         }`}
-        onClick={() => onPageChange(page)}
+        onClick={() => {
+          onPageChange(page); // Call onPageChange with the clicked page
+        }}
       >
         <span>{page + 1}</span>
       </div>
