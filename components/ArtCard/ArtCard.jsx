@@ -1,6 +1,7 @@
 import React from 'react';
-import styles from './artcard.module.css';
 import { useRouter } from 'next/router';
+import { usePagination } from '@/context/PaginationContext';
+import styles from './artcard.module.css';
 import Image from 'next/image';
 
 export default function ArtCard({ artObj }) {
@@ -15,7 +16,6 @@ export default function ArtCard({ artObj }) {
         className={styles.cardImg}
         height={300}
         width={300}
-        fetchPriority='high'
       />
       <div className={styles.captionWrap}>
         <div className={styles.caption}>
