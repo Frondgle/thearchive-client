@@ -102,9 +102,8 @@
   margin: 10px;
 }
 
-/* Media query for mobile screens */
-/* max-width based on asus zenbook fold (853) */
-@media (max-width: 915px) {
+/* Media query for mobile screens in portrait mode */
+@media (max-width: 935px) {
   .artContent {
     display: flex;
     flex-direction: column;
@@ -116,7 +115,6 @@
     width: 90%;
     max-width: 400px;
     height: auto;
-    max-height: 60vh;
     margin: 0;
   }
 
@@ -126,3 +124,34 @@
     margin: 0;
   }
 }
+
+/* Media query for mobile screens in landscape mode */
+@media (max-width: 935px) and (orientation: landscape) {
+  .artContent {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .artImage {
+    width: auto;
+    max-width: 50%;
+    height: auto; 
+    max-height: 100%;
+    filter: drop-shadow(0 0 10px rgb(11, 20, 13));
+    border-radius: 2.5px;
+    object-fit: contain; 
+  }
+  
+  .detailsColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    margin-left: 1rem;
+  }
+}
+
