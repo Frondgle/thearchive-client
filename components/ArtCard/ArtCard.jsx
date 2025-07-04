@@ -16,6 +16,9 @@ export default function ArtCard({ artObj }) {
         className={styles.cardImg}
         height={300}
         width={300}
+        loading="lazy"
+        placeholder="blur"
+        blurDataURL={`${cloudinaryURL}${artObj.pic}`}
       />
       <div className={styles.captionWrap}>
         <div className={styles.caption}>
