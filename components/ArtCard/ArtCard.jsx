@@ -10,11 +10,12 @@ export default function ArtCard({ artObj }) {
   return (
     <div className={styles.cardWrap} onClick={() => router.push(`/art/${artObj.id}`)}>
       <Image
-        src={`${cloudinaryURL}${artObj.pic}`}
+        src={`${cloudinaryURL}${artObj.pic}?q_auto:good&f_auto`}
         alt="art card"
         className={styles.cardImg}
         height={300}
         width={300}
+        priority
       />
       <div className={styles.captionWrap}>
         <div className={styles.caption}>
