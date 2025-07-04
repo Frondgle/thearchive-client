@@ -103,7 +103,7 @@
 }
 
 /* Media query for mobile screens in portrait mode */
-@media (max-width: 915px) {
+@media (max-width: 935px) {
   .artContent {
     display: flex;
     flex-direction: column;
@@ -126,7 +126,7 @@
 }
 
 /* Media query for mobile screens in landscape mode */
-@media (max-width: 915px) and (orientation: landscape) {
+@media (max-width: 935px) and (orientation: landscape) {
   .artContent {
     display: flex;
     flex-direction: row;
