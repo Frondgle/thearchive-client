@@ -6,11 +6,12 @@ import Image from 'next/image';
 export default function ArtCard({ artObj }) {
   const router = useRouter();
   const cloudinaryURL = process.env.NEXT_PUBLIC_CLOUDINARY_URL;
+  const optimizedImageUrl = `${cloudinaryURL}image/upload/w_300,h_300,q_auto:good,f_auto/${artObj.pic.split('image/upload/')[1]}`;
 
   return (
     <div className={styles.cardWrap} onClick={() => router.push(`/art/${artObj.id}`)}>
       <Image
-        src={`${cloudinaryURL}${artObj.pic}?q_auto:good&f_auto`}
+        src={optimizedImageUrl}
         alt="art card"
         className={styles.cardImg}
         height={300}
