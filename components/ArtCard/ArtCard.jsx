@@ -1,6 +1,5 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { usePagination } from '@/context/PaginationContext';
 import styles from './artcard.module.css';
 import Image from 'next/image';
 
@@ -16,9 +15,6 @@ export default function ArtCard({ artObj }) {
         className={styles.cardImg}
         height={300}
         width={300}
-        loading="lazy"
-        placeholder="blur"
-        blurDataURL={`${cloudinaryURL}${artObj.pic}`}
       />
       <div className={styles.captionWrap}>
         <div className={styles.caption}>
