@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { getArt } from '@/api/artData';
+import { getSixArt } from '@/api/artData';
 import ArtCard from '@/components/ArtCard/ArtCard';
 import Pagination from '@/components/Pagination/Pagination';
 import { usePagination } from '@/context/PaginationContext';
@@ -8,11 +8,19 @@ import styles from './index.module.css';
 
 export default function Home() {
   const [art, setArt] = useState([]);
-  const { currentPage, setCurrentPage } = usePagination(); // Access currentPage from context
+  const { currentPage, setCurrentPage } = usePagination();
+  const [, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getArt().then(setArt);
-  }, []);
+    const fetchPageData = async () => {
+      setIsLoading(true);
+      const data = await getSixArt(currentPage, itemsPerPage);
+      setArt(data);
+      setIsLoading(false);
+    };
+
+    fetchPageData();
+  }, [currentPage]);
 
   const itemsPerPage = 6;
   const totalPages = Math.ceil(art.length / itemsPerPage);

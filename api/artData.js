@@ -21,6 +21,27 @@ const getArt = () => new Promise((resolve, reject) => {
     });
 });
 
+// Gets six items of art per page, images load faster this way
+const getSixArt = (page = 1, itemsPerPage = 6) => new Promise((resolve, reject) => {
+  fetch(`${dbURL}/art?page=${page}&limit=${itemsPerPage}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then((data) => resolve(data))
+    .catch((error) => {
+      console.error('Error fetching art:', error);
+      reject(error);
+    });
+});
+
 const getSingleArt = (id) => new Promise((resolve, reject) => {
   fetch(`${dbURL}/art/${id}`, {
     method: 'GET',
@@ -56,4 +77,4 @@ const getArtIDs = () => new Promise((resolve, reject) => {
 });
 
 
-export { getArt, getSingleArt, getArtIDs };
+export { getArt, getSixArt, getSingleArt, getArtIDs };

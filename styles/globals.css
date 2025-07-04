@@ -27,7 +27,6 @@ body {
 }
 
 /* Media query for mobile screens */
-/* max-width based on surface level pro */
 @media (max-width: 915px) {
   body {
     background-attachment: fixed; /* Keep the image fixed in place */
