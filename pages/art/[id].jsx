@@ -33,7 +33,7 @@ export default function ViewArtPage() {
       </Head>
       <div className={styles.container}>
         <div className={styles.artContent}>
-          <img src={imageUrl} alt={artObj.description} className={styles.artImage} />
+          <img src={imageUrl} alt={artObj.description} className={styles.artImage} onContextMenu={(e) => e.preventDefault()} />
           <div className={styles.detailsColumn}>
             <div className={styles.detailsWrap}>
               <div>
