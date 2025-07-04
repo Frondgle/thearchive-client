@@ -19,7 +19,7 @@ export default function Pagination({ totalPages, currentPage, onPageChange }) {
           currentPage === page ? styles.active : ''
         }`}
         onClick={() => {
-          onPageChange(page); // Call onPageChange with the clicked page
+          onPageChange(page);
         }}
       >
         <span>{page + 1}</span>
