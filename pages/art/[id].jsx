@@ -10,7 +10,9 @@ export default function ViewArtPage() {
   const router = useRouter();
   const { id } = router.query;
   const cloudinaryURL = process.env.NEXT_PUBLIC_CLOUDINARY_URL;
-  const imageUrl = artObj.pic ? `${cloudinaryURL}${artObj.pic}` : '';
+  const optimizedImageUrl = artObj.pic
+  ? `${cloudinaryURL}image/upload/w_600,h_725,q_auto:eco,f_auto,fl_progressive,fl_png8/${artObj.pic.split('image/upload/')[1]}`
+  : '';
 
   useEffect(() => {
     if (id) getSingleArt(id).then(setArtObj);
@@ -34,7 +36,7 @@ export default function ViewArtPage() {
       <div className={styles.container}>
         <div className={styles.artContent}>
           <img 
-            src={imageUrl} 
+            src={optimizedImageUrl} 
             alt={artObj.description} 
             className={styles.artImage} 
             // onContextMenu={(e) => e.preventDefault()} 
