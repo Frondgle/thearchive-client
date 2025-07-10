@@ -39,7 +39,7 @@ export default function ViewArtPage() {
             src={optimizedImageUrl} 
             alt={artObj.description} 
             className={styles.artImage} 
-            // onContextMenu={(e) => e.preventDefault()} 
+            onContextMenu={(e) => e.preventDefault()} 
           />
           <div className={styles.detailsColumn}>
             <div className={styles.detailsWrap}>
