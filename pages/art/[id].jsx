@@ -39,17 +39,12 @@ export default function ViewArtPage() {
             src={optimizedImageUrl} 
             alt={artObj.description} 
             className={styles.artImage} 
-            // onContextMenu={(e) => e.preventDefault()} 
+            onContextMenu={(e) => e.preventDefault()} 
           />
           <div className={styles.detailsColumn}>
             <div className={styles.detailsWrap}>
               <div>
                 <p>{artObj.code || ''}</p>
-                <hr />
-                <h5>
-                  <i>{artObj.title || ''} </i>
-                  {artObj.date_created ? ` - (${new Date(artObj.date_created).getFullYear()})` : '(Unknown Date)'}
-                </h5>
                 <hr />
                 <p>{artObj.description}</p>
                 <hr />
