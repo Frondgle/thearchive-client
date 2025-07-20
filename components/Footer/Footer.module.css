@@ -5,7 +5,11 @@
     color: hsla(220, 24%, 93%, 0.9);
     font-size: 1rem;
     margin: 4rem 3rem 1.5rem 4rem;
-    text-shadow: 0 0 3px rgb(200, 181, 208);
+    text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
   }
   
   .copyright {
