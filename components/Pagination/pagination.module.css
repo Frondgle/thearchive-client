@@ -11,8 +11,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 50px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
     font-weight: bold;
     color: #000;
@@ -20,12 +20,12 @@
     transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
-    background-image: url('/images/filmroll.jpg');
+    background-image: url('/images/squareFilmStrip.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     text-align: center;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .polaroidPaginationItem.active {
@@ -36,7 +36,7 @@
 
 .polaroidPaginationItem:hover {
     transform: scale(1.05);
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .polaroidPaginationItem span {
@@ -50,8 +50,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
-    padding: 5px 10px;
+    margin: 2.5px;
+    padding: 5px 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
     background-color: #fff; 
@@ -60,6 +60,8 @@
     transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
     opacity: 0.7;
+    width: 30px;
+    height: 30px;
 }
 
 .paginationIcon {
@@ -81,4 +83,35 @@
     color: #999;
     cursor: not-allowed;
     opacity: 0.3;
+}
+
+.paginationNumber {
+    color: #eadaf5;
+    font-size: 1.75rem;
+    text-shadow:
+    -1px -1px 0 rgb(156, 35, 242),
+    1px -1px 0 rgb(156, 35, 242),
+    -1px  1px 0 rgb(156, 35, 242),
+    1px  1px 0 rgb(156, 35, 242);
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.paginationNumber.active {
+    color: #edef87;
+    opacity: 1;
+}
+
+.paginationNumber:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+    color: #edef87;
+}
+
+@media (max-width: 753px) {
+.paginationNumber {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+}
 }

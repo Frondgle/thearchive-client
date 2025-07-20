@@ -39,18 +39,18 @@ export default function Home() {
       <Head>
         <title>The Sonatore Archive</title>
       </Head>
-      
-      <div className={styles.artContainer}>
-        {currentArt.map((artObj, index) => (
-          <ArtCard key={index} artObj={artObj} />
-        ))}
-      </div>
 
       <Pagination
         totalPages={totalPages}
         currentPage={currentPage}
         onPageChange={handlePageChange}
       />
+      
+      <div className={styles.artContainer}>
+        {currentArt.map((artObj, index) => (
+          <ArtCard key={index} artObj={artObj} />
+        ))}
+      </div>
     </>
   );
 }
