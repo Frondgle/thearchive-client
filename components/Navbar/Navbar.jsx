@@ -13,25 +13,18 @@ function NavBar() {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <div className={styles.logoContainer}>
-          <Link href="/" passHref>
-            <img 
-              src="/images/hat.png" 
-              alt="Golden Cowboy Hat" 
-              className={styles.logo}
-              width={10}
-              height={10} 
-              onClick={handleClick} // Reset currentPage on click
-            />
-          </Link>
-          <Link href="/" className={styles.title} passHref>
-            <div className={styles.skullAndText} onClick={handleClick}> {/* Reset currentPage on click */}
-              <div className={styles.titleText}>
-                The Sonatore Archive
-              </div>
+          <img 
+            src="/images/hat.png" 
+            alt="Golden Cowboy Hat" 
+            className={styles.logo}
+          />
+          <Link href="/" className={styles.link} passHref onClick={handleClick}>
+            <div className={styles.titleText}>
+              The Sonatore Archive
             </div>
           </Link>
         </div>
-      </div>
+        </div>
     </nav>
   );
 }
