@@ -12,20 +12,15 @@
   font-size: 1.75rem;
   font-weight: 600;
   text-decoration: none;
-  font-family: "Tsukimi Rounded", sans-serif;
   margin-left: -65px;
   margin-top: 50px;
-  text-shadow: 0 0 3px rgb(200, 181, 208);
+  /* text-shadow: 0 0 3px rgb(200, 181, 208); */
 }
 
 .title:hover {
   color: #edef87;
   text-decoration: none;
   transition: all 0.5s ease-in-out;
-}
-
-.skull{
-  margin-top: -10px;
 }
 
 .skullAndText {
@@ -35,7 +30,13 @@
 }
 
 .titleText {
-  margin-left: -30px;
+  margin-left: -10px;
+  margin-bottom: 25px;
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
 }
 
 .logo {

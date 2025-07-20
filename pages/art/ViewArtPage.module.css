@@ -30,7 +30,7 @@
   margin-left: 1rem;
 }
 
-.detailsWrap {
+/* .detailsWrap {
   color: #fff;
   padding: 2rem;
   background-color: hotpink;
@@ -38,6 +38,32 @@
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
   opacity: 0.85;
+  background-image: url('/images/infoTexture.JPG');
+} */
+
+.detailsWrap {
+  position: relative;
+  color: #fff;
+  padding: 2rem;
+  background-color: hotpink;
+  border-radius: 2.5px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  opacity: 0.85;
+  z-index: 1;
+  overflow: hidden; /* Ensures background doesn't spill out */
+}
+
+.detailsWrap::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0 */
+  background-image: url('/images/infoTexture.JPG');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3; /* Adjust this value for transparency */
+  z-index: 0;
 }
 
 .pagination {

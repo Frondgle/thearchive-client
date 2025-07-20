@@ -18,18 +18,15 @@ function NavBar() {
               src="/images/hat.png" 
               alt="Golden Cowboy Hat" 
               className={styles.logo}
-              width={90}
-              height={90} 
+              width={10}
+              height={10} 
               onClick={handleClick} // Reset currentPage on click
             />
           </Link>
           <Link href="/" className={styles.title} passHref>
             <div className={styles.skullAndText} onClick={handleClick}> {/* Reset currentPage on click */}
-              <div className={styles.skull}>
-                <img src="https://cdn-icons-png.flaticon.com/512/10806/10806558.png" width={70} alt="cow skull t" />
-              </div>
               <div className={styles.titleText}>
-                he Sonatore Archive
+                The Sonatore Archive
               </div>
             </div>
           </Link>
