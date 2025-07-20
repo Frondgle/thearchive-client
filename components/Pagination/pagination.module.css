@@ -4,7 +4,6 @@
     align-items: center;
     gap: 0px;
     margin-top: 20px;
-    font-family: "Tsukimi Rounded", sans-serif;
 }
 
 .polaroidPaginationItem {
@@ -30,14 +29,14 @@
 }
 
 .polaroidPaginationItem.active {
-    border: 2px solid #007bff;
-    color: #007bff;
+    border: 2px solid #bf359a;
+    color: #bf359a;
     opacity: 1;
 }
 
 .polaroidPaginationItem:hover {
-    transform: scale(1.1);
-    opacity: 1;
+    transform: scale(1.05);
+    opacity: 0.8;
 }
 
 .polaroidPaginationItem span {
