@@ -2,14 +2,14 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    color: hsla(220, 24%, 93%, 0.9);
+    color: #eadaf5;
     font-size: 1rem;
     margin: 4rem 3rem 1.5rem 4rem;
     text-shadow:
-    -1px -1px 0 black,
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
+    -1px -1px 0 rgb(156, 35, 242),
+     1px -1px 0 rgb(156, 35, 242),
+    -1px  1px 0 rgb(156, 35, 242),
+     1px  1px 0 rgb(156, 35, 242);
   }
   
   .copyright {
