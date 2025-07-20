@@ -7,31 +7,16 @@
   padding: 1rem 2rem;
 }
 
-.title {
-  color: #dedfe3;
-  font-size: 1.75rem;
-  font-weight: 600;
+.link {
   text-decoration: none;
-  margin-left: -65px;
-  margin-top: 50px;
-  /* text-shadow: 0 0 3px rgb(200, 181, 208); */
-}
-
-.title:hover {
-  color: #edef87;
-  text-decoration: none;
-  transition: all 0.5s ease-in-out;
-}
-
-.skullAndText {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .titleText {
-  margin-left: -10px;
-  margin-bottom: 25px;
+  color: #dedfe3;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-left: -75px;
+  margin-top: 25px;
   text-shadow:
     -1px -1px 0 black,
      1px -1px 0 black,
@@ -39,16 +24,15 @@
      1px  1px 0 black;
 }
 
+.titleText:hover {
+  color: #edef87;
+  transition: all 0.5s ease-in-out;
+}
+
 .logo {
   margin: 1rem 0 0 2rem;
   width: 90px;
   height: 90px;
-}
-
-.logo:hover {
-  cursor: pointer;
-  filter: drop-shadow(0 0 3px rgb(223, 228, 224));
-  transition: all 0.5s ease-in-out;
 }
 
 .logoContainer {
