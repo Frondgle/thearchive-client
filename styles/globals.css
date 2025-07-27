@@ -18,13 +18,10 @@ body {
   font-family: 'Alte Haas Grotesk Bold';
 }
 
-/* Media query for mobile screens */
-@media (max-width: 450px) {
+/* Media query for smaller screens */
+@media (max-width: 768px) {
   body {
-    image-rendering: auto;
-    -webkit-optimize-contrast: high;
-    -webkit-image-rendering: crisp-edges;
-    -ms-interpolation-mode: bicubic;
+    background-size: 150%; /* Zoom out the image by increasing its size */
   }
 }
 
