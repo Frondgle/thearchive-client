@@ -1,12 +1,13 @@
 import styles from './navbar.module.css';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { usePagination } from '@/context/PaginationContext'; // Import the context
 
 function NavBar() {
-  const { setCurrentPage } = usePagination(); // Access setCurrentPage from context
-
+  const router = useRouter();
+  const { setCurrentPage } = usePagination();
   const handleClick = () => {
     setCurrentPage(0); // Reset currentPage to 0
+    router.push('/');
   };
 
   return (
@@ -18,11 +19,9 @@ function NavBar() {
             alt="Golden Cowboy Hat" 
             className={styles.logo}
           />
-          <Link href="/" className={styles.link} passHref onClick={handleClick}>
-            <div className={styles.titleText}>
-              The Sonatore Archive
-            </div>
-          </Link>
+        <div className={styles.titleText} onClick={handleClick}>
+          The Sonatore Archive
+        </div>
         </div>
         </div>
     </nav>

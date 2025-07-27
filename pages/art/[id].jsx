@@ -42,6 +42,23 @@ export default function ViewArtPage() {
             onContextMenu={(e) => e.preventDefault()} 
           />
           <div className={styles.detailsColumn}>
+            {/* Pagination */}
+            <div className={styles.pagination}>
+              <button
+                className={styles.paginationButton}
+                onClick={() => handlePagination(prevId)}
+                disabled={!prevId}
+              >
+                <img src="/images/Left.png" alt="Left" className={styles.paginationIcon} width={40} height={20} />
+              </button>
+              <button
+                className={styles.paginationButton}
+                onClick={() => handlePagination(nextId)}
+                disabled={!nextId}
+              >
+                <img src="/images/Right.png" alt="Right" className={styles.paginationIcon} width={40} height={20} />
+              </button>
+            </div>
             <div className={styles.detailsWrap}>
               <div>
                 <p>{artObj.code || ''}</p>
@@ -63,26 +80,8 @@ export default function ViewArtPage() {
                 </p>
               </div>
             </div>
-
-            {/* Pagination */}
-            <div className={styles.pagination}>
-              <button
-                className={styles.paginationButton}
-                onClick={() => handlePagination(prevId)}
-                disabled={!prevId}
-              >
-                <img src="/images/Left.png" alt="Left" className={styles.paginationIcon} width={40} height={20} />
-              </button>
-              <button
-                className={styles.paginationButton}
-                onClick={() => handlePagination(nextId)}
-                disabled={!nextId}
-              >
-                <img src="/images/Right.png" alt="Right" className={styles.paginationIcon} width={40} height={20} />
-              </button>
-            </div>
             <div className={styles.homeButton}>
-              <button className={styles.homeButtonLink} onClick={() => router.push('/')}>
+              <button className={styles.homeButtonLink} onClick={() => router.push('/photoGallery/photoGallery')}>
                 <img src="/images/home-emoji.png" alt="Home" className={styles.homeButtonIcon} />
               </button>
             </div>

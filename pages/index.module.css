@@ -1,8 +1,133 @@
-.artContainer {
+.container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    margin-bottom: 3rem;
+}
+
+.sonatoreBlurb {
+    position: relative;
+    color: #fff;
+    padding: 2rem;
+    background-color: hotpink;
+    border-radius: 5px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    opacity: 0.85;
+    z-index: 1;
+    overflow: hidden; /* Ensures content stays inside the container */
+    margin-bottom: 50px;
+    margin-right: 25px;
+    width: 250px;
+    height: 300px;
+    text-overflow: ellipsis; /* Adds ellipsis for overflowing text */
+    word-wrap: break-word; /* Breaks long words to fit inside */
+    display: flex; /* Ensures content respects the container */
+    flex-direction: column; /* Aligns text vertically */
   }
+  
+  .sonatoreBlurb::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0 */
+    background-image: url('/images/infoTexture.JPG');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3; /* Adjust this value for transparency */
+    z-index: 0;
+  }
+
+.photoGalleryLink {
+    cursor: pointer;
+    margin-top: -15px;
+}
+
+/* Media query for tablets in portrait mode */
+@media (max-width: 1024px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: static;
+    }
+  
+    .photoGalleryLink {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  
+    .sonatoreBlurb {
+      width: 237px;
+      height: 300px;
+      margin: 0;
+    }
+  }
+  
+  /* Media query for mobile screens in portrait mode */
+  @media (max-width: 450px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: static;
+    }
+  
+    .photoGalleryLink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        max-width: 400px;
+        height: auto;
+        margin-bottom: 3rem;
+    }
+  
+    .sonatoreBlurb {
+      width: 237px;
+      height: 300px;
+      margin-top: 10px;
+    }
+  }
+  
+  /* Media query for mobile screens in landscape mode */
+  @media (max-width: 935px) and (orientation: landscape) {
+    .container {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .photoGalleryLink {
+        width: auto;
+        max-width: 50%;
+        height: auto; 
+        max-height: 100%;
+        filter: drop-shadow(0 0 10px rgb(11, 20, 13));
+        border-radius: 2.5px;
+        object-fit: contain; 
+        margin-top: -15px;
+    }
+    
+    .sonatoreBlurb {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 250px;
+        height: 300px;
+    }
+  }
+  
+  

@@ -4,8 +4,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  margin-bottom: -2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1.25rem;
 }
 
 .link {
@@ -17,7 +18,7 @@
   font-size: 1.75rem;
   font-weight: 600;
   margin-left: -75px;
-  margin-top: 25px;
+  margin-top: 15px;
   text-shadow:
   -1px -1px 0 rgb(156, 35, 242),
    1px -1px 0 rgb(156, 35, 242),
@@ -28,10 +29,10 @@
 .titleText:hover {
   color: #edef87;
   transition: all 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .logo {
-  margin: 1rem 0 0 2rem;
   width: 90px;
   height: 90px;
 }
@@ -45,7 +46,45 @@
 /* Media query for mobile screens */
 @media (max-width: 753px) {
   .titleText {
-    margin-top: 35px;
-    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-left: -68px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 1035px) {
+  .navbar {
+    background: none;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 320px) {
+  .titleText {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-left: -60px;
+    margin-top: 12px;
+  }
+
+  .logo {
+    width: 70px;
+    height: 70px;
   }
 }
