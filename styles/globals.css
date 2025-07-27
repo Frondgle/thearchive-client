@@ -8,7 +8,6 @@
 
 html, body {
   height: 100%; /* Fix the height of the body and html */
-  overflow: auto; /* Allow scrolling for content overflow */
 }
 
 body {
