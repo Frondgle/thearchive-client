@@ -19,13 +19,14 @@ body {
 }
 
 /* Media query for mobile screens */
-/* @media (max-width: 450px) {
+@media (max-width: 450px) {
   body {
-    background-image: url('/images/spaceBackground.jpg');
-    background-attachment: fixed;
-    background-position: center;
+    image-rendering: auto;
+    -webkit-optimize-contrast: high;
+    -webkit-image-rendering: crisp-edges;
+    -ms-interpolation-mode: bicubic;
   }
-} */
+}
 
 .auth-form {
   width: 50%;
