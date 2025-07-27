@@ -38,6 +38,7 @@ export default function PhotoGallery() {
     <>
       <Head>
         <title>The Sonatore Archive - Photo Gallery</title>
+        <link rel="preload" href="/images/spaceBackground.jpg" as="image" />
       </Head>
 
       <Pagination
