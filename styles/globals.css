@@ -7,7 +7,8 @@
 }
 
 html, body {
-  height: 100%; /* Fix the height of the body and html */
+  min-height: 100%;
+  overflow: auto;
 }
 
 body {
