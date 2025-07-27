@@ -18,6 +18,15 @@ body {
   font-family: 'Alte Haas Grotesk Bold';
 }
 
+/* Media query for mobile screens */
+/* @media (max-width: 450px) {
+  body {
+    background-image: url('/images/spaceBackground.jpg');
+    background-attachment: fixed;
+    background-position: center;
+  }
+} */
+
 .auth-form {
   width: 50%;
 }
