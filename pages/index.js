@@ -1,56 +1,54 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import { getSixArt } from '@/api/artData';
-import ArtCard from '@/components/ArtCard/ArtCard';
-import Pagination from '@/components/Pagination/Pagination';
-import { usePagination } from '@/context/PaginationContext';
+import { useRouter } from 'next/router';
 import styles from './index.module.css';
+import RandomArtCard from '@/components/RandomArtCard/RandomArtCard';
+import { getArt } from '@/api/artData';
 
-export default function Home() {
-  const [art, setArt] = useState([]);
-  const { currentPage, setCurrentPage } = usePagination();
-  const [, setIsLoading] = useState(false);
+export default function Home({ randomArt }) {
+  const router = useRouter();
 
-  useEffect(() => {
-    const fetchPageData = async () => {
-      setIsLoading(true);
-      const data = await getSixArt(currentPage, itemsPerPage);
-      setArt(data);
-      setIsLoading(false);
-    };
-
-    fetchPageData();
-  }, [currentPage]);
-
-  const itemsPerPage = 6;
-  const totalPages = Math.ceil(art.length / itemsPerPage);
-
-  const handlePageChange = (pageIndex) => {
-    setCurrentPage(pageIndex);
-  };
-
-  const currentArt = art.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
+  const sonatoreBlurb = `This is an emotional blurb about Sonatore.<br /><br />It's very dope.<br /><br />Click on the pic to view his photo gallery.`;
 
   return (
     <>
       <Head>
         <title>The Sonatore Archive</title>
       </Head>
-
-      <Pagination
-        totalPages={totalPages}
-        currentPage={currentPage}
-        onPageChange={handlePageChange}
-      />
-      
-      <div className={styles.artContainer}>
-        {currentArt.map((artObj, index) => (
-          <ArtCard key={index} artObj={artObj} />
-        ))}
+      <div className={styles.container}>
+        <div
+          className={styles.sonatoreBlurb}
+          dangerouslySetInnerHTML={{ __html: sonatoreBlurb }}
+        ></div>
+        <div
+          className={styles.photoGalleryLink}
+          onClick={() => router.push('/photoGallery/photoGallery')}
+        >
+          {randomArt ? (
+            <RandomArtCard artObj={randomArt} />
+          ) : (
+            <p></p>
+          )}
+        </div>
       </div>
     </>
   );
+}
+
+// Fetch data on the server side
+export async function getServerSideProps() {
+  const data = await getArt();
+
+  // Randomly pick an art object
+  let randomArt = null;
+  if (data.length > 0) {
+    const randomIndex = Math.floor(Math.random() * data.length);
+    randomArt = data[randomIndex];
+  }
+
+  return {
+    props: {
+      randomArt, // Pass the random art as a prop to the component
+    },
+  };
 }

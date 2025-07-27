@@ -9,9 +9,6 @@
 body {
   background-color: #262627;
   background-size: cover;
-  /* background: linear-gradient(217deg, rgba(232, 166, 210, 0.9), rgba(255, 0, 0, 0) 70.71%),
-    linear-gradient(127deg, rgba(76, 183, 222, 1), rgba(0, 255, 0, 0) 70.71%),
-    linear-gradient(336deg, rgb(218, 84, 84), rgba(0, 0, 255, 0) 70.71%); */
   background-image: url('/images/spaceBackground.jpg');
   color: #DADADB;
   min-height: 100vh;
@@ -35,7 +32,7 @@ body {
 /* Media query for mobile screens */
 @media (max-width: 915px) {
   body {
-    background-attachment: fixed; /* Keep the image fixed in place */
+    background-attachment: fixed;
     background-position: center 20%;
   }
 }
