@@ -8,13 +8,22 @@
 
 body {
   background-color: #262627;
-  background-size: cover;
   background-image: url('/images/spaceBackground.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   color: #DADADB;
   min-height: 100vh;
   font-family: 'Alte Haas Grotesk Bold';
-  src: url('/fonts/AlteHaasGroteskBold.ttf') format('truetype');
-  background-repeat: no-repeat;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 450px) {
+  body {
+    background-attachment: scroll;
+    background-position: center;
+  }
 }
 
 .auth-form {
