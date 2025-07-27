@@ -6,6 +6,11 @@
   font-style: normal;
 }
 
+html, body {
+  height: 100%; /* Fix the height of the body and html */
+  overflow: auto; /* Allow scrolling for content overflow */
+}
+
 body {
   background-color: #262627;
   background-image: url('/images/spaceBackground.jpg');
@@ -16,13 +21,6 @@ body {
   color: #DADADB;
   min-height: 100vh;
   font-family: 'Alte Haas Grotesk Bold';
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  body {
-    background-size: 150%; /* Zoom out the image by increasing its size */
-  }
 }
 
 .auth-form {
