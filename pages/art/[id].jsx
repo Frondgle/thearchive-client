@@ -8,7 +8,7 @@ import { usePagination } from '../../context/PaginationContext';
 export default function ViewArtPage() {
   const [artObj, setArtObj] = useState({});
   const [artIDs, setArtIDs] = useState([]);
-  const { currentPage, setCurrentPage } = usePagination();
+  const { currentPage, setCurrentPage, itemsPerPage } = usePagination();
   const router = useRouter();
   const { id } = router.query;
   const cloudinaryURL = process.env.NEXT_PUBLIC_CLOUDINARY_URL;
@@ -26,28 +26,14 @@ export default function ViewArtPage() {
   const prevId = currentIndex > 0 ? artIDs[currentIndex - 1] : null;
   const nextId = currentIndex < artIDs.length - 1 ? artIDs[currentIndex + 1] : null;
 
-  // useRef stores first pic user viewed in the gallery
-  const originalIDRef = useRef(null);
-
-  // Update the originalIDRef only once when currentIndex is first calculated
+  // Dynamically update the current page based on currentIndex
   useEffect(() => {
-    if (originalIDRef.current === null && currentIndex >= 0) {
-      originalIDRef.current = currentIndex + 1;
-    }
-  }, [currentIndex]);
+    const newPage = Math.floor(currentIndex / itemsPerPage);
 
-  const originalID = originalIDRef.current; // first pic user viewed in the gallery
-  const manageCPID = currentIndex + 1; // current pic user is viewing
-  const remainder = manageCPID % 6;
-
-  useEffect(() => {
-    if (remainder === 0 && manageCPID < originalID) {
-      setCurrentPage(currentPage - 1);
+    if (newPage !== currentPage && newPage >= 0) {
+      setCurrentPage(newPage);
     }
-    if (remainder === 1 && manageCPID > originalID) {
-      setCurrentPage(currentPage + 1);
-    }
-  }, [manageCPID, remainder]);
+  }, [currentIndex, currentPage, setCurrentPage]);
 
   const handlePagination = (pageId) => {
     if (pageId !== null) router.push(`/art/${pageId}`);

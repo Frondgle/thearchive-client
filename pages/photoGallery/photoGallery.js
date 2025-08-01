@@ -8,7 +8,7 @@ import styles from './photoGallery.module.css';
 
 export default function PhotoGallery() {
   const [art, setArt] = useState([]);
-  const { currentPage, setCurrentPage } = usePagination();
+  const { currentPage, setCurrentPage, itemsPerPage } = usePagination();
   const [, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -22,7 +22,6 @@ export default function PhotoGallery() {
     fetchPageData();
   }, [currentPage]);
 
-  const itemsPerPage = 6;
   const totalPages = Math.ceil(art.length / itemsPerPage);
 
   const handlePageChange = (pageIndex) => {

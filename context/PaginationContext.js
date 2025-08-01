@@ -4,9 +4,10 @@ const PaginationContext = createContext();
 
 export const PaginationProvider = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(0); // Default to the first page
+  const itemsPerPage = 6; // Define how many items per page
 
   return (
-    <PaginationContext.Provider value={{ currentPage, setCurrentPage }}>
+    <PaginationContext.Provider value={{ currentPage, setCurrentPage, itemsPerPage }}>
       {children}
     </PaginationContext.Provider>
   );
