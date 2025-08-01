@@ -6,10 +6,10 @@
   font-style: normal;
 }
 
-/* html, body {
+html, body {
   height: 100%;
   overflow: auto;
-} */
+}
 
 body {
   background-color: #262627;
@@ -20,7 +20,7 @@ body {
   background-position: center;
   color: #DADADB;
   font-family: 'Alte Haas Grotesk Bold';
-  min-height: 100%;
+
 }
 
 .auth-form {
