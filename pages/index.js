@@ -8,7 +8,19 @@ import { getArt } from '@/api/artData';
 export default function Home({ randomArt }) {
   const router = useRouter();
 
-  const sonatoreBlurb = `This is an emotional blurb about Sonatore.<br /><br />It's very dope.<br /><br />Click on the pic to view his photo gallery.`;
+  const sonatoreBlurb = `
+                Hello!
+                <br /><br />
+                Welcome to The Sonatore Archive!
+                <br /><br />
+                We are excited to share with you around 150 of his Polaroid photos to launch the site with. We will expand the archive to hold all of the art we currently have of his. Which includes thousands more Polaroids, paintings, music, and more.
+                <br /><br />
+                If you or anyone you know have any pieces of his that you would like to add to the archive please reach out via the contact page.
+                <br /><br />
+                Love,
+                <br /><br />
+                Friends of Sonatore
+                `;
 
   return (
     <>
