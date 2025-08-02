@@ -118,6 +118,10 @@
       height: 300px;
       margin-top: 10px;
     }
+
+    .sonatoreBlurb::before {
+      height: 550px;
+    }
   }
   
   /* Media query for mobile screens in landscape mode */
