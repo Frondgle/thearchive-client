@@ -1,3 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 .navbar {
   background: none;
   top: 0;
@@ -43,8 +51,43 @@
   gap: 1rem;
 }
 
+.linksContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+.linkText {
+  color: #eadaf5;
+  margin-top: 15px;
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-shadow:
+  -1px -1px 0 rgb(156, 35, 242),
+   1px -1px 0 rgb(156, 35, 242),
+  -1px  1px 0 rgb(156, 35, 242),
+   1px  1px 0 rgb(156, 35, 242);
+}
+
+.linkText:hover {
+  color: #edef87;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
 /* Media query for mobile screens */
 @media (max-width: 753px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .linkText {
+    font-size: 1rem;
+    margin-top: 25px;
+  }
+
   .titleText {
     font-size: 1.5rem;
     font-weight: 600;
@@ -62,6 +105,16 @@
     align-items: center;
     padding: 1rem 2rem;
   }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .linkText {
+    font-size: 1.5rem;
+    margin-top: 25px;
+  }
   
   .logoContainer {
     display: flex;
@@ -75,12 +128,17 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 450px) {
   .titleText {
     font-size: 1.25rem;
     font-weight: 600;
     margin-left: -60px;
     margin-top: 12px;
+  }
+
+  .linkText {
+    font-size: 0.9rem;
+    margin-top: 25px;
   }
 
   .logo {
