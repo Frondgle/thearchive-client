@@ -1,7 +1,7 @@
+/* Layout */
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
   margin-top: 25px;
@@ -10,73 +10,81 @@
 
 .linksContainer {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
 }
 
-.title {
-  color: #eadaf5;
-  font-size: 1.75rem;
-  font-weight: 600;
-  text-align: center;
-  text-shadow:
-  -1px -1px 0 rgb(156, 35, 242),
-    1px -1px 0 rgb(156, 35, 242),
-  -1px  1px 0 rgb(156, 35, 242),
-    1px  1px 0 rgb(156, 35, 242);
+/* Make the <Link> itself displayable (for focus outline, etc.) */
+.linkItem {
+  display: inline-block;
+  outline: none;
+}
+.linkItem:focus-visible .clipWrap {
+  outline: 2px solid #9c23f2;
+  outline-offset: 2px;
 }
 
-.iconWrapper {
+/* Outer: renders the soft blur (not clipped) */
+.shadowWrap {
+  display: inline-block;
+  border-radius: 25px; /* same visual radius */
+  filter: drop-shadow(0 0 10px rgb(11, 20, 13));
+}
+
+/* Inner: rounded + clipping for image and overlay */
+.clipWrap {
   position: relative;
-  cursor: pointer;
-  border-radius: 20px;
-}
-
-/* .icon {
-  margin: 0.5rem;
-  transition: transform 0.5s ease-in-out;
-  filter: drop-shadow(0 0 10px rgb(11, 20, 13));
-  border-radius: 20px;
-} */
-
-.icon {
-  border-radius: 20px;
-  transition: transform 0.5s ease-in-out;
-  filter: drop-shadow(0 0 10px rgb(11, 20, 13));
+  border-radius: 25px;
+  overflow: hidden;                 /* critical: overlay is clipped */
+  /* If you want spacing around the image inside the rounded card: */
   padding: 0.5rem;
+  background: transparent;
+  isolation: isolate;               /* helps some GPU paths on mobile */
 }
-  
+
+/* The icon image itself */
+.icon {
+  display: block;
+  border-radius: 25px;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Darkening overlay—no box-shadow to avoid square silhouette */
 .captionWrap {
   position: absolute;
-  inset: 0;                         
-  background: rgba(0,0,0,0.6); 
+  inset: 0; /* full coverage */
   border-radius: inherit;
+  background: rgba(0, 0, 0, 0.6);
   visibility: hidden;
   opacity: 0;
+  pointer-events: none; /* keep clicks on the link */
   transition: visibility 0s, opacity 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
-  
-.iconWrapper:hover .icon {
-  transform: scale(1.1);
+
+/* Center the caption text */
+.caption {
+  height: 100%;
+  display: flex;               
+  justify-content: center;     
+  align-items: flex-start;     
+  padding: 0.75rem 1rem;       
+  text-decoration: none;
+  color: #dadadb;
+  text-align: center;
 }
 
-.iconWrapper:hover .captionWrap {
+/* Hover/press interaction */
+.clipWrap:hover .icon {
+  transform: scale(1.1);
+}
+.clipWrap:hover .captionWrap {
   visibility: visible;
   opacity: 1;
 }
 
-.caption {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem 2rem;
-  text-decoration: none;
-  color: #DADADB;
-}
-
-/* Media query for mobile screens */
+/* Mobile grid */
 @media (max-width: 500px) {
   .linksContainer {
     display: grid;
@@ -85,7 +93,7 @@
     gap: 0.5rem;
   }
 
-  /* Make the last item span both columns if odd number of items */
+  /* If odd count, make the last item span both columns */
   .linksContainer > :last-child:nth-child(odd) {
     grid-column: 1 / -1;
     justify-self: center;
