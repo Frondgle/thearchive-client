@@ -84,29 +84,51 @@
     gap: 0.5rem;
   }
 
-  /* If odd count, center the last one (5th) */
+  /* kill glow + shadow on mobile */
+  .shadowWrap {
+    filter: none !important;   /* remove drop-shadow */
+  }
+  .icon {
+    filter: none !important;   /* remove any per-image shadow */
+  }
+
+  /* keep rounded clip + overlay */
+  .clipWrap {
+    border-radius: 25px;
+    overflow: hidden;
+  }
+
+  /* overlay: always covers and darkens */
+  .overlay {
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(0, 0, 0, 0.6);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    padding-top: 0.6rem;
+    transition: opacity 0.35s ease;
+  }
+
+  .caption {
+    text-align: center;
+    padding: 0 0.75rem;
+    color: #dadadb;
+  }
+
+  /* trigger on tap/focus */
+  .linkItem:active .overlay,
+  .linkItem:focus-within .overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* optional: center the last icon if odd count */
   .linksContainer > :last-child:nth-child(odd) {
     grid-column: 1 / -1;
     justify-self: center;
   }
-
-  /* Kill square silhouette on stubborn mobile GPUs */
-  .clipWrap {
-    border-radius: 25px;
-    overflow: hidden;
-    clip-path: inset(0 round 25px);
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
-    mask-image: radial-gradient(white, black);
-    isolation: isolate;
-  }
-
-  /* Show overlay on tap/focus instead of hover */
-  .linkItem:active .overlay,
-  .linkItem:focus-within .overlay {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  /* Optional: avoid zoom jank on mobile */
-  .clipWrap:hover .icon { transform: none; }
 }
