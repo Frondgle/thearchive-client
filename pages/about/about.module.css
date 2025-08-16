@@ -3,9 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  margin-top: 25px;
-  margin-bottom: 3rem;
+  margin: 25px 0 3rem;
 }
 
 .linksContainer {
@@ -16,77 +14,69 @@
   align-items: center;
 }
 
-/* Make the <Link> itself displayable (for focus outline, etc.) */
 .linkItem {
   display: inline-block;
   outline: none;
 }
-.linkItem:focus-visible .clipWrap {
-  outline: 2px solid #9c23f2;
-  outline-offset: 2px;
-}
 
-/* Outer: renders the soft blur (not clipped) */
+/* Outer: glow lives here (not clipped) */
 .shadowWrap {
-  display: inline-block;
-  border-radius: 25px; /* same visual radius */
+  border-radius: 25px;
   filter: drop-shadow(0 0 10px rgb(11, 20, 13));
 }
 
-/* Inner: rounded + clipping for image and overlay */
+/* Inner: rounded clip box */
 .clipWrap {
   position: relative;
   border-radius: 25px;
-  overflow: hidden;                 /* critical: overlay is clipped */
-  /* If you want spacing around the image inside the rounded card: */
+  overflow: hidden;       /* critical */
   padding: 0.5rem;
-  background: transparent;
-  isolation: isolate;               /* helps some GPU paths on mobile */
+  isolation: isolate;
 }
 
-/* The icon image itself */
+/* IMPORTANT: make Next/Image’s internal wrapper match the rounding+clip */
+.clipWrap :global(span) {
+  display: block !important;
+  border-radius: 25px !important;
+  overflow: hidden !important;
+}
+
+/* Image */
 .icon {
   display: block;
   border-radius: 25px;
   transition: transform 0.5s ease-in-out;
 }
 
-/* Darkening overlay—no box-shadow to avoid square silhouette */
-.captionWrap {
+/* Full-cover darkening overlay (no box-shadow) */
+.overlay {
   position: absolute;
-  inset: 0; /* full coverage */
-  border-radius: inherit;
-  background: rgba(0, 0, 0, 0.6);
-  visibility: hidden;
+  inset: 0;
+  border-radius: 25px;
+  background: rgba(0,0,0,0.6);
   opacity: 0;
-  pointer-events: none; /* keep clicks on the link */
-  transition: visibility 0s, opacity 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  visibility: hidden;
+  pointer-events: none;
+  display: grid;
+  justify-items: center;  /* horizontal center */
+  align-content: start;   /* top align vertically */
+  padding-top: 0.6rem;
+  transition: visibility 0s, opacity 0.35s ease;
 }
 
-/* Center the caption text */
+/* Caption text */
 .caption {
-  height: 100%;
-  display: flex;               
-  justify-content: center;     
-  align-items: flex-start;     
-  padding: 0.75rem 1rem;       
-  text-decoration: none;
   color: #dadadb;
   text-align: center;
+  padding: 0 0.75rem;
 }
 
-/* Hover/press interaction */
-.clipWrap:hover .icon {
-  transform: scale(1.1);
-}
-.clipWrap:hover .captionWrap {
-  visibility: visible;
-  opacity: 1;
-}
+/* Hover/press states (desktop) */
+.clipWrap:hover .icon { transform: scale(1.1); }
+.clipWrap:hover .overlay { opacity: 1; visibility: visible; }
 
 /* Mobile grid */
 @media (max-width: 500px) {
-  /* keep the grid you had */
   .linksContainer {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -94,48 +84,29 @@
     gap: 0.5rem;
   }
 
-    /* Center the last odd item (the 5th one in your case) */
-    .linksContainer > :last-child:nth-child(odd) {
-      grid-column: 1 / -1;
-      justify-self: center;
-    }
+  /* If odd count, center the last one (5th) */
+  .linksContainer > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
 
-  /* ——— kill the square silhouette on mobile Chrome ——— */
+  /* Kill square silhouette on stubborn mobile GPUs */
   .clipWrap {
     border-radius: 25px;
-    overflow: hidden;                          /* clip overlay */
-    clip-path: inset(0 round 25px);            /* extra mask for GPU quirks */
-    mask-image: radial-gradient(white, black); /* Standard property for compatibility */
-    -webkit-mask-image: -webkit-radial-gradient(white, black); /* iOS/Chromium fix */
+    overflow: hidden;
+    clip-path: inset(0 round 25px);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
     isolation: isolate;
   }
 
-  /* ——— make caption top-aligned + centered horizontally ——— */
-  .captionWrap {
-    inset: 0;
-    display: grid;
-    justify-items: center;  /* horizontal center */
-    align-content: start;   /* stick to the top */
-    padding-top: 0.6rem;    /* breathing room from top edge */
-    background: rgba(0,0,0,0.6);  /* keep tint */
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .35s ease;
-  }
-
-  .caption {
-    text-align: center;
-    padding: 0 0.75rem;     /* keep text from touching edges */
-  }
-
-  /* ——— :hover doesn't exist on touch — trigger on tap/focus ——— */
-  .linkItem:active .captionWrap,
-  .linkItem:focus-within .captionWrap {
-    visibility: visible;
+  /* Show overlay on tap/focus instead of hover */
+  .linkItem:active .overlay,
+  .linkItem:focus-within .overlay {
     opacity: 1;
+    visibility: visible;
   }
 
-  /* optional: avoid janky zoom on tap */
+  /* Optional: avoid zoom jank on mobile */
   .clipWrap:hover .icon { transform: none; }
 }
