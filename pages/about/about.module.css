@@ -31,14 +31,26 @@
 .iconWrapper {
   position: relative;
   cursor: pointer;
-  border-radius: 20px;                
+  border-radius: 20px;
+  overflow: hidden;                /* <-- critical: clip children to curve */
+  padding: 0.5rem;                 /* replaces the image margin */
+  filter: drop-shadow(0 0 10px rgb(11, 20, 13));                
 }
 
-.icon {
+/* .icon {
   margin: 0.5rem;
   transition: transform 0.5s ease-in-out;
   filter: drop-shadow(0 0 10px rgb(11, 20, 13));
   border-radius: 20px;
+} */
+
+.icon {
+  display: block;
+  /* width: 100%;
+  height: auto; */
+  border-radius: 20px;             /* or inherit; either is fine now */
+  margin: 0;                       /* moved to wrapper as padding */
+  transition: transform 0.5s ease-in-out;
 }
   
 .captionWrap {
@@ -46,7 +58,6 @@
   inset: 0;                         
   background: rgba(0,0,0,0.6); 
   border-radius: inherit;
-  /* box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.8); */
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
