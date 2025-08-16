@@ -19,16 +19,13 @@
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
 .cardWrap:hover .cardImg {
   transform: scale(1.1);
-}
-
-.captionWrap {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
 .cardWrap:hover .captionWrap {
