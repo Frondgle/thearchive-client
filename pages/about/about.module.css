@@ -1,11 +1,9 @@
+/* Layout */
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 25px;
-    margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px 0 3rem;
 }
 
 .aboutBlurb {
@@ -18,77 +16,75 @@
 }
 
 .linksContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.title {
-    color: #eadaf5;
-    font-size: 1.75rem;
-    font-weight: 600;
-    text-align: center;
-    text-shadow:
-    -1px -1px 0 rgb(156, 35, 242),
-     1px -1px 0 rgb(156, 35, 242),
-    -1px  1px 0 rgb(156, 35, 242),
-     1px  1px 0 rgb(156, 35, 242);
+.linkItem {
+  display: inline-block;
+  outline: none;
 }
 
+/* Outer: glow lives here (not clipped) */
+.shadowWrap {
+  border-radius: 25px;
+  filter: drop-shadow(0 0 10px rgb(11, 20, 13));
+}
+
+/* Inner: rounded clip box */
+.clipWrap {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;       /* critical */
+  padding: 0.5rem;
+  isolation: isolate;
+}
+
+/* IMPORTANT: make Next/Image’s internal wrapper match the rounding+clip */
+.clipWrap :global(span) {
+  display: block !important;
+  border-radius: 25px !important;
+  overflow: hidden !important;
+}
+
+/* Image */
 .icon {
-    border-radius: 20px;
+  display: block;
+  border-radius: 25px;
+  transition: transform 0.5s ease-in-out;
 }
 
-.iconWrapper {
-    position: relative;
-    cursor: pointer;
+/* Full-cover darkening overlay (no box-shadow) */
+.overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 25px;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  display: grid;
+  justify-items: center;  /* horizontal center */
+  align-content: start;   /* top align vertically */
+  padding-top: 0.6rem;
+  transition: visibility 0s, opacity 0.35s ease;
 }
 
-.icon {
-    margin: 0.5rem;
-    transition: transform 0.5s ease-in-out;
-    filter: drop-shadow(0 0 10px rgb(11, 20, 13));
-    border-radius: 20px;
-  }
-  
-  .captionWrap {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 90%;
-    height: 90%;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 20px;
-    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.8);
-  }
-  
-  .iconWrapper:hover .icon {
-    transform: scale(1.1);
-  }
-  
-  .captionWrap {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  }
-  
-  .iconWrapper:hover .captionWrap {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  .caption {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    color: #DADADB;
-  }
+/* Caption text */
+.caption {
+  color: #dadadb;
+  text-align: center;
+  padding: 0 0.75rem;
+}
 
-/* Media query for mobile screens */
+/* Hover/press states (desktop) */
+.clipWrap:hover .icon { transform: scale(1.1); }
+.clipWrap:hover .overlay { opacity: 1; visibility: visible; }
+
+/* Mobile grid */
 @media (max-width: 500px) {
   .linksContainer {
     display: grid;
@@ -97,7 +93,49 @@
     gap: 0.5rem;
   }
 
-  /* Make the last item span both columns if odd number of items */
+  /* kill glow + shadow on mobile */
+  .shadowWrap {
+    filter: none !important;   /* remove drop-shadow */
+  }
+  .icon {
+    filter: none !important;   /* remove any per-image shadow */
+  }
+
+  /* keep rounded clip + overlay */
+  .clipWrap {
+    border-radius: 25px;
+    overflow: hidden;
+  }
+
+  /* overlay: always covers and darkens */
+  .overlay {
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(0, 0, 0, 0.6);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    padding-top: 0.6rem;
+    transition: opacity 0.35s ease;
+  }
+
+  .caption {
+    text-align: center;
+    padding: 0 0.75rem;
+    color: #dadadb;
+  }
+
+  /* trigger on tap/focus */
+  .linkItem:active .overlay,
+  .linkItem:focus-within .overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* optional: center the last icon if odd count */
   .linksContainer > :last-child:nth-child(odd) {
     grid-column: 1 / -1;
     justify-self: center;
