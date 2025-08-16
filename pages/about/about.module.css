@@ -86,6 +86,7 @@
 
 /* Mobile grid */
 @media (max-width: 500px) {
+  /* keep the grid you had */
   .linksContainer {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -93,9 +94,48 @@
     gap: 0.5rem;
   }
 
-  /* If odd count, make the last item span both columns */
-  .linksContainer > :last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
+    /* Center the last odd item (the 5th one in your case) */
+    .linksContainer > :last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+
+  /* ——— kill the square silhouette on mobile Chrome ——— */
+  .clipWrap {
+    border-radius: 25px;
+    overflow: hidden;                          /* clip overlay */
+    clip-path: inset(0 round 25px);            /* extra mask for GPU quirks */
+    mask-image: radial-gradient(white, black); /* Standard property for compatibility */
+    -webkit-mask-image: -webkit-radial-gradient(white, black); /* iOS/Chromium fix */
+    isolation: isolate;
   }
+
+  /* ——— make caption top-aligned + centered horizontally ——— */
+  .captionWrap {
+    inset: 0;
+    display: grid;
+    justify-items: center;  /* horizontal center */
+    align-content: start;   /* stick to the top */
+    padding-top: 0.6rem;    /* breathing room from top edge */
+    background: rgba(0,0,0,0.6);  /* keep tint */
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease;
+  }
+
+  .caption {
+    text-align: center;
+    padding: 0 0.75rem;     /* keep text from touching edges */
+  }
+
+  /* ——— :hover doesn't exist on touch — trigger on tap/focus ——— */
+  .linkItem:active .captionWrap,
+  .linkItem:focus-within .captionWrap {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* optional: avoid janky zoom on tap */
+  .clipWrap:hover .icon { transform: none; }
 }
