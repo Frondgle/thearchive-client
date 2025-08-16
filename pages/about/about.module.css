@@ -32,9 +32,6 @@
   position: relative;
   cursor: pointer;
   border-radius: 20px;
-  overflow: hidden;                /* <-- critical: clip children to curve */
-  padding: 0.5rem;                 /* replaces the image margin */
-  filter: drop-shadow(0 0 10px rgb(11, 20, 13));                
 }
 
 /* .icon {
@@ -45,12 +42,10 @@
 } */
 
 .icon {
-  display: block;
-  /* width: 100%;
-  height: auto; */
-  border-radius: 20px;             /* or inherit; either is fine now */
-  margin: 0;                       /* moved to wrapper as padding */
+  border-radius: 20px;
   transition: transform 0.5s ease-in-out;
+  filter: drop-shadow(0 0 10px rgb(11, 20, 13));
+  padding: 0.5rem;
 }
   
 .captionWrap {
