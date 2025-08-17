@@ -1,12 +1,19 @@
 import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { usePagination } from '@/context/PaginationContext';
 import styles from './index.module.css';
 import RandomArtCard from '@/components/RandomArtCard/RandomArtCard';
 import { getArt } from '@/api/artData';
 
 export default function Home({ randomArt }) {
   const router = useRouter();
+  const { setCurrentPage } = usePagination();
+
+  const handlePhotoClick = () => {
+    setCurrentPage(0);
+    router.push('/photoGallery/photoGallery');
+  };
 
   const sonatoreBlurb = `
     Hello!
@@ -34,7 +41,7 @@ export default function Home({ randomArt }) {
         ></div>
         <div
           className={styles.photoGalleryLink}
-          onClick={() => router.push('/photoGallery/photoGallery')}
+          onClick={handlePhotoClick}
         >
           {randomArt ? (
             <RandomArtCard artObj={randomArt} />
