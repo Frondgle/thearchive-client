@@ -1,0 +1,35 @@
+/* The visible “box” with image + tint */
+.dropdownWrap {
+    display: inline-block;
+    border-radius: 8px;
+    position: relative;
+}
+  
+.dropdown {
+    width: 290px;
+    padding: 0.5rem 2.25rem 0.5rem 0.75rem;
+    color: #fff;
+    font-size: 1.25rem;
+    font-family: inherit;
+    border: 2px solid rgba(255,255,255,.8);
+    border-radius: 8px;
+    background: transparent;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Optional: add a custom arrow */
+.dropdownWrap::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0.6rem;
+    transform: translateY(-50%);
+    width: 0; height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 7px solid #fff;  /* arrow color */
+    pointer-events: none;
+}
