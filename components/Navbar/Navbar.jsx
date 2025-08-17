@@ -2,6 +2,7 @@ import styles from './navbar.module.css';
 import { useRouter } from 'next/router';
 import { usePagination } from '@/context/PaginationContext';
 import { useCallback } from 'react';
+import DropdownNav from '../DropdownNav/DropdownNav';
 
 function NavBar() {
   const router = useRouter();
@@ -54,6 +55,9 @@ function NavBar() {
             The Sonatore Archive
           </div>
         </div>
+        <div className={styles.dropdownNav}>
+            <DropdownNav />
+          </div>
         <div className={styles.linksContainer}>
           <div className={styles.linkText} onClick={handlePhotoClick}>
             Photos
