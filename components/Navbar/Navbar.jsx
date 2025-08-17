@@ -8,8 +8,12 @@ function NavBar() {
   const { setCurrentPage } = usePagination();
 
   const handleHomeClick = () => {
-    setCurrentPage(0);
     router.push('/');
+  };
+
+  const handlePhotoClick = () => {
+    setCurrentPage(0);
+    router.push('/photoGallery/photoGallery');
   };
 
   const handleAboutClick = () => {
@@ -51,6 +55,9 @@ function NavBar() {
           </div>
         </div>
         <div className={styles.linksContainer}>
+          <div className={styles.linkText} onClick={handlePhotoClick}>
+            Photos
+          </div>
           <div className={styles.linkText} onClick={handleAboutClick}>
             About
           </div>

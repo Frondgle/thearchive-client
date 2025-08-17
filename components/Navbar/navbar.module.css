@@ -78,21 +78,23 @@
 
 /* Media query for mobile screens */
 @media (max-width: 753px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
+  .linksContainer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.25rem 0.25rem;      
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .linksContainer > * {
+    justify-self: center;      
   }
 
   .linkText {
-    font-size: 1rem;
-    margin-top: 25px;
-  }
-
-  .titleText {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-left: -68px;
-    margin-top: 15px;
+    margin-top: 0;             
+    text-align: center;
+    font-size: 1rem;           
+    line-height: 0.5;
   }
 }
 
