@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import { usePagination } from '@/context/PaginationContext';
 import { useCallback } from 'react';
-import styles from './DropdownNav.module.css';
+import styles from './dropdownNav.module.css';
 
 export default function DropdownNav() { 
     const router = useRouter();
