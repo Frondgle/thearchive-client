@@ -1,3 +1,4 @@
+/* Layout */
 .container {
   display: flex;
   flex-direction: column;
@@ -79,12 +80,13 @@
   border-color: #edef87;
 }
 
+/* Tooltip (below the icon) */
 .tooltip {
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(6px);
-  background: rgba(255, 105, 180, 0);
+  background: rgba(255, 105, 180, 0); /* 🔥 transparent hotpink */
   color: #fff;
   font-size: 12px;
   line-height: 1;
@@ -98,6 +100,7 @@
   z-index: 2;
 }
 
+/* Tooltip arrow pointing UP */
 .tooltip::after {
   content: "";
   position: absolute;
@@ -105,9 +108,10 @@
   left: 50%;
   transform: translateX(-50%);
   border: 6px solid transparent;
-  border-bottom-color: rgba(255, 105, 180, 0.7);
+  border-bottom-color: rgba(255, 105, 180, 0.7); /* match background */
 }
 
+/* Show tooltip on hover/focus */
 .iconWrap:hover .tooltip,
 .linkItem:focus-visible .tooltip,
 .linkItem:focus-within .tooltip {
@@ -117,7 +121,7 @@
   transition: opacity .15s ease, transform .15s ease, visibility 0s;
 }
 
-/* Mobile views */
+/* Mobile tweaks */
 @media (max-width: 500px) {
   .container {
     padding: 2rem;
