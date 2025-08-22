@@ -121,6 +121,18 @@
   transition: opacity .15s ease, transform .15s ease, visibility 0s;
 }
 
+/* When link has focus, hide tooltip AND reset icon style */
+.linkItem:focus .tooltip {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: none !important;
+}
+
+.linkItem:focus .icon {
+  transform: none !important;      /* back to normal size */
+  border-color: #fff !important;   /* back to default white border */
+}
+
 /* Mobile tweaks */
 @media (max-width: 500px) {
   .container {
