@@ -8,7 +8,19 @@ export default function DropdownNav() {
     const router = useRouter();
     const { setCurrentPage } = usePagination();
 
+    const isMobileOrSmall = () => {
+        if (typeof window === "undefined") return false;
+        const byWidth = window.matchMedia?.("(max-width: 768px)")?.matches;
+        const uaMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        return Boolean(byWidth || uaMobile);
+    };
+
     const openCenteredPopup = useCallback((url, name) => {
+        if (isMobileOrSmall()) {
+            window.location.href = url;
+            return;
+        }
+
         const w = 720;
         const h = 780;
         const dualScreenLeft = window.screenLeft ?? window.screenX ?? 0;
@@ -43,6 +55,7 @@ export default function DropdownNav() {
         switch (value) {
             case "/photoGallery/photoGallery":
                 router.push(value);
+                break;
             case "/about/about":
                 router.push(value);
                 setCurrentPage(0);
