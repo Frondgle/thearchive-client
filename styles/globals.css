@@ -6,7 +6,7 @@
   font-style: normal;
 }
 
-/* ✅ Only apply html, body styles on small/mobile screens */
+/* Only apply html, body styles on small/mobile screens */
 @media (max-width: 768px) {
   html,
   body {
@@ -38,3 +38,24 @@ body {
 .page-link:focus {
   box-shadow: none !important;
 }
+
+/* Ensure root fills viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Next.js root becomes a flex column */
+#__next {
+  min-height: 100svh;    /* svh avoids mobile URL-bar jump */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main expands to push footer to the bottom */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
