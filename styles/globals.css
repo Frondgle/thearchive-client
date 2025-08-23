@@ -6,9 +6,13 @@
   font-style: normal;
 }
 
-html, body {
-  height: 100%;
-  overflow: auto;
+/* ✅ Only apply html, body styles on small/mobile screens */
+@media (max-width: 768px) {
+  html,
+  body {
+    height: 100%;
+    overflow: auto;
+  }
 }
 
 body {
