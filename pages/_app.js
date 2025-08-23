@@ -1,18 +1,19 @@
 import '@/styles/globals.css';
-// import { ClerkProvider } from '@clerk/nextjs' TODO: comment in to add Clerk Auth
+// import { ClerkProvider } from '@clerk/nextjs' // TODO: comment in to add Clerk Auth
 import NavBar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 import { PaginationProvider } from '@/context/PaginationContext';
 
 export default function App({ Component, pageProps }) {
   return (
-    <PaginationProvider> {/* Wrap the entire app with PaginationProvider */}
+    <PaginationProvider>
       {/* <ClerkProvider> // TODO: comment in to add Clerk Auth */}
       <>
         <NavBar />
-        <div className="container">
+        {/* Main grows to fill the viewport so the footer sits at the bottom */}
+        <main>
           <Component {...pageProps} />
-        </div>
+        </main>
         <Footer />
       </>
       {/* </ClerkProvider> // TODO: comment in to add Clerk Auth */}

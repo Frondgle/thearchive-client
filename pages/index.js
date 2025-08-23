@@ -58,7 +58,6 @@ export default function Home({ randomArt }) {
 export async function getServerSideProps() {
   const data = await getArt();
 
-  // Randomly pick an art object
   let randomArt = null;
   if (data.length > 0) {
     const randomIndex = Math.floor(Math.random() * data.length);
@@ -67,7 +66,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      randomArt, // Pass the random art as a prop to the component
+      randomArt,
     },
   };
 }
