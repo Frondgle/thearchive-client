@@ -46,7 +46,7 @@ export default function DropdownNav() {
     };
 
     const handleMailingList = () => {
-        openCenteredPopup('https://forms.gle/MAqLRnXxQmHvzJBF7', 'sonatoreMailingListForm')
+        openCenteredPopup('/mailingList/mailingList', 'sonatoreMailingListForm')
     };
 
     const handleChange = (e) => {
