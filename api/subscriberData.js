@@ -9,13 +9,14 @@ const subscribeEmail = (email) => new Promise((resolve, reject) => {
     },
     body: JSON.stringify({ email }),
   })
-    .then((response) => {
-      if (!response.ok) {
-        reject(new Error(data.message || `Error: ${response.status}`));
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.success) {
+        resolve(data);
+      } else {
+        reject(new Error(data.message || 'Error subscribing'));
       }
-      return response.json();
     })
-    .then((data) => resolve(data))
     .catch((error) => {
       console.error('Error subscribing:', error);
       reject(error);
