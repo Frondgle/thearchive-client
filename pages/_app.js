@@ -3,13 +3,16 @@ import '@/styles/globals.css';
 import NavBar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 import { PaginationProvider } from '@/context/PaginationContext';
+import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
+  const hideNavbar = router.pathname === '/mailingList/mailingList';
   return (
     <PaginationProvider>
       {/* <ClerkProvider> // TODO: comment in to add Clerk Auth */}
       <>
-        <NavBar />
+        {!hideNavbar && <NavBar />}
         {/* Main grows to fill the viewport so the footer sits at the bottom */}
         <main>
           <Component {...pageProps} />
