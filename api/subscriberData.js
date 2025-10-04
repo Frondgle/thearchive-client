@@ -11,7 +11,7 @@ const subscribeEmail = (email) => new Promise((resolve, reject) => {
   })
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`Error: ${response.status} ${response.statusText}`);
+        reject(new Error(data.message || `Error: ${response.status}`));
       }
       return response.json();
     })

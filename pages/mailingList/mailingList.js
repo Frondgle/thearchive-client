@@ -17,7 +17,7 @@ function MailingList() {
                 setEmail('');
             }
         } catch (error) {
-            setMessage('Error subscribing. Please try again.');
+            setMessage(error.message || 'Error subscribing. Please try again.');
         }
     };
 
