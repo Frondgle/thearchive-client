@@ -1,0 +1,144 @@
+.container {
+    margin-top: 10px;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+}
+
+.textContainer {
+    margin-left: -65px;
+    margin-top: 10px;
+}
+
+.titleText {
+    color: #eadaf5;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-top: 15px;
+    text-shadow:
+    -1px -1px 0 rgb(156, 35, 242),
+     1px -1px 0 rgb(156, 35, 242),
+    -1px  1px 0 rgb(156, 35, 242),
+     1px  1px 0 rgb(156, 35, 242);
+}
+
+.contentContainer {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    color: #fff;
+    padding: 2rem;
+    background-color: hotpink;
+    border-radius: 5px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    opacity: 0.85;
+    z-index: 1;
+    overflow-y: scroll;
+    width: 400px;
+    height: 350px;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+}
+
+  /* Custom scrollbar styling */
+.contentContainer::-webkit-scrollbar {
+  width: 4px;
+}
+
+.contentContainer::-webkit-scrollbar-track {
+  background: hotpink;
+  border-radius: 4px;
+}
+
+.contentContainer::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+}
+
+.contentContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+}
+
+.contentContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    background-image: url('/images/infoTexture.JPG');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+.emailBlurb {
+    margin-bottom: 30px;
+}
+
+.formContainer input {
+    width: 350px;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+.formContainer input::placeholder {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #999;
+}
+
+.subscribeButton {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    opacity: 1 !important;
+  }
+  
+  .subscribeButton:hover {
+    transform: scale(1.1);
+    border-color: #edef87;
+    color: #edef87;
+  }
+
+  .message {
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  
+  
