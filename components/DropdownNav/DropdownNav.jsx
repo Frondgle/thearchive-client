@@ -42,7 +42,7 @@ export default function DropdownNav() {
       }, []);
 
     const handleContactUs = () => {
-        openCenteredPopup('https://forms.gle/pWieuBfeXdmcmLCq8', 'sonatoreContactForm')
+        openCenteredPopup('/contactUs/contactUs', 'sonatoreContactForm')
     };
 
     const handleMailingList = () => {
