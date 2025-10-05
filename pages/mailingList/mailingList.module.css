@@ -154,10 +154,9 @@
     .contentContainer {
       width: 75%;
       max-width: 350px;
-      height: 420px;
-      max-height: 520px;
+      height: 450px;
+      max-height: 500px;
       padding: 1.5rem;
-      padding-bottom: 20px;
       margin-bottom: 30px;
       overflow-y: auto;
     }
