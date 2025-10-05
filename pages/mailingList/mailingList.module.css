@@ -130,7 +130,7 @@
     color: #edef87;
   }
 
-  .message {
+.message {
     margin-top: 15px;
     padding: 10px;
     text-align: center;
@@ -138,7 +138,68 @@
     font-family: "Space Grotesk", sans-serif;
     font-weight: 600;
     color: #fff;
+}
+
+/* Mobile-specific: remove hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .subscribeButton:hover {
+        transform: scale(1);
+        border-color: #fff;
+        color: #fff;
+    }
+}
+  
+/* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+    .contentContainer {
+      width: 75%;
+      max-width: 350px;
+      height: auto;
+      max-height: 500px;
+      padding: 1.5rem;
+      margin-bottom: 30px;
+    }
+  
+    .formContainer input {
+      width: 92.5%;
+      max-width: 300px;
+    }
+  
+    .logo {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .titleText {
+      font-size: 1.25rem;
+    }
+  
+    .textContainer {
+      margin-left: -40px;
+    }
   }
   
+  /* Tablets (481px to 768px) */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .contentContainer {
+      width: 85%;
+      max-width: 400px;
+      height: auto;
+      max-height: 450px;
+    }
   
+    .formContainer input {
+      width: 90%;
+      max-width: 400px;
+    }
+  
+    .logo {
+      width: 75px;
+      height: 75px;
+    }
+  
+    .titleText {
+      font-size: 1.5rem;
+    }
+  }
   
