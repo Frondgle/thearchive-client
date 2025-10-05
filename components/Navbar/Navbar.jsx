@@ -67,7 +67,7 @@ function NavBar() {
           </div>
           <div
             className={styles.link}
-            onClick={() => openCenteredPopup('https://forms.gle/pWieuBfeXdmcmLCq8', 'sonatoreContactForm')}
+            onClick={() => openCenteredPopup('/contactUs/contactUs', 'sonatoreContactForm')}
           >
             <div className={styles.linkText}>Contact Us</div>
           </div>
