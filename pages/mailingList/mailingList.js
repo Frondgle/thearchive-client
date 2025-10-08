@@ -1,8 +1,11 @@
 import styles from './mailingList.module.css';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import { subscribeEmail } from '@/api/subscriberData';
 
 function MailingList() {
+    const router = useRouter();
+
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
@@ -20,6 +23,10 @@ function MailingList() {
             setMessage(error.message || 'Error subscribing. Please try again.');
         }
     };
+
+    const handleBackToArchive = () => {
+        router.push('/');
+    }
 
     return (
       <div className={styles.container}>
@@ -56,9 +63,12 @@ function MailingList() {
             />
             </div>
             <div className={styles.buttonContainer}>
-            <button onClick={handleSubmit} className={styles.subscribeButton}>
-                Subscribe
-            </button>
+                <button onClick={handleSubmit} className={styles.subscribeButton}>
+                    Subscribe
+                </button>
+                <button onClick={handleBackToArchive} className={`${styles.subscribeButton} ${styles.backButton}`}>
+                    Back to Archive
+                </button>
             </div>
             {message && <p className={styles.message}>{message}</p>}
         </div>
