@@ -1,7 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import styles from './randomartcard.module.css';
-import Image from 'next/image';
 
 export default function RandomArtCard({ artObj }) {
   const router = useRouter();
@@ -10,13 +9,14 @@ export default function RandomArtCard({ artObj }) {
   
   return (
     <div className={styles.cardWrap} onClick={() => router.push('/photoGallery/photoGallery')}>
-      <Image
+      <img
         src={optimizedImageUrl}
         alt="art card"
         className={styles.cardImg}
         height={363}
         width={300}
       />
+
       <div className={styles.captionWrap}>
         <div className={styles.caption}>
           <p className={styles.description}>Photo Gallery</p>
