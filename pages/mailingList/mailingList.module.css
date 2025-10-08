@@ -48,7 +48,9 @@
     z-index: 1;
     overflow-y: scroll;
     width: 400px;
-    height: 350px;
+    height: 385px;
+    min-height: 385px;  
+    max-height: 385px;
     word-wrap: break-word;
     display: flex;
     flex-direction: column;
