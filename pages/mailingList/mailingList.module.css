@@ -97,7 +97,7 @@
 }
 
 .formContainer input {
-    width: 350px;
+    width: 94%;
     font-size: 16px;
     padding: 10px;
     border: 2px solid #fff;
@@ -124,13 +124,24 @@
     transition: all 0.3s ease;
     margin-top: 30px;
     opacity: 1 !important;
-  }
+}
   
-  .subscribeButton:hover {
+.subscribeButton:hover {
     transform: scale(1.1);
     border-color: #edef87;
     color: #edef87;
-  }
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.backButton {
+  display: none;
+}
 
 .message {
     margin-top: 15px;
@@ -165,7 +176,12 @@
   
     .formContainer input {
       width: 92.5%;
-      max-width: 300px;
+      max-width: none;
+    }
+
+    .buttonContainer {
+      width: 100%;
+      gap: 10px;
     }
   
     .logo {
@@ -180,6 +196,10 @@
     .textContainer {
       margin-left: -40px;
     }
+
+    .backButton {
+      display: block;  /* Show on mobile */
+    }
   }
   
   /* Tablets (481px to 768px) */
@@ -192,8 +212,12 @@
     }
   
     .formContainer input {
-      width: 90%;
-      max-width: 400px;
+      width: 92.5%;
+      max-width: none;
+    }
+
+    .buttonContainer {
+      width: 100%;
     }
   
     .logo {
@@ -203,6 +227,10 @@
   
     .titleText {
       font-size: 1.5rem;
+    }
+
+    .backButton {
+      display: block;  /* Show on mobile */
     }
   }
   
