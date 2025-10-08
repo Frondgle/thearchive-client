@@ -48,9 +48,9 @@
     z-index: 1;
     overflow-y: scroll;
     width: 400px;
-    height: 475px;
-    min-height: 475px;  
-    max-height: 475px;
+    height: 500px;
+    min-height: 500px;  
+    max-height: 500px;
     word-wrap: break-word;
     display: flex;
     flex-direction: column;
@@ -169,8 +169,8 @@
     .contentContainer {
       width: 75%;
       max-width: 350px;
-      height: 515px;
-      max-height: 515px;
+      height: 530px;
+      max-height: 530px;
       padding: 1.5rem;
       margin-bottom: 30px;
       overflow-y: auto;
@@ -202,7 +202,7 @@
       width: 85%;
       max-width: 400px;
       height: auto;
-      max-height: 450px;
+      max-height: 475px;
     }
   
     .formContainer input,

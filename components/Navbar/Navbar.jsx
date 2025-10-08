@@ -23,7 +23,7 @@ function NavBar() {
 
   const openCenteredPopup = useCallback((url, name) => {
     const w = 780;
-    const h = 780;
+    const h = 800;
     const dualScreenLeft = window.screenLeft ?? window.screenX ?? 0;
     const dualScreenTop = window.screenTop ?? window.screenY ?? 0;
     const width = window.innerWidth ?? document.documentElement.clientWidth ?? screen.width;
