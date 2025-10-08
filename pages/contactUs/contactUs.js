@@ -41,7 +41,7 @@ function ContactUs() {
         </div>
         <div className={styles.contentContainer}>
             <div className={styles.contactBlurb}>
-                Have any questions, comments, or feedback about The Sonatore Archive? Have any artwork you'd like to contribute?
+                Have any questions, comments, or feedback about The Sonatore Archive? Have any artwork you&apos;d like to contribute?
                 <br /><br />
                 Send us a message!
                 <br /><br />
