@@ -25,6 +25,10 @@ function ContactUs() {
         }
     };
 
+    const handleBackToArchive = () => {
+        router.push('/');
+    }
+
     return (
       <div className={styles.container}>
         <div className={styles.titleContainer}>
@@ -77,7 +81,10 @@ function ContactUs() {
             </div>
             <div className={styles.buttonContainer}>
                 <button onClick={handleSubmit} className={styles.sendMessageButton}>
-                    Send Message
+                    Submit
+                </button>
+                <button onClick={handleBackToArchive} className={`${styles.sendMessageButton} ${styles.backButton}`}>
+                    Back to Archive
                 </button>
             </div>
             {message && <p className={styles.message}>{message}</p>}

@@ -212,7 +212,7 @@
     }
   
     .formContainer input {
-      width: 92.5%;
+      width: 94%;
       max-width: none;
     }
 
@@ -230,7 +230,7 @@
     }
 
     .backButton {
-      display: block;  /* Show on mobile */
+      display: block;  /* Show on tablet */
     }
   }
   

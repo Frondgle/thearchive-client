@@ -98,7 +98,7 @@
 
 .formContainer input, .formContainer textarea {
     font-family: "Space Grotesk", sans-serif;
-    width: 350px;
+    width: 94%;
     font-size: 16px;
     padding: 10px;
     border: 2px solid #fff;
@@ -145,6 +145,17 @@
     color: #edef87;
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+.backButton {
+  display: none;
+}
+
 .message {
     margin-top: 15px;
     padding: 10px;
@@ -179,7 +190,12 @@
     .formContainer input,
     .formContainer textarea {
       width: 92.5%;
-      max-width: 300px;
+      max-width: none;
+    }
+
+    .buttonContainer {
+      width: 100%;
+      gap: 10px;
     }
   
     .logo {
@@ -194,6 +210,10 @@
     .textContainer {
       margin-left: -40px;
     }
+
+    .backButton {
+      display: block;  /* Show on mobile */
+    }
   }
   
   /* Tablets (481px to 768px) */
@@ -207,8 +227,12 @@
   
     .formContainer input,
     .formContainer textarea {
-      width: 90%;
-      max-width: 400px;
+      width: 94%;
+      max-width: none;
+    }
+
+    .buttonContainer {
+      width: 100%;
     }
   
     .logo {
@@ -218,6 +242,10 @@
   
     .titleText {
       font-size: 1.5rem;
+    }
+
+    .backButton {
+      display: block;  /* Show on tablet */
     }
   }
   
