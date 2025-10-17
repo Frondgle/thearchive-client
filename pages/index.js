@@ -7,15 +7,15 @@ import RandomArtCard from '@/components/RandomArtCard/RandomArtCard';
 import { getArt } from '@/api/artData';
 
 export default function Home({ randomArt }) {
-  const router = useRouter();
-  const { setCurrentPage } = usePagination();
+    const router = useRouter();
+    const { setCurrentPage } = usePagination();
 
-  const handlePhotoClick = () => {
-    setCurrentPage(0);
-    router.push('/photoGallery/photoGallery');
-  };
+    const handlePhotoClick = () => {
+        setCurrentPage(0);
+        router.push('/photoGallery/photoGallery');
+    };
 
-  const sonatoreBlurb = `
+    const sonatoreBlurb = `
     Hello!
     <br /><br />
     Welcome to The Sonatore Archive!
@@ -29,44 +29,44 @@ export default function Home({ randomArt }) {
     Friends of Sonatore
   `;
 
-  return (
-    <>
-      <Head>
-        <title>The Sonatore Archive</title>
-      </Head>
-      <div className={styles.container}>
-        <div
-          className={styles.sonatoreBlurb}
-          dangerouslySetInnerHTML={{ __html: sonatoreBlurb }}
-        ></div>
-        <div
-          className={styles.photoGalleryLink}
-          onClick={handlePhotoClick}
-        >
-          {randomArt ? (
-            <RandomArtCard artObj={randomArt} />
-          ) : (
-            <p></p>
-          )}
-        </div>
-      </div>
-    </>
-  );
+    return (
+        <>
+            <Head>
+                <title>The Sonatore Archive</title>
+            </Head>
+            <div className={styles.container}>
+                <div
+                    className={styles.sonatoreBlurb}
+                    dangerouslySetInnerHTML={{ __html: sonatoreBlurb }}
+                ></div>
+                <div
+                    className={styles.photoGalleryLink}
+                    onClick={handlePhotoClick}
+                >
+                    {randomArt ? (
+                        <RandomArtCard artObj={randomArt} />
+                    ) : (
+                        <p></p>
+                    )}
+                </div>
+            </div>
+        </>
+    );
 }
 
 // Fetch data on the server side
 export async function getServerSideProps() {
-  const data = await getArt();
+    const data = await getArt();
 
-  let randomArt = null;
-  if (data.length > 0) {
-    const randomIndex = Math.floor(Math.random() * data.length);
-    randomArt = data[randomIndex];
-  }
+    let randomArt = null;
+    if (data.length > 0) {
+        const randomIndex = Math.floor(Math.random() * data.length);
+        randomArt = data[randomIndex];
+    }
 
-  return {
-    props: {
-      randomArt,
-    },
-  };
+    return {
+        props: {
+            randomArt,
+        },
+    };
 }

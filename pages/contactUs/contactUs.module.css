@@ -27,10 +27,10 @@
     font-weight: 600;
     margin-top: 15px;
     text-shadow:
-    -1px -1px 0 rgb(156, 35, 242),
-     1px -1px 0 rgb(156, 35, 242),
-    -1px  1px 0 rgb(156, 35, 242),
-     1px  1px 0 rgb(156, 35, 242);
+        -1px -1px 0 rgb(156, 35, 242),
+        1px -1px 0 rgb(156, 35, 242),
+        -1px 1px 0 rgb(156, 35, 242),
+        1px 1px 0 rgb(156, 35, 242);
 }
 
 .contentContainer {
@@ -49,31 +49,31 @@
     overflow-y: scroll;
     width: 400px;
     height: 500px;
-    min-height: 500px;  
+    min-height: 500px;
     max-height: 500px;
     word-wrap: break-word;
     display: flex;
     flex-direction: column;
 }
 
-  /* Custom scrollbar styling */
+/* Custom scrollbar styling */
 .contentContainer::-webkit-scrollbar {
-  width: 4px;
+    width: 4px;
 }
 
 .contentContainer::-webkit-scrollbar-track {
-  background: hotpink;
-  border-radius: 4px;
+    background: hotpink;
+    border-radius: 4px;
 }
 
 .contentContainer::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
 }
 
 .contentContainer::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 4px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
 }
 
 .contentContainer::before {
@@ -90,13 +90,14 @@
     opacity: 0.3;
     z-index: 0;
     pointer-events: none;
-  }
+}
 
 .contactBlurb {
     margin-bottom: 30px;
 }
 
-.formContainer input, .formContainer textarea {
+.formContainer input,
+.formContainer textarea {
     font-family: "Space Grotesk", sans-serif;
     width: 94%;
     font-size: 16px;
@@ -105,7 +106,8 @@
     border-radius: 5px;
 }
 
-.formContainer input::placeholder, .formContainer textarea::placeholder {
+.formContainer input::placeholder,
+.formContainer textarea::placeholder {
     font-family: "Space Grotesk", sans-serif;
     font-size: 16px;
     font-weight: 700;
@@ -138,7 +140,7 @@
     margin-top: 30px;
     opacity: 1 !important;
 }
-  
+
 .sendMessageButton:hover {
     transform: scale(1.1);
     border-color: #edef87;
@@ -146,14 +148,14 @@
 }
 
 .buttonContainer {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 
 }
 
 .backButton {
-  display: none;
+    display: none;
 }
 
 .message {
@@ -174,78 +176,79 @@
         color: #fff;
     }
 }
-  
+
 /* Mobile devices (up to 480px) */
 @media (max-width: 480px) {
     .contentContainer {
-      width: 75%;
-      max-width: 350px;
-      height: 545px;
-      max-height: 5450px;
-      padding: 1.5rem;
-      margin-bottom: 30px;
-      overflow-y: auto;
+        width: 75%;
+        max-width: 350px;
+        height: 545px;
+        max-height: 5450px;
+        padding: 1.5rem;
+        margin-bottom: 30px;
+        overflow-y: auto;
     }
-  
+
     .formContainer input,
     .formContainer textarea {
-      width: 92.5%;
-      max-width: none;
+        width: 92.5%;
+        max-width: none;
     }
 
     .buttonContainer {
-      width: 100%;
-      gap: 10px;
+        width: 100%;
+        gap: 10px;
     }
-  
+
     .logo {
-      width: 60px;
-      height: 60px;
+        width: 60px;
+        height: 60px;
     }
-  
+
     .titleText {
-      font-size: 1.25rem;
+        font-size: 1.25rem;
     }
-  
+
     .textContainer {
-      margin-left: -40px;
+        margin-left: -40px;
     }
 
     .backButton {
-      display: block;  /* Show on mobile */
+        display: block;
+        /* Show on mobile */
     }
-  }
-  
-  /* Tablets (481px to 768px) */
-  @media (min-width: 481px) and (max-width: 768px) {
+}
+
+/* Tablets (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
     .contentContainer {
-      width: 85%;
-      max-width: 400px;
-      height: auto;
-      max-height: 475px;
+        width: 85%;
+        max-width: 400px;
+        height: auto;
+        max-height: 475px;
     }
-  
+
     .formContainer input,
     .formContainer textarea {
-      width: 94%;
-      max-width: none;
+        width: 94%;
+        max-width: none;
     }
 
     .buttonContainer {
-      width: 100%;
+        width: 100%;
     }
-  
+
     .logo {
-      width: 75px;
-      height: 75px;
+        width: 75px;
+        height: 75px;
     }
-  
+
     .titleText {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
 
     .backButton {
-      display: block;  /* Show on tablet */
+        display: block;
+        /* Show on tablet */
     }
-  }
-  
+}

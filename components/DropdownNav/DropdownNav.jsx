@@ -4,7 +4,7 @@ import { usePagination } from '@/context/PaginationContext';
 import { useCallback } from 'react';
 import styles from './dropdownNav.module.css';
 
-export default function DropdownNav() { 
+export default function DropdownNav() {
     const router = useRouter();
     const { setCurrentPage } = usePagination();
 
@@ -29,17 +29,17 @@ export default function DropdownNav() {
         const height = window.innerHeight ?? document.documentElement.clientHeight ?? screen.height;
         const left = Math.max(0, (width - w) / 2 + dualScreenLeft);
         const top = Math.max(0, (height - h) / 2 + dualScreenTop);
-    
+
         const win = window.open(
-          url,
-          name,
-          `scrollbars=yes,resizable=yes,width=${w},height=${h},top=${top},left=${left}`
+            url,
+            name,
+            `scrollbars=yes,resizable=yes,width=${w},height=${h},top=${top},left=${left}`
         );
-    
+
         if (!win || win.closed || typeof win.closed === 'undefined') {
-          window.open(url, '_blank', 'noopener,noreferrer');
+            window.open(url, '_blank', 'noopener,noreferrer');
         }
-      }, []);
+    }, []);
 
     const handleContactUs = () => {
         openCenteredPopup('/contactUs/contactUs', 'sonatoreContactForm')
@@ -51,7 +51,7 @@ export default function DropdownNav() {
 
     const handleChange = (e) => {
         let value = e.target.value;
-        
+
         switch (value) {
             case "/photoGallery/photoGallery":
                 router.push(value);

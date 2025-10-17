@@ -1,61 +1,62 @@
-
 @font-face {
-  font-family: 'Alte Haas Grotesk Bold';
-  src: url('/fonts/AlteHaasGroteskBold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Alte Haas Grotesk Bold';
+    src: url('/fonts/AlteHaasGroteskBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* Only apply html, body styles on small/mobile screens */
 @media (max-width: 768px) {
-  html,
-  body {
-    height: 100%;
-    overflow: auto;
-  }
+
+    html,
+    body {
+        height: 100%;
+        overflow: auto;
+    }
 }
 
 body {
-  background-color: #262627;
-  background-image: url('/images/spaceBackground.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  color: #DADADB;
-  font-family: 'Alte Haas Grotesk Bold';
+    background-color: #262627;
+    background-image: url('/images/spaceBackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #DADADB;
+    font-family: 'Alte Haas Grotesk Bold';
 
 }
 
 .auth-form {
-  width: 50%;
+    width: 50%;
 }
 
 .page-link {
-  color: #183f98;
+    color: #183f98;
 }
 
 .page-link:focus {
-  box-shadow: none !important;
+    box-shadow: none !important;
 }
 
 /* Ensure root fills viewport */
-html, body {
-  height: 100%;
-  margin: 0;
+html,
+body {
+    height: 100%;
+    margin: 0;
 }
 
 /* Next.js root becomes a flex column */
 #__next {
-  min-height: 100svh;    /* svh avoids mobile URL-bar jump */
-  display: flex;
-  flex-direction: column;
+    min-height: 100svh;
+    /* svh avoids mobile URL-bar jump */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Main expands to push footer to the bottom */
 main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
-
