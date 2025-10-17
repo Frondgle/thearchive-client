@@ -1,16 +1,16 @@
 .cardWrap {
     position: relative;
     cursor: pointer;
-  }
-  
-  .cardImg {
+}
+
+.cardImg {
     margin: 1rem;
     transition: transform 0.5s ease-in-out;
     filter: drop-shadow(0 0 10px rgb(11, 20, 13));
     border-radius: 3.5px;
-  }
-  
-  .captionWrap {
+}
+
+.captionWrap {
     position: absolute;
     top: 5%;
     left: 5%;
@@ -19,36 +19,35 @@
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 5px;
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.6);
-  }
-  
-  .cardWrap:hover .cardImg {
+}
+
+.cardWrap:hover .cardImg {
     transform: scale(1.1);
-  }
-  
-  .captionWrap {
+}
+
+.captionWrap {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  }
-  
-  .cardWrap:hover .captionWrap {
+}
+
+.cardWrap:hover .captionWrap {
     visibility: visible;
     opacity: 1;
-  }
-  
-  .caption {
+}
+
+.caption {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem 2rem;
     overflow-y: auto;
-  }
-  
-  .description {
+}
+
+.description {
     font-size: 2rem;
-  }
-  
-  .code .title .description {
+}
+
+.code .title .description {
     color: #DADADB;
-  }
-  
+}

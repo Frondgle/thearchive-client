@@ -24,42 +24,42 @@
     word-wrap: break-word;
     display: flex;
     flex-direction: column;
-  }
+}
 
-  /* Custom scrollbar styling */
+/* Custom scrollbar styling */
 .sonatoreBlurb::-webkit-scrollbar {
-  width: 4px;
+    width: 4px;
 }
 
 .sonatoreBlurb::-webkit-scrollbar-track {
-  background: hotpink;
-  border-radius: 4px;
+    background: hotpink;
+    border-radius: 4px;
 }
 
 .sonatoreBlurb::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
 }
 
 .sonatoreBlurb::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 4px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
 }
-  
+
 .sonatoreBlurb::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 500px;
-  background-image: url('/images/infoTexture.JPG');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.3;
-  z-index: 0;
-  pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    background-image: url('/images/infoTexture.JPG');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .photoGalleryLink {
@@ -70,13 +70,13 @@
 /* Media query for tablets in portrait mode */
 @media (max-width: 1024px) {
     .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: static;
     }
-  
+
     .photoGalleryLink {
         width: 90%;
         max-width: 400px;
@@ -87,24 +87,24 @@
         justify-content: center;
         align-items: center;
     }
-  
+
     .sonatoreBlurb {
-      width: 237px;
-      height: 300px;
-      margin: 0;
+        width: 237px;
+        height: 300px;
+        margin: 0;
     }
-  }
-  
-  /* Media query for mobile screens in portrait mode */
-  @media (max-width: 450px) {
+}
+
+/* Media query for mobile screens in portrait mode */
+@media (max-width: 450px) {
     .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: static;
     }
-  
+
     .photoGalleryLink {
         display: flex;
         justify-content: center;
@@ -114,42 +114,42 @@
         height: auto;
         margin-bottom: 3rem;
     }
-  
+
     .sonatoreBlurb {
-      width: 237px;
-      height: 300px;
-      margin-top: 10px;
+        width: 237px;
+        height: 300px;
+        margin-top: 10px;
     }
 
     .sonatoreBlurb::before {
-      height: 550px;
+        height: 550px;
     }
-  }
-  
-  /* Media query for mobile screens in landscape mode */
-  @media (max-width: 935px) and (orientation: landscape) {
+}
+
+/* Media query for mobile screens in landscape mode */
+@media (max-width: 935px) and (orientation: landscape) {
     .container {
-      display: flex;
-      flex-direction: row;
-      gap: 20px;
-      align-items: flex-start;
-      width: 100%;
-      max-width: 1200px;
-      margin-top: 1rem;
-      margin-bottom: 2rem;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 1200px;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
     }
-    
+
     .photoGalleryLink {
         width: auto;
         max-width: 50%;
-        height: auto; 
+        height: auto;
         max-height: 100%;
         filter: drop-shadow(0 0 10px rgb(11, 20, 13));
         border-radius: 2.5px;
-        object-fit: contain; 
+        object-fit: contain;
         margin-top: -15px;
     }
-    
+
     .sonatoreBlurb {
         display: flex;
         flex-direction: column;
@@ -157,6 +157,4 @@
         width: 250px;
         height: 300px;
     }
-  }
-  
-  
+}

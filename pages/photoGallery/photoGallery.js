@@ -7,50 +7,50 @@ import { usePagination } from '@/context/PaginationContext';
 import styles from './photoGallery.module.css';
 
 export default function PhotoGallery() {
-  const [art, setArt] = useState([]);
-  const { currentPage, setCurrentPage, itemsPerPage } = usePagination();
-  const [, setIsLoading] = useState(false);
+    const [art, setArt] = useState([]);
+    const { currentPage, setCurrentPage, itemsPerPage } = usePagination();
+    const [, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchPageData = async () => {
-      setIsLoading(true);
-      const data = await getSixArt(currentPage, itemsPerPage);
-      setArt(data);
-      setIsLoading(false);
+    useEffect(() => {
+        const fetchPageData = async () => {
+            setIsLoading(true);
+            const data = await getSixArt(currentPage, itemsPerPage);
+            setArt(data);
+            setIsLoading(false);
+        };
+
+        fetchPageData();
+    }, [currentPage]);
+
+    const totalPages = Math.ceil(art.length / itemsPerPage);
+
+    const handlePageChange = (pageIndex) => {
+        setCurrentPage(pageIndex);
     };
 
-    fetchPageData();
-  }, [currentPage]);
+    const currentArt = art.slice(
+        currentPage * itemsPerPage,
+        (currentPage + 1) * itemsPerPage
+    );
 
-  const totalPages = Math.ceil(art.length / itemsPerPage);
+    return (
+        <>
+            <Head>
+                <title>The Sonatore Archive - Photo Gallery</title>
+            </Head>
 
-  const handlePageChange = (pageIndex) => {
-    setCurrentPage(pageIndex);
-  };
+            <Pagination
+                className={styles.pagination}
+                totalPages={totalPages}
+                currentPage={currentPage}
+                onPageChange={handlePageChange}
+            />
 
-  const currentArt = art.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
-
-  return (
-    <>
-      <Head>
-        <title>The Sonatore Archive - Photo Gallery</title>
-      </Head>
-
-      <Pagination
-        className={styles.pagination}
-        totalPages={totalPages}
-        currentPage={currentPage}
-        onPageChange={handlePageChange}
-      />
-      
-      <div className={styles.artContainer}>
-        {currentArt.map((artObj, index) => (
-          <ArtCard key={index} artObj={artObj} />
-        ))}
-      </div>
-    </>
-  );
+            <div className={styles.artContainer}>
+                {currentArt.map((artObj, index) => (
+                    <ArtCard key={index} artObj={artObj} />
+                ))}
+            </div>
+        </>
+    );
 }

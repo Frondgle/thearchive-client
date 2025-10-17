@@ -1,3 +1,11 @@
 {
-  "cSpell.words": ["thearchive", "cloudinary"]
+    "cSpell.words": [
+        "thearchive",
+        "cloudinary"
+    ],
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
 }

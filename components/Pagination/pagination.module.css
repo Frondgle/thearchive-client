@@ -19,7 +19,8 @@
     cursor: pointer;
     transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    background: rgba(255, 255, 255, 0.8);
+    /* Slightly transparent white background */
     background-image: url('/images/squareFilmStrip.png');
     background-repeat: no-repeat;
     background-position: center center;
@@ -54,7 +55,7 @@
     padding: 5px 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    background-color: #fff; 
+    background-color: #fff;
     color: #333;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
@@ -79,7 +80,8 @@
 }
 
 .paginationButton:disabled .paginationIcon {
-    background-color: rgba(224, 224, 224, 0.8); /* Slightly transparent gray for disabled state */
+    background-color: rgba(224, 224, 224, 0.8);
+    /* Slightly transparent gray for disabled state */
     color: #999;
     cursor: not-allowed;
     opacity: 0.3;
@@ -89,10 +91,10 @@
     color: #eadaf5;
     font-size: 1.75rem;
     text-shadow:
-    -1px -1px 0 rgb(156, 35, 242),
-    1px -1px 0 rgb(156, 35, 242),
-    -1px  1px 0 rgb(156, 35, 242),
-    1px  1px 0 rgb(156, 35, 242);
+        -1px -1px 0 rgb(156, 35, 242),
+        1px -1px 0 rgb(156, 35, 242),
+        -1px 1px 0 rgb(156, 35, 242),
+        1px 1px 0 rgb(156, 35, 242);
     margin-left: 5px;
     margin-right: 5px;
     cursor: pointer;
@@ -111,7 +113,8 @@
 }
 
 @media (max-width: 753px) {
-.paginationNumber {
-    font-size: 1.5rem; /* Adjust font size for smaller screens */
-}
+    .paginationNumber {
+        font-size: 1.5rem;
+        /* Adjust font size for smaller screens */
+    }
 }

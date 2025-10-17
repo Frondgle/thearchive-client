@@ -5,11 +5,11 @@ import Link from 'next/link';
 import styles from './about.module.css';
 
 const LINKS = [
-  { href: 'https://www.instagram.com/thesonatorearchive', label: 'Instagram', src: '/images/instagramIcon2.png', alt: 'Instagram' },
-  { href: 'https://www.youtube.com/@sonatore1525',        label: 'YouTube',   src: '/images/youTubeIcon13.png',   alt: 'YouTube' },
-  { href: 'https://open.spotify.com/artist/4riQpqytzfECeWtiZ9ksYV?si=qqeh7sj-RrK9GLXHYUeUaw', label: 'Spotify',  src: '/images/spotifyIcon9.png', alt: 'Spotify' },
-  { href: 'https://sonatore.bandcamp.com',                 label: 'Bandcamp',  src: '/images/bandcampIcon7.png',  alt: 'Bandcamp' },
-  { href: 'https://discord.com/invite/ScsaJSPTdj',         label: 'Discord',   src: '/images/discordIcon3.png',   alt: 'Discord' },
+    { href: 'https://www.instagram.com/thesonatorearchive', label: 'Instagram', src: '/images/instagramIcon2.png', alt: 'Instagram' },
+    { href: 'https://www.youtube.com/@sonatore1525', label: 'YouTube', src: '/images/youTubeIcon13.png', alt: 'YouTube' },
+    { href: 'https://open.spotify.com/artist/4riQpqytzfECeWtiZ9ksYV?si=qqeh7sj-RrK9GLXHYUeUaw', label: 'Spotify', src: '/images/spotifyIcon9.png', alt: 'Spotify' },
+    { href: 'https://sonatore.bandcamp.com', label: 'Bandcamp', src: '/images/bandcampIcon7.png', alt: 'Bandcamp' },
+    { href: 'https://discord.com/invite/ScsaJSPTdj', label: 'Discord', src: '/images/discordIcon3.png', alt: 'Discord' },
 ];
 
 const aboutBlurb = `
@@ -25,44 +25,44 @@ const aboutBlurb = `
 `;
 
 export default function About() {
-  return (
-    <>
-      <Head>
-        <title>The Sonatore Archive - About Sonatore</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+    return (
+        <>
+            <Head>
+                <title>The Sonatore Archive - About Sonatore</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+            </Head>
 
-      <div className={styles.container}>
-        <div
-          className={styles.aboutBlurb}
-          dangerouslySetInnerHTML={{ __html: aboutBlurb }}
-        />
-        <div className={styles.linksContainer}>
-          {LINKS.map(({ href, label, src, alt }) => (
-            <Link
-              key={href}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.linkItem}
-              aria-label={label}
-            >
-              <div className={styles.iconWrap}>
-                <Image
-                  src={src}
-                  alt={alt}
-                  width={75}
-                  height={75}
-                  className={styles.icon}
+            <div className={styles.container}>
+                <div
+                    className={styles.aboutBlurb}
+                    dangerouslySetInnerHTML={{ __html: aboutBlurb }}
                 />
-                <span className={styles.tooltip} role="tooltip">
-                  {label}
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </>
-  );
+                <div className={styles.linksContainer}>
+                    {LINKS.map(({ href, label, src, alt }) => (
+                        <Link
+                            key={href}
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.linkItem}
+                            aria-label={label}
+                        >
+                            <div className={styles.iconWrap}>
+                                <Image
+                                    src={src}
+                                    alt={alt}
+                                    width={75}
+                                    height={75}
+                                    className={styles.icon}
+                                />
+                                <span className={styles.tooltip} role="tooltip">
+                                    {label}
+                                </span>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+            </div>
+        </>
+    );
 }
