@@ -8,7 +8,8 @@ import { useRouter } from 'next/router';
 export default function App({ Component, pageProps }) {
     const router = useRouter();
     const hideNavbar = router.pathname === '/mailingList/mailingList'
-        || router.pathname === '/contactUs/contactUs';
+        || router.pathname === '/contactUs/contactUs'
+        || router.pathname === '/unsubscribe/unsubscribe';
     return (
         <PaginationProvider>
             {/* <ClerkProvider> // TODO: comment in to add Clerk Auth */}
