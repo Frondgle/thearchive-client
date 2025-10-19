@@ -1,31 +1,31 @@
 import styles from './unsubscribe.module.css';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { unsubscribeEmail } from '../../api/unsubscribeData';
+import { unsubscribeToken } from '../../api/unsubscribeData';
 
 function Unsubscribe() {
     const router = useRouter();
-    const { email } = router.query;
+    const { token } = router.query;
     const [status, setStatus] = useState('loading');
     const [message, setMessage] = useState('Processing your request...');
 
     useEffect(() => {
-        if (!email) {
+        if (!token) {
             setStatus('error');
             setMessage('Invalid unsubscribe link.');
             return;
         }
 
-        unsubscribeEmail(decodeURIComponent(email))
+        unsubscribeToken(token)
             .then(() => {
                 setStatus('success');
-                setMessage(`${email} has successfully unsubscribed from The Sonatore Archive.`);
+                setMessage("You have successfully unsubscribed from The Sonatore Archive.");
             })
             .catch((error) => {
                 setStatus('error');
                 setMessage(error.message || 'An error occurred. Please try again later.');
             });
-    }, [email]);
+    }, [token]);
 
     return (
         <div className={styles.container}>
