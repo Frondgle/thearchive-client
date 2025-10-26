@@ -1,5 +1,5 @@
-// const dbURL = process.env.NEXT_PUBLIC_HEROKU_URL;
-const dbURL = 'http://localhost:8000';
+const dbURL = process.env.NEXT_PUBLIC_HEROKU_URL;
+// const dbURL = 'http://localhost:8000';
 console.log('API Base URL:', dbURL);
 
 const unsubscribeToken = (token) => new Promise((resolve, reject) => {

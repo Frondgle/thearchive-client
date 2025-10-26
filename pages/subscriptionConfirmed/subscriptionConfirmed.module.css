@@ -1,0 +1,30 @@
+.container {
+    margin-left: 25px;
+    color: #eadaf5;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 15px;
+    text-shadow:
+        -1px -1px 0 rgb(156, 35, 242),
+        1px -1px 0 rgb(156, 35, 242),
+        -1px 1px 0 rgb(156, 35, 242),
+        1px 1px 0 rgb(156, 35, 242);
+}
+
+.linkText {
+    color: #eadaf5;
+    margin-top: 25px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-shadow:
+        -1px -1px 0 rgb(156, 35, 242),
+        1px -1px 0 rgb(156, 35, 242),
+        -1px 1px 0 rgb(156, 35, 242),
+        1px 1px 0 rgb(156, 35, 242);
+}
+
+.linkText:hover {
+    color: #edef87;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
