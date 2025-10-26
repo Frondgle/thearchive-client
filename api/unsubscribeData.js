@@ -3,12 +3,11 @@ const dbURL = process.env.NEXT_PUBLIC_HEROKU_URL;
 console.log('API Base URL:', dbURL);
 
 const unsubscribeToken = (token) => new Promise((resolve, reject) => {
-    fetch(`${dbURL}/api/unsubscribe/`, {
-        method: 'POST',
+    fetch(`${dbURL}/api/unsubscribe/?token=${token}`, {
+        method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ token }),
     })
         .then((response) => response.json())
         .then((data) => {

@@ -9,7 +9,8 @@ export default function App({ Component, pageProps }) {
     const router = useRouter();
     const hideNavbar = router.pathname === '/mailingList/mailingList'
         || router.pathname === '/contactUs/contactUs'
-        || router.pathname === '/unsubscribe/unsubscribe';
+        || router.pathname === '/unsubscribe/unsubscribe'
+        || router.pathname === '/subscriptionConfirmed/subscriptionConfirmed';
     return (
         <PaginationProvider>
             {/* <ClerkProvider> // TODO: comment in to add Clerk Auth */}
