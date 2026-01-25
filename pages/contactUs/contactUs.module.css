@@ -154,10 +154,6 @@
 
 }
 
-.backButton {
-    display: none;
-}
-
 .message {
     margin-top: 15px;
     padding: 10px;
@@ -212,11 +208,6 @@
     .textContainer {
         margin-left: -40px;
     }
-
-    .backButton {
-        display: block;
-        /* Show on mobile */
-    }
 }
 
 /* Tablets (481px to 768px) */
@@ -245,10 +236,5 @@
 
     .titleText {
         font-size: 1.5rem;
-    }
-
-    .backButton {
-        display: block;
-        /* Show on tablet */
     }
 }

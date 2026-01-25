@@ -20,7 +20,7 @@ export default function PhotoGallery() {
         };
 
         fetchPageData();
-    }, [currentPage]);
+    }, [currentPage, itemsPerPage]);
 
     const totalPages = Math.ceil(art.length / itemsPerPage);
 
