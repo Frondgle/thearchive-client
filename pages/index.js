@@ -10,24 +10,15 @@ export default function Home({ randomArt }) {
     const router = useRouter();
     const { setCurrentPage } = usePagination();
 
+    const handleGoToArchive = () => {
+        setCurrentPage(0);
+        router.push('/photoGallery/photoGallery');
+    }
+
     const handlePhotoClick = () => {
         setCurrentPage(0);
         router.push('/photoGallery/photoGallery');
     };
-
-    const sonatoreBlurb = `
-    Hello!
-    <br /><br />
-    Welcome to The Sonatore Archive!
-    <br /><br />
-    We are excited to share with you around 150 of his Polaroid photos to launch the site with. We will expand the archive to hold all of the art we currently have of his. Which includes thousands more Polaroids, paintings, music, and more.
-    <br /><br />
-    If you or anyone you know have any pieces of his that you would like to add to the archive please reach out via the contact page.
-    <br /><br />
-    Love,
-    <br /><br />
-    Friends of Sonatore
-  `;
 
     return (
         <>
@@ -35,10 +26,18 @@ export default function Home({ randomArt }) {
                 <title>The Sonatore Archive</title>
             </Head>
             <div className={styles.container}>
-                <div
-                    className={styles.sonatoreBlurb}
-                    dangerouslySetInnerHTML={{ __html: sonatoreBlurb }}
-                ></div>
+                <div className={styles.sonatoreBlurb}>
+                    <div className={styles.para}>Hello!</div>
+                    <div className={styles.para}>Welcome to The Sonatore Archive!</div>
+                    <div className={styles.para}>We are excited to share with you around 150 of his Polaroid photos to launch the site with. We will expand the archive to hold all of the art we currently have of his. Which includes thousands more Polaroids, paintings, music, and more.</div>
+                    <div className={styles.para}>If you or anyone you know have any pieces of his that you would like to add to the archive please reach out via the contact page.</div>
+                    <div className={styles.para}>Love,</div>
+                    <div className={styles.para}>Friends of Sonatore</div>
+                    <button onClick={handleGoToArchive} className={styles.subscribeButton}>
+                        Go to Archive
+                    </button>
+                </div>
+                
                 <div
                     className={styles.photoGalleryLink}
                     onClick={handlePhotoClick}

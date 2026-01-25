@@ -26,6 +26,31 @@
     flex-direction: column;
 }
 
+.para {
+    margin: 10px 0;
+}
+
+.subscribeButton {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    opacity: 1 !important;
+}
+
+.subscribeButton:hover {
+    transform: scale(1.1);
+    border-color: #edef87;
+    color: #edef87;
+}
+
 /* Custom scrollbar styling */
 .sonatoreBlurb::-webkit-scrollbar {
     width: 4px;
@@ -51,12 +76,12 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 500px;
+    right: 0;
+    bottom: 0;
+    min-height: 580px;
     background-image: url('/images/infoTexture.JPG');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-size: 100% auto;
+    background-repeat: repeat-y;
     opacity: 0.3;
     z-index: 0;
     pointer-events: none;
@@ -119,10 +144,6 @@
         width: 237px;
         height: 300px;
         margin-top: 10px;
-    }
-
-    .sonatoreBlurb::before {
-        height: 550px;
     }
 }
 

@@ -2,9 +2,13 @@ import styles from './contactUs.module.css';
 import { useState } from 'react';
 import { sendMessage } from '@/api/contactMessageData';
 import { useRouter } from 'next/router';
+import { usePagination } from '@/context/PaginationContext';
+
 
 function ContactUs() {
     const router = useRouter();
+    const { setCurrentPage } = usePagination();
+
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -29,6 +33,7 @@ function ContactUs() {
     };
 
     const handleBackToArchive = () => {
+        setCurrentPage(0);
         router.push('/photoGallery/photoGallery');
     }
 

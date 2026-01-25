@@ -1,21 +1,12 @@
 .container {
-    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: #eadaf5;
     font-size: 1.5rem;
     font-weight: 600;
-    margin-top: 15px;
-    text-shadow:
-        -1px -1px 0 rgb(156, 35, 242),
-        1px -1px 0 rgb(156, 35, 242),
-        -1px 1px 0 rgb(156, 35, 242),
-        1px 1px 0 rgb(156, 35, 242);
-}
-
-.linkText {
-    color: #eadaf5;
     margin-top: 25px;
-    font-size: 1.5rem;
-    font-weight: 600;
     text-shadow:
         -1px -1px 0 rgb(156, 35, 242),
         1px -1px 0 rgb(156, 35, 242),
@@ -23,8 +14,23 @@
         1px 1px 0 rgb(156, 35, 242);
 }
 
-.linkText:hover {
-    color: #edef87;
-    transition: all 0.5s ease-in-out;
+.subscribeButton {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    opacity: 1 !important;
+}
+
+.subscribeButton:hover {
+    transform: scale(1.1);
+    border-color: #edef87;
+    color: #edef87;
 }
