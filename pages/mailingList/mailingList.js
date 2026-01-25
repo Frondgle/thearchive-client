@@ -1,10 +1,13 @@
 import styles from './mailingList.module.css';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { usePagination } from '@/context/PaginationContext';
 import { subscribeEmail } from '@/api/subscriberData';
 
 function MailingList() {
     const router = useRouter();
+    const { setCurrentPage } = usePagination();
+    
 
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -25,6 +28,7 @@ function MailingList() {
     };
 
     const handleBackToArchive = () => {
+        setCurrentPage(0);
         router.push('/photoGallery/photoGallery');
     }
 

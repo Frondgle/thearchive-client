@@ -37,16 +37,12 @@
     pointer-events: none;
 }
 
-.aboutBlurb {
-    margin-bottom: 0.75rem;
-}
-
 .aboutBlurb i {
     display: block;
     text-align: right;
     margin-top: 1rem;
     color: #edef87;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .linksContainer {
@@ -135,6 +131,28 @@
     /* back to normal size */
     border-color: #fff !important;
     /* back to default white border */
+}
+
+.subscribeButton {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    opacity: 1 !important;
+}
+
+.subscribeButton:hover {
+    transform: scale(1.1);
+    border-color: #edef87;
+    color: #edef87;
 }
 
 /* Mobile tweaks */

@@ -3,6 +3,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './about.module.css';
+import { useRouter } from 'next/router';
+import { usePagination } from '@/context/PaginationContext';
+
 
 const LINKS = [
     { href: 'https://www.instagram.com/thesonatorearchive', label: 'Instagram', src: '/images/instagramIcon2.png', alt: 'Instagram' },
@@ -25,6 +28,15 @@ const aboutBlurb = `
 `;
 
 export default function About() {
+    const router = useRouter();
+    const { setCurrentPage } = usePagination();
+
+
+    const handleBackToArchive = () => {
+        setCurrentPage(0);
+        router.push('/photoGallery/photoGallery');
+    }
+
     return (
         <>
             <Head>
@@ -37,6 +49,9 @@ export default function About() {
                     className={styles.aboutBlurb}
                     dangerouslySetInnerHTML={{ __html: aboutBlurb }}
                 />
+                <button className={styles.subscribeButton} onClick={handleBackToArchive}>
+                    Back to Archive
+                </button>
                 <div className={styles.linksContainer}>
                     {LINKS.map(({ href, label, src, alt }) => (
                         <Link
