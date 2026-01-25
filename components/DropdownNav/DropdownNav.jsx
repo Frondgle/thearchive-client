@@ -1,53 +1,11 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { usePagination } from '@/context/PaginationContext';
-import { useCallback } from 'react';
 import styles from './dropdownNav.module.css';
 
 export default function DropdownNav() {
     const router = useRouter();
     const { setCurrentPage } = usePagination();
-
-    const isMobileOrSmall = () => {
-        if (typeof window === "undefined") return false;
-        const byWidth = window.matchMedia?.("(max-width: 768px)")?.matches;
-        const uaMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-        return Boolean(byWidth || uaMobile);
-    };
-
-    const openCenteredPopup = useCallback((url, name) => {
-        if (isMobileOrSmall()) {
-            window.location.href = url;
-            return;
-        }
-
-        const w = 720;
-        const h = 780;
-        const dualScreenLeft = window.screenLeft ?? window.screenX ?? 0;
-        const dualScreenTop = window.screenTop ?? window.screenY ?? 0;
-        const width = window.innerWidth ?? document.documentElement.clientWidth ?? screen.width;
-        const height = window.innerHeight ?? document.documentElement.clientHeight ?? screen.height;
-        const left = Math.max(0, (width - w) / 2 + dualScreenLeft);
-        const top = Math.max(0, (height - h) / 2 + dualScreenTop);
-
-        const win = window.open(
-            url,
-            name,
-            `scrollbars=yes,resizable=yes,width=${w},height=${h},top=${top},left=${left}`
-        );
-
-        if (!win || win.closed || typeof win.closed === 'undefined') {
-            window.open(url, '_blank', 'noopener,noreferrer');
-        }
-    }, []);
-
-    const handleContactUs = () => {
-        openCenteredPopup('/contactUs/contactUs', 'sonatoreContactForm')
-    };
-
-    const handleMailingList = () => {
-        openCenteredPopup('/mailingList/mailingList', 'sonatoreMailingListForm')
-    };
 
     const handleChange = (e) => {
         let value = e.target.value;
@@ -61,10 +19,10 @@ export default function DropdownNav() {
                 setCurrentPage(0);
                 break;
             case "contact":
-                handleContactUs();
+                router.push('/contactUs/contactUs');
                 break;
             case "list":
-                handleMailingList();
+                router.push('/mailingList/mailingList')
                 break;
             default:
                 break;

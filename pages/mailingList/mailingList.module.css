@@ -139,10 +139,6 @@
 
 }
 
-.backButton {
-    display: none;
-}
-
 .message {
     margin-top: 15px;
     padding: 10px;
@@ -195,11 +191,6 @@
 
     .textContainer {
         margin-left: -40px;
-    }
-
-    .backButton {
-        display: block;
-        /* Show on mobile */
     }
 }
 

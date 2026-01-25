@@ -1,8 +1,11 @@
 import styles from './contactUs.module.css';
 import { useState } from 'react';
 import { sendMessage } from '@/api/contactMessageData';
+import { useRouter } from 'next/router';
 
 function ContactUs() {
+    const router = useRouter();
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [content, setContent] = useState('');
@@ -26,7 +29,7 @@ function ContactUs() {
     };
 
     const handleBackToArchive = () => {
-        router.push('/');
+        router.push('/photoGallery/photoGallery');
     }
 
     return (
@@ -83,7 +86,7 @@ function ContactUs() {
                     <button onClick={handleSubmit} className={styles.sendMessageButton}>
                         Submit
                     </button>
-                    <button onClick={handleBackToArchive} className={`${styles.sendMessageButton} ${styles.backButton}`}>
+                    <button onClick={handleBackToArchive} className={styles.sendMessageButton}>
                         Back to Archive
                     </button>
                 </div>

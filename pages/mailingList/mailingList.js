@@ -25,7 +25,7 @@ function MailingList() {
     };
 
     const handleBackToArchive = () => {
-        router.push('/');
+        router.push('/photoGallery/photoGallery');
     }
 
     return (
@@ -66,7 +66,7 @@ function MailingList() {
                     <button onClick={handleSubmit} className={styles.subscribeButton}>
                         Subscribe
                     </button>
-                    <button onClick={handleBackToArchive} className={`${styles.subscribeButton} ${styles.backButton}`}>
+                    <button onClick={handleBackToArchive} className={styles.subscribeButton}>
                         Back to Archive
                     </button>
                 </div>
