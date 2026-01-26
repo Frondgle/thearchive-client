@@ -1,53 +1,52 @@
+/* Card Container */
 .cardWrap {
     position: relative;
     cursor: pointer;
 }
 
+/* Image Styles */
 .cardImg {
     margin: 1rem;
-    transition: transform 0.5s ease-in-out;
-    filter: drop-shadow(0 0 10px rgb(11, 20, 13));
     border-radius: 3.5px;
+    filter: drop-shadow(0 0 10px rgb(11, 20, 13));
+    transition: transform 0.5s ease-in-out;
 }
 
+/* Caption Overlay */
 .captionWrap {
     position: absolute;
     top: 5%;
     left: 5%;
     width: 90%;
     height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 5px;
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.6);
-}
-
-.cardWrap:hover .cardImg {
-    transform: scale(1.1);
-}
-
-.captionWrap {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
-.cardWrap:hover .captionWrap {
-    visibility: visible;
-    opacity: 1;
-}
-
 .caption {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
     padding: 1rem 2rem;
-    overflow-y: auto;
 }
 
 .description {
     font-size: 2rem;
+    color: #fff;
 }
 
-.code .title .description {
-    color: #DADADB;
+/* Hover Effects */
+
+.cardWrap:hover .cardImg {
+    transform: scale(1.1);
+}
+
+.cardWrap:hover .captionWrap {
+    visibility: visible;
+    opacity: 1;
 }

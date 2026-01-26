@@ -3,30 +3,25 @@ import { useRouter } from "next/router";
 import { usePagination } from '@/context/PaginationContext';
 import styles from './dropdownNav.module.css';
 
+const ROUTES = {
+    PHOTO_GALLERY: "/photoGallery/photoGallery",
+    ABOUT: "/about/about",
+    CONTACT_US: "/contactUs/contactUs",
+    MAILING_LIST: "/mailingList/mailingList"
+}
+
 export default function DropdownNav() {
     const router = useRouter();
     const { setCurrentPage } = usePagination();
 
     const handleChange = (e) => {
-        let value = e.target.value;
+        const value = e.target.value;
 
-        switch (value) {
-            case "/photoGallery/photoGallery":
-                router.push(value);
-                break;
-            case "/about/about":
-                router.push(value);
-                setCurrentPage(0);
-                break;
-            case "contact":
-                router.push('/contactUs/contactUs');
-                break;
-            case "list":
-                router.push('/mailingList/mailingList')
-                break;
-            default:
-                break;
-        }
+        if (!value) return;
+
+        if (value === ROUTES.ABOUT) setCurrentPage(0);
+
+        router.push(value);
         e.target.value = "";
     }
 
@@ -34,10 +29,10 @@ export default function DropdownNav() {
         <div className={styles.dropdownWrap}>
             <select onChange={handleChange} defaultValue={""} className={styles.dropdown}>
                 <option value="" disabled>Navigate to...</option>
-                <option value="/photoGallery/photoGallery">Photo Gallery</option>
-                <option value="/about/about">About</option>
-                <option value="contact">Contact Us</option>
-                <option value="list">Mailing List</option>
+                <option value={ROUTES.PHOTO_GALLERY}>Photo Gallery</option>
+                <option value={ROUTES.ABOUT}>About</option>
+                <option value={ROUTES.CONTACT_US}>Contact Us</option>
+                <option value={ROUTES.MAILING_LIST}>Mailing List</option>
             </select>
         </div>
     );

@@ -2,14 +2,15 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import styles from './artcard.module.css';
 import Image from 'next/image';
+import { getOptimizedImageUrl } from '@/utils/imageUtils';
 
 export default function ArtCard({ artObj }) {
+    const { id, pic, code, title, description } = artObj;
     const router = useRouter();
-    const cloudinaryURL = process.env.NEXT_PUBLIC_CLOUDINARY_URL;
-    const optimizedImageUrl = `${cloudinaryURL}image/upload/w_300,h_363,q_auto:eco,f_auto,fl_progressive,fl_png8/${artObj.pic.split('image/upload/')[1]}`;
+    const optimizedImageUrl = getOptimizedImageUrl(pic);
 
     return (
-        <div className={styles.cardWrap} onClick={() => router.push(`/art/${artObj.id}`)}>
+        <div className={styles.cardWrap} onClick={() => router.push(`/art/${id}`)}>
             <Image
                 src={optimizedImageUrl}
                 alt="art card"
@@ -19,11 +20,11 @@ export default function ArtCard({ artObj }) {
             />
             <div className={styles.captionWrap}>
                 <div className={styles.caption}>
-                    <p>{artObj.code || ''}</p>
+                    <p>{code || ''}</p>
                     <h5>
-                        <i>{artObj.title || ''}</i>
+                        <i>{title || ''}</i>
                     </h5>
-                    <p className={styles.description}>{artObj.description}</p>
+                    <p className={styles.description}>{description}</p>
                 </div>
             </div>
         </div>

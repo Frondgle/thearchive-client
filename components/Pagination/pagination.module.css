@@ -1,3 +1,4 @@
+/* Pagination Container */
 .paginationContainer {
     display: flex;
     justify-content: center;
@@ -6,27 +7,37 @@
     margin-top: 20px;
 }
 
+/* Page Numbers Wrapper */
+.pageNumbers {
+    display: flex;
+    gap: 0;
+}
+
+/* Page Number Items */
 .polaroidPaginationItem {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     width: 30px;
     height: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-    font-weight: bold;
     color: #000;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-    overflow: hidden;
     background: rgba(255, 255, 255, 0.8);
-    /* Slightly transparent white background */
     background-image: url('/images/squareFilmStrip.png');
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     background-size: cover;
-    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
     opacity: 0.5;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.polaroidPaginationItem span {
+    position: relative;
+    z-index: 1;
+    font-size: 16px;
+    font-weight: 550;
+    color: #000;
 }
 
 .polaroidPaginationItem.active {
@@ -40,81 +51,51 @@
     opacity: 0.7;
 }
 
-.polaroidPaginationItem span {
-    position: relative;
-    z-index: 1;
-    font-size: 16px;
-    font-weight: 550;
+/* Navigation Buttons */
+.arrowButtonsLeft {
+    display: flex;
+    margin-right: 3px;
+}
+
+.arrowButtonsRight {
+    display: flex;
+    margin-left: 3px;
 }
 
 .paginationButton {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2.5px;
-    padding: 5px 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    background-color: #fff;
-    color: #333;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-    opacity: 0.7;
     width: 30px;
     height: 30px;
+    margin: 3px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .paginationIcon {
     width: 20px;
     height: 20px;
     opacity: 0.7;
-    background-color: fff;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.paginationButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
 }
 
 .paginationButton:hover .paginationIcon {
-    background-color: #fff;
-    color: #fff;
     transform: scale(1.1);
     opacity: 1;
 }
 
 .paginationButton:disabled .paginationIcon {
-    background-color: rgba(224, 224, 224, 0.8);
-    /* Slightly transparent gray for disabled state */
-    color: #999;
-    cursor: not-allowed;
     opacity: 0.3;
-}
-
-.paginationNumber {
-    color: #eadaf5;
-    font-size: 1.75rem;
-    text-shadow:
-        -1px -1px 0 rgb(156, 35, 242),
-        1px -1px 0 rgb(156, 35, 242),
-        -1px 1px 0 rgb(156, 35, 242),
-        1px 1px 0 rgb(156, 35, 242);
-    margin-left: 5px;
-    margin-right: 5px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-}
-
-.paginationNumber.active {
-    color: #edef87;
-    opacity: 1;
-}
-
-.paginationNumber:hover {
-    transform: scale(1.05);
-    opacity: 0.8;
-    color: #edef87;
-}
-
-@media (max-width: 753px) {
-    .paginationNumber {
-        font-size: 1.5rem;
-        /* Adjust font size for smaller screens */
-    }
 }

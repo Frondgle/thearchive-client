@@ -2,42 +2,36 @@ import styles from './navbar.module.css';
 import { useRouter } from 'next/router';
 import { usePagination } from '@/context/PaginationContext';
 import DropdownNav from '../DropdownNav/DropdownNav';
+import Image from 'next/image';
+
+const NAV_LINKS = [
+    { text: 'Photos', path: '/photoGallery/photoGallery', resetPage: true },
+    { text: 'About', path: '/about/about' },
+    { text: 'Contact Us', path: '/contactUs/contactUs'},
+    { text: 'Mailing List', path: '/mailingList/mailingList'}
+]
 
 function NavBar() {
     const router = useRouter();
     const { setCurrentPage } = usePagination();
 
-    const handleHomeClick = () => {
-        router.push('/');
-    };
-
-    const handlePhotoClick = () => {
-        setCurrentPage(0);
-        router.push('/photoGallery/photoGallery');
-    };
-
-    const handleAboutClick = () => {
-        router.push('/about/about');
-    };
-
-    const handleContactUsClick = () => {
-        router.push('/contactUs/contactUs');
-    };
-
-    const handleMailingListClick = () => {
-        router.push('/mailingList/mailingList');
-    };
+    const handleNavigation = (path, resetPage = false) => {
+        if (resetPage) setCurrentPage(0);
+        router.push(path);
+    }
 
     return (
         <nav className={styles.navbar}>
             <div className={styles.container}>
                 <div className={styles.logoContainer}>
-                    <img
+                    <Image
                         src="/images/hat.png"
                         alt="Golden Cowboy Hat"
                         className={styles.logo}
+                        width={90}
+                        height={90}
                     />
-                    <div className={styles.titleText} onClick={handleHomeClick}>
+                    <div className={`${styles.titleText} ${styles.titleLinkText}`} onClick={() => handleNavigation('/')}>
                         The Sonatore Archive
                     </div>
                 </div>
@@ -45,24 +39,15 @@ function NavBar() {
                     <DropdownNav />
                 </div>
                 <div className={styles.linksContainer}>
-                    <div className={styles.linkText} onClick={handlePhotoClick}>
-                        Photos
-                    </div>
-                    <div className={styles.linkText} onClick={handleAboutClick}>
-                        About
-                    </div>
-                    <div
-                        className={styles.link}
-                        onClick={handleContactUsClick}
-                    >
-                        <div className={styles.linkText}>Contact Us</div>
-                    </div>
-                    <div
-                        className={styles.link}
-                        onClick={handleMailingListClick}
-                    >
-                        <div className={styles.linkText}>Mailing List</div>
-                    </div>
+                    {NAV_LINKS.map((link) => (
+                        <div
+                            key={link.text}
+                            className={styles.titleLinkText}
+                            onClick={() => handleNavigation(link.path, link.resetPage)}    
+                        >
+                            {link.text}
+                        </div>
+                    ))}
                 </div>
             </div>
         </nav>
