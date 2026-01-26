@@ -1,3 +1,4 @@
+/* Footer Container */
 .footer {
     display: flex;
     justify-content: flex-end;
@@ -14,11 +15,7 @@
         1px 1px 0 rgb(156, 35, 242);
 }
 
-.copyright {
-    font: 1rem sans-serif;
-    font-size: 1rem;
-}
-
+/* Responsive Layout */
 @media (max-width: 1035px) {
     .footer {
         justify-content: center;

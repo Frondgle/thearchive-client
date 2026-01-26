@@ -1,10 +1,11 @@
-/* The visible “box” with image + tint */
+/* Dropdown Container */
 .dropdownWrap {
     display: inline-block;
     border-radius: 8px;
     position: relative;
 }
 
+/* Dropdown Select */
 .dropdown {
     width: 200px;
     padding: 0.25rem 2rem 0.25rem 0.5rem;
@@ -20,7 +21,7 @@
     -moz-appearance: none;
 }
 
-/* Optional: add a custom arrow */
+/* Custom Dropdown Arrow */
 .dropdownWrap::after {
     content: "";
     position: absolute;
@@ -32,6 +33,5 @@
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
     border-top: 7px solid #fff;
-    /* arrow color */
     pointer-events: none;
 }

@@ -1,20 +1,24 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import styles from './randomartcard.module.css';
+import { getOptimizedImageUrl } from '@/utils/imageUtils';
 
 export default function RandomArtCard({ artObj }) {
     const router = useRouter();
-    const cloudinaryURL = process.env.NEXT_PUBLIC_CLOUDINARY_URL;
-    const optimizedImageUrl = `${cloudinaryURL}image/upload/w_300,h_363,q_auto:eco,f_auto,fl_progressive,fl_png8/${artObj.pic.split('image/upload/')[1]}`;
+    const optimizedImageUrl = getOptimizedImageUrl(artObj.pic);
 
     return (
-        <div className={styles.cardWrap} onClick={() => router.push('/photoGallery/photoGallery')}>
-            <img
+        <div 
+            className={styles.cardWrap} 
+            onClick={() => router.push('/photoGallery/photoGallery')}
+        >
+            <Image 
                 src={optimizedImageUrl}
-                alt="art card"
+                alt="Random art from gallery"
                 className={styles.cardImg}
-                height={363}
                 width={300}
+                height={363}
             />
 
             <div className={styles.captionWrap}>
