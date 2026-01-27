@@ -24,8 +24,7 @@
     word-wrap: break-word;
     display: flex;
     flex-direction: column;
-    color: rgba(255, 245, 230, 0.85);
-}
+    color: rgba(255, 245, 230, 0.904);}
 
 /* Custom scrollbar styling */
 .sonatoreBlurb::-webkit-scrollbar {
