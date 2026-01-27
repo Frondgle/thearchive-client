@@ -1,8 +1,10 @@
 import styles from './mailingList.module.css';
+import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { usePagination } from '@/context/PaginationContext';
 import { subscribeEmail } from '@/api/subscriberData';
+import WhiteButton from '@/components/WhiteButton/WhiteButton';
 
 function MailingList() {
     const router = useRouter();
@@ -36,10 +38,12 @@ function MailingList() {
         <div className={styles.container}>
             <div className={styles.titleContainer}>
                 <div className={styles.logoContainer}>
-                    <img
+                    <Image 
                         src="/images/hat.png"
                         alt="Golden Cowboy Hat"
                         className={styles.logo}
+                        width={90}
+                        height={90}
                     />
                 </div>
                 <div className={styles.textContainer}>
@@ -67,12 +71,12 @@ function MailingList() {
                     />
                 </div>
                 <div className={styles.buttonContainer}>
-                    <button onClick={handleSubmit} className={styles.subscribeButton}>
+                    <WhiteButton onClick={handleSubmit}>
                         Subscribe
-                    </button>
-                    <button onClick={handleBackToArchive} className={styles.subscribeButton}>
+                    </WhiteButton>
+                    <WhiteButton onClick={handleBackToArchive}>
                         Back to Archive
-                    </button>
+                    </WhiteButton>
                 </div>
                 {message && <p className={styles.message}>{message}</p>}
             </div>

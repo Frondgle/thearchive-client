@@ -2,6 +2,7 @@ import styles from './subscriptionConfirmed.module.css';
 import { useRouter } from 'next/router';
 import { usePagination } from '@/context/PaginationContext';
 import { useEffect, useState } from 'react';
+import WhiteButton from '@/components/WhiteButton/WhiteButton';
 
 function SubscriptionConfirmed() {
     const router = useRouter();
@@ -29,10 +30,10 @@ function SubscriptionConfirmed() {
 
     return (
         <div className={styles.container}>
-            {message}
-            <button className={styles.subscribeButton} onClick={handleBackToArchive}>
+            <div className={styles.message}>{message}</div>
+            <WhiteButton onClick={handleBackToArchive}>
                 Back to Archive
-            </button>
+            </WhiteButton>
         </div>
     );
 }
