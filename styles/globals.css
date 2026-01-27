@@ -27,18 +27,6 @@ body {
 
 }
 
-.auth-form {
-    width: 50%;
-}
-
-.page-link {
-    color: #183f98;
-}
-
-.page-link:focus {
-    box-shadow: none !important;
-}
-
 /* Ensure root fills viewport */
 html,
 body {

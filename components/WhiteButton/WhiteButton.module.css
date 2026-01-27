@@ -1,0 +1,28 @@
+.whiteButton {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 1 !important;
+}
+
+.whiteButton:hover {
+    transform: scale(1.1);
+    border-color: #edef87;
+    color: #edef87;
+}
+
+/* Mobile-specific: remove hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .whiteButton:hover {
+        transform: scale(1);
+        border-color: #fff;
+        color: #fff;
+    }
+}

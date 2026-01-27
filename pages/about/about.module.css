@@ -37,20 +37,20 @@
     pointer-events: none;
 }
 
-.aboutBlurb i {
-    display: block;
-    text-align: right;
-    margin-top: 1rem;
-    color: #edef87;
-    margin-bottom: 1rem;
+/* Center the button */
+.centerButton {
+    display: flex;
+    justify-content: center;
 }
 
+/* Social Links */
 .linksContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
 }
 
 .linkItem {
@@ -65,39 +65,43 @@
 
 .icon {
     display: block;
+    border: 3px solid #fff;
     border-radius: 20px;
     transition: transform 0.3s ease, border-color 0.3s ease;
-    border: 3px solid #fff;
 }
 
+/* Icon Hover/Focus States */
 .iconWrap:hover .icon,
 .linkItem:focus-visible .icon {
     transform: scale(1.1);
     border-color: #edef87;
 }
 
-/* Tooltip (below the icon) */
+.linkItem:focus .icon {
+    transform: none;
+    border-color: #fff;
+}
+
+/* Tooltip */
 .tooltip {
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%) translateY(6px);
-    background: rgba(255, 105, 180, 0);
-    /* 🔥 transparent hotpink */
+    padding: 6px 8px;
+    background: transparent;
     color: #fff;
     font-size: 12px;
     line-height: 1;
-    padding: 6px 8px;
     border-radius: 6px;
     white-space: nowrap;
+    transform: translateX(-50%) translateY(6px);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity .15s ease, transform .15s ease, visibility 0s linear .15s;
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0s linear 0.15s;
     z-index: 2;
 }
 
-/* Tooltip arrow pointing UP */
 .tooltip::after {
     content: "";
     position: absolute;
@@ -106,68 +110,30 @@
     transform: translateX(-50%);
     border: 6px solid transparent;
     border-bottom-color: rgba(255, 105, 180, 0.7);
-    /* match background */
 }
 
-/* Show tooltip on hover/focus */
+/* Show Tooltip */
 .iconWrap:hover .tooltip,
 .linkItem:focus-visible .tooltip,
 .linkItem:focus-within .tooltip {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(10px);
-    transition: opacity .15s ease, transform .15s ease, visibility 0s;
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0s;
 }
 
-/* When link has focus, hide tooltip AND reset icon style */
 .linkItem:focus .tooltip {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    transition: none !important;
+    opacity: 0;
+    visibility: hidden;
 }
 
-.linkItem:focus .icon {
-    transform: none !important;
-    /* back to normal size */
-    border-color: #fff !important;
-    /* back to default white border */
-}
-
-.subscribeButton {
-    background: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-    padding: 12px 30px;
-    font-size: 16px;
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 15px;
-    margin-bottom: 30px;
-    opacity: 1 !important;
-}
-
-.subscribeButton:hover {
-    transform: scale(1.1);
-    border-color: #edef87;
-    color: #edef87;
-}
-
-/* Mobile tweaks */
+/* Mobile Screens */
 @media (max-width: 500px) {
-    .container {
-        padding: 2rem;
-        margin: 15px auto 2rem;
-        width: 80%;
-    }
-
     .icon {
-        width: 50px !important;
-        height: 50px !important;
-        border-radius: 10px;
+        width: 50px;
+        height: 50px;
         border: 2px solid #fff;
+        border-radius: 10px;
     }
 
     .linksContainer {
@@ -188,20 +154,10 @@
 }
 
 @media (max-width: 420px) {
-    .container {
-        .container {
-            padding-top: 1.5rem;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-            padding-bottom: 2rem;
-        }
-    }
-
     .icon {
-        width: 40px !important;
-        height: 40px !important;
+        width: 40px;
+        height: 40px;
         border-radius: 7.5px;
-        border: 2px solid #fff;
     }
 
     .linksContainer {
@@ -210,21 +166,9 @@
 }
 
 @media (max-width: 350px) {
-    .container {
-        padding-top: 1rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        padding-bottom: 2rem;
-    }
-
     .icon {
-        width: 30px !important;
-        height: 30px !important;
+        width: 30px;
+        height: 30px;
         border-radius: 7.5px;
-        border: 2px solid #fff;
-    }
-
-    .linksContainer {
-        gap: 1rem;
     }
 }

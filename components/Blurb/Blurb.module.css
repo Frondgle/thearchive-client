@@ -1,0 +1,30 @@
+/* Blurb Content styles */
+.paragraph {
+    margin-bottom: 20px;
+    opacity: 0.85;
+}
+
+.highlight {
+    color: #edef87;
+}
+
+.signature {
+    display: block;
+    text-align: right;
+    margin-top: 1rem;
+    color: #edef87;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.heart {
+    color: #fff;
+    font-weight: 700;
+    font-style: normal;
+    text-shadow:
+        -0.5px -0.5px 0 #fff,
+        0.5px -0.5px 0 #fff,
+        -0.5px 0.5px 0 #fff,
+        0.5px 0.5px 0 #fff;
+    margin-right: 0.25rem;
+}

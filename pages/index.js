@@ -5,6 +5,8 @@ import { usePagination } from '@/context/PaginationContext';
 import styles from './index.module.css';
 import RandomArtCard from '@/components/RandomArtCard/RandomArtCard';
 import { getArt } from '@/api/artData';
+import WhiteButton from '@/components/WhiteButton/WhiteButton';
+import IndexBlurbContent from '@/content/indexBlurbContent';
 
 export default function Home({ randomArt }) {
     const router = useRouter();
@@ -27,15 +29,10 @@ export default function Home({ randomArt }) {
             </Head>
             <div className={styles.container}>
                 <div className={styles.sonatoreBlurb}>
-                    <div className={styles.para}>Hello!</div>
-                    <div className={styles.para}>Welcome to The Sonatore Archive!</div>
-                    <div className={styles.para}>We are excited to share with you around 150 of his Polaroid photos to launch the site with. We will expand the archive to hold all of the art we currently have of his. Which includes thousands more Polaroids, paintings, music, and more.</div>
-                    <div className={styles.para}>If you or anyone you know have any pieces of his that you would like to add to the archive please reach out via the contact page.</div>
-                    <div className={styles.para}>Love,</div>
-                    <div className={styles.para}>Friends of Sonatore</div>
-                    <button onClick={handleGoToArchive} className={styles.subscribeButton}>
+                    <IndexBlurbContent />
+                    <WhiteButton onClick={handleGoToArchive}>
                         Go to Archive
-                    </button>
+                    </WhiteButton>
                 </div>
                 
                 <div
