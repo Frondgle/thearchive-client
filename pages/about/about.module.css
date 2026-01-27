@@ -6,7 +6,6 @@
     align-items: center;
     margin: 25px auto 3rem;
     position: relative;
-    color: #fff;
     padding-top: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -20,6 +19,7 @@
     width: 100%;
     max-width: 550px;
     height: auto;
+    color: rgba(255, 245, 230, 0.85);
 }
 
 .container::before {
