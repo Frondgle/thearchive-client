@@ -138,6 +138,21 @@
     }
 }
 
+/* Media query specifically for iPad Mini in landscape (1024 x 768) */
+@media (min-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
+    .container {
+        gap: 5px;
+        margin-top: 25px;
+    }
+
+    .sonatoreBlurb {
+        height: 57.5vh;
+        width: 80%;
+        aspect-ratio: 3 / 4;
+        margin-left: 30px;
+    }
+}
+
 /* Media query for mobile screens in landscape mode */
 @media (max-width: 935px) and (orientation: landscape) {
     .container {
