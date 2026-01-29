@@ -92,28 +92,49 @@
     }
 }
 
-/* Media query for mobile screens in portrait mode */
-@media (max-width: 450px) {
+/* Media query specifically for iPads (Mini, Air, Pro) in portrait */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     .container {
         flex-direction: column;
         align-items: center;
-        padding: 1rem;
+        min-height: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        gap: 30px;
+    }
+
+    .photoGalleryLink {
+        max-width: 50%;
+        width: 50%;
+        height: auto;
+        aspect-ratio: auto;
+    }
+
+    .sonatoreBlurb {
+        max-width: 42.5%;
+        width: 42.5%;
+        height: auto;
+        aspect-ratio: auto;
+    }
+}
+
+/* Media query specifically for iPads in landscape */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .container {
+        flex-direction: row;
+        gap: 30px;
+        align-items: center;
         min-height: auto;
     }
 
     .photoGalleryLink {
-        max-width: 95%;
-        width: 95%;
-        height: auto;
-        margin-bottom: 20px;
+        height: 65vh;
         aspect-ratio: 3 / 4;
     }
 
     .sonatoreBlurb {
-        max-width: 80%;
-        width: 80%;
-        height: 350px;
-        aspect-ratio: auto;
+        height: 65vh;
+        aspect-ratio: 3 / 4;
     }
 }
 
@@ -134,5 +155,38 @@
     .sonatoreBlurb {
         height: 70vh;
         aspect-ratio: 3 / 4;
+    }
+}
+
+/* Media query for mobile screens in portrait mode */
+@media (max-width: 450px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        min-height: auto;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .photoGalleryLink {
+        max-width: 95%;
+        width: 95%;
+        height: auto;
+        margin-bottom: 20px;
+        aspect-ratio: 3 / 4;
+    }
+
+    .sonatoreBlurb {
+        max-width: 80%;
+        width: 78.5%;
+        height: auto;
+        aspect-ratio: auto;
+    }
+}
+
+@media (max-width: 380px) { 
+    .sonatoreBlurb {
+        width: 76.5%;
     }
 }
