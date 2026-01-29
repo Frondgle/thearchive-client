@@ -2,6 +2,7 @@ import { getArtIDs, getSingleArt } from '../../api/artData';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './ViewArtPage.module.css';
+import Image from 'next/image';
 import Head from 'next/head';
 import { usePagination } from '../../context/PaginationContext';
 
@@ -33,7 +34,7 @@ export default function ViewArtPage() {
         if (newPage !== currentPage && newPage >= 0) {
             setCurrentPage(newPage);
         }
-    }, [currentIndex, currentPage, setCurrentPage]);
+    }, [currentIndex, currentPage, setCurrentPage, itemsPerPage]);
 
     const handlePagination = (pageId) => {
         if (pageId !== null) router.push(`/art/${pageId}`);
@@ -46,11 +47,13 @@ export default function ViewArtPage() {
             </Head>
             <div className={styles.container}>
                 <div className={styles.artContent}>
-                    <img
+                    <Image
                         src={optimizedImageUrl}
                         alt={artObj.description}
                         className={styles.artImage}
-                        onContextMenu={(e) => e.preventDefault()}
+                        width={1000}  
+                        height={1333} 
+                        sizes="50vw"
                     />
                     <div className={styles.detailsColumn}>
                         {/* Pagination */}
@@ -60,14 +63,26 @@ export default function ViewArtPage() {
                                 onClick={() => handlePagination(prevId)}
                                 disabled={!prevId}
                             >
-                                <img src="/images/Left.png" alt="Left" className={styles.paginationIcon} width={40} height={20} />
+                                <Image 
+                                    src="/images/Left.png"
+                                    alt="Previous"
+                                    className={styles.cardImg}
+                                    width={40}
+                                    height={20}
+                                />
                             </button>
                             <button
                                 className={styles.paginationButton}
                                 onClick={() => handlePagination(nextId)}
                                 disabled={!nextId}
                             >
-                                <img src="/images/Right.png" alt="Right" className={styles.paginationIcon} width={40} height={20} />
+                                <Image 
+                                    src="/images/Right.png"
+                                    alt="Next"
+                                    className={styles.cardImg}
+                                    width={40}
+                                    height={20}
+                                />
                             </button>
                         </div>
                         <div className={styles.detailsWrap}>
@@ -93,7 +108,13 @@ export default function ViewArtPage() {
                         </div>
                         <div className={styles.homeButton}>
                             <button className={styles.homeButtonLink} onClick={() => router.push('/photoGallery/photoGallery')}>
-                                <img src="/images/home-emoji.png" alt="Home" className={styles.homeButtonIcon} />
+                                <Image 
+                                    src="/images/home-emoji.png"
+                                    alt="Home"
+                                    className={styles.cardImg}
+                                    width={40}
+                                    height={40}
+                                />
                             </button>
                         </div>
                     </div>
