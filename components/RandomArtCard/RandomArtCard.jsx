@@ -17,8 +17,9 @@ export default function RandomArtCard({ artObj }) {
                 src={optimizedImageUrl}
                 alt="Random art from gallery"
                 className={styles.cardImg}
-                width={300}
-                height={363}
+                width={1000}
+                height={1333}
+                sizes="50vw"
             />
 
             <div className={styles.captionWrap}>
