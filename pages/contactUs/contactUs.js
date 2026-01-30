@@ -1,4 +1,5 @@
 import styles from './contactUs.module.css';
+import Image from 'next/image';
 import { useState } from 'react';
 import { sendMessage } from '@/api/contactMessageData';
 import { useRouter } from 'next/router';
@@ -41,10 +42,12 @@ function ContactUs() {
         <div className={styles.container}>
             <div className={styles.titleContainer}>
                 <div className={styles.logoContainer}>
-                    <img
+                    <Image 
                         src="/images/hat.png"
                         alt="Golden Cowboy Hat"
                         className={styles.logo}
+                        width={90}
+                        height={90}
                     />
                 </div>
                 <div className={styles.textContainer}>
