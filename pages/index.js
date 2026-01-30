@@ -23,7 +23,7 @@ export default function Home({ randomArt }) {
     
     updateDimensions();
     window.addEventListener('resize', updateDimensions);
-    return () => window.removeEventListener('resize', updateDimensions);
+        return () => window.removeEventListener('resize', updateDimensions);
     }, []);
 
     const router = useRouter();
