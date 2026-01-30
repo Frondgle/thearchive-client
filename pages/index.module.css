@@ -12,6 +12,9 @@
     color: #fff;
     padding: 2rem;
     background-color: hotpink;
+    background-image: url('/images/infoTexture.JPG');
+    background-size: cover;
+    background-blend-mode: overlay;
     border-radius: 5px;
     font-family: "Space Grotesk", sans-serif;
     font-weight: 700;
@@ -22,7 +25,16 @@
     color: rgba(255, 245, 230, 0.904);
     max-width: 40%;
     aspect-ratio: 3 / 4;
+    height: 51vh;
+}
+
+.photoGalleryLink {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 65vh;
+    aspect-ratio: 3 / 4;
 }
 
 /* Custom scrollbar styling */
@@ -45,53 +57,6 @@
     border-radius: 4px;
 }
 
-.sonatoreBlurb::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('/images/infoTexture.JPG');
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.3;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.photoGalleryLink {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    aspect-ratio: 3 / 4;
-}
-
-/* Media query for tablets in portrait mode */
-@media (max-width: 1024px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        min-height: auto;
-    }
-
-    .photoGalleryLink {
-        max-width: 90%;
-        width: 90%;
-        height: auto;
-        aspect-ratio: 3 / 4;
-    }
-
-    .sonatoreBlurb {
-        max-width: 90%;
-        width: 90%;
-        height: 400px;
-        aspect-ratio: auto;
-    }
-}
-
 /* Media query specifically for iPads (Mini, Air, Pro) in portrait */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     .container {
@@ -107,14 +72,14 @@
         max-width: 50%;
         width: 50%;
         height: auto;
-        aspect-ratio: auto;
+        aspect-ratio: 3 / 4;
     }
 
     .sonatoreBlurb {
         max-width: 42.5%;
         width: 42.5%;
         height: auto;
-        aspect-ratio: auto;
+        aspect-ratio: 3 / 4;
     }
 }
 
@@ -141,20 +106,25 @@
 /* Media query specifically for iPad Mini in landscape (1024 x 768) */
 @media (min-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
     .container {
-        gap: 5px;
-        margin-top: 25px;
+        flex-direction: row;
+        gap: 50px;
+        margin-top: 20px;
+        align-items: center;
     }
 
     .sonatoreBlurb {
         height: 57.5vh;
-        width: 80%;
         aspect-ratio: 3 / 4;
-        margin-left: 30px;
+    }
+
+    .photoGalleryLink {
+        height: 72.5vh;
+        aspect-ratio: 3 / 4;
     }
 }
 
 /* Media query for mobile screens in landscape mode */
-@media (max-width: 935px) and (orientation: landscape) {
+@media (max-width: 767px) and (orientation: landscape) {
     .container {
         flex-direction: row;
         gap: 20px;
@@ -188,7 +158,6 @@
         max-width: 95%;
         width: 95%;
         height: auto;
-        margin-bottom: 20px;
         aspect-ratio: 3 / 4;
     }
 
@@ -196,12 +165,55 @@
         max-width: 80%;
         width: 78.5%;
         height: auto;
-        aspect-ratio: auto;
+        aspect-ratio: 3 / 4;
     }
 }
 
 @media (max-width: 380px) { 
     .sonatoreBlurb {
         width: 76.5%;
+    }
+}
+
+/* Media queries for narrow desktop/small laptop screens */
+@media (min-width: 450px) and (max-width: 861px) {    
+    .container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .sonatoreBlurb {
+        width: 50%;
+        max-width: 50%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+        box-sizing: border-box;
+    }
+
+    .photoGalleryLink {
+        width: 50%;
+        max-width: 50%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+}
+
+@media (min-width: 862px) and (max-width: 1024px) and (hover: hover) {
+    .container {
+        gap: 30px;
+        margin-top: 30px;
+        flex-direction: row;
+    }
+
+    .sonatoreBlurb {
+        height: 45vh;
+        aspect-ratio: 3 / 4;
+    }
+
+    .photoGalleryLink {
+        height: 60vh;
+        aspect-ratio: 3 / 4;
     }
 }

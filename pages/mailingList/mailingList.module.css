@@ -37,10 +37,14 @@
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
     position: relative;
     color: #fff;
     padding: 2rem;
     background-color: hotpink;
+    background-image: url('/images/infoTexture.JPG');
+    background-size: cover;
+    background-blend-mode: overlay;
     border-radius: 5px;
     font-family: "Space Grotesk", sans-serif;
     font-weight: 700;
@@ -76,7 +80,7 @@
     border-radius: 4px;
 }
 
-.contentContainer::before {
+/* .contentContainer::before {
     content: "";
     position: absolute;
     top: 0;
@@ -90,7 +94,7 @@
     opacity: 0.3;
     z-index: 0;
     pointer-events: none;
-}
+} */
 
 .emailBlurb {
     margin-bottom: 30px;
