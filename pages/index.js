@@ -8,24 +8,7 @@ import { getArt } from '@/api/artData';
 import WhiteButton from '@/components/WhiteButton/WhiteButton';
 import IndexBlurbContent from '@/content/indexBlurbContent';
 
-import { useState, useEffect } from 'react';
-
 export default function Home({ randomArt }) {
-    const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-
-    useEffect(() => {
-    const updateDimensions = () => {
-        setDimensions({
-            width: window.innerWidth,
-            height: window.innerHeight
-        });
-    };
-    
-    updateDimensions();
-    window.addEventListener('resize', updateDimensions);
-        return () => window.removeEventListener('resize', updateDimensions);
-    }, []);
-
     const router = useRouter();
     const { setCurrentPage } = usePagination();
 
@@ -44,18 +27,6 @@ export default function Home({ randomArt }) {
             <Head>
                 <title>The Sonatore Archive</title>
             </Head>
-            <div style={{
-                position: 'fixed',
-                top: 10,
-                right: 10,
-                background: 'black',
-                color: 'white',
-                padding: '10px',
-                zIndex: 9999,
-                fontSize: '16px'
-            }}>
-                {dimensions.width} × {dimensions.height}
-            </div>
             <div className={styles.container}>
                 <div className={styles.sonatoreBlurb}>
                     <IndexBlurbContent />
