@@ -52,8 +52,9 @@ export default function ViewArtPage() {
                         alt={artObj.description}
                         className={styles.artImage}
                         width={1000}  
-                        height={1210} 
+                        height={1333} 
                         sizes="50vw"
+                        unoptimized
                     />
                     <div className={styles.detailsColumn}>
                         {/* Pagination */}
