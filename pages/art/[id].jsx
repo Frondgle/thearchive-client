@@ -52,7 +52,7 @@ export default function ViewArtPage() {
                         alt={artObj.description}
                         className={styles.artImage}
                         width={1000}  
-                        height={1333} 
+                        height={1210} 
                         sizes="50vw"
                     />
                     <div className={styles.detailsColumn}>
