@@ -14,7 +14,7 @@ export default function ViewArtPage() {
     const { id } = router.query;
     const cloudinaryURL = process.env.NEXT_PUBLIC_CLOUDINARY_URL;
     const optimizedImageUrl = artObj.pic
-        ? `${cloudinaryURL}image/upload/w_1000,h_1212,c_fill,q_auto,f_auto,fl_progressive/${artObj.pic.split('image/upload/')[1]}`
+        ? `${cloudinaryURL}image/upload/w_1000,h_1333,c_fit,q_auto,f_auto,fl_progressive/${artObj.pic.split('image/upload/')[1]}`
         : '';
 
     useEffect(() => {
@@ -52,7 +52,7 @@ export default function ViewArtPage() {
                         alt={artObj.description}
                         className={styles.artImage}
                         width={1000}  
-                        height={1212} 
+                        height={1333} 
                         sizes="(max-width: 768px) 95vw, 50vw"
                         unoptimized
                     />
