@@ -17,6 +17,8 @@ export default function ArtCard({ artObj }) {
                 className={styles.cardImg}
                 height={363}
                 width={300}
+                sizes="(max-width: 450px) 300px, (max-width: 1024px) 600px, 1000px"
+                draggable={false}
             />
             <div className={styles.captionWrap}>
                 <div className={styles.caption}>

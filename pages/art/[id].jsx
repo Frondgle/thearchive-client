@@ -14,7 +14,7 @@ export default function ViewArtPage() {
     const { id } = router.query;
     const cloudinaryURL = process.env.NEXT_PUBLIC_CLOUDINARY_URL;
     const optimizedImageUrl = artObj.pic
-        ? `${cloudinaryURL}image/upload/w_600,h_725,q_auto:eco,f_auto,fl_progressive,fl_png8/${artObj.pic.split('image/upload/')[1]}`
+        ? `${cloudinaryURL}image/upload/w_auto,dpr_auto,q_auto,f_auto,fl_progressive/${artObj.pic.split('image/upload/')[1]}`
         : '';
 
     useEffect(() => {
