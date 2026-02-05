@@ -19,6 +19,11 @@
 .textContainer {
     margin-left: -55px;
     margin-top: 10px;
+    text-shadow:
+        -0.5px -0.5px 0 #fff,
+        0.5px -0.5px 0 #fff,
+        -0.5px 0.5px 0 #fff,
+        0.5px 0.5px 0 #fff;
 }
 
 .titleText {
@@ -37,14 +42,10 @@
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 30px;
     position: relative;
     color: #fff;
     padding: 2rem;
     background-color: hotpink;
-    background-image: url('/images/infoTexture.JPG');
-    background-size: cover;
-    background-blend-mode: overlay;
     border-radius: 5px;
     font-family: "Space Grotesk", sans-serif;
     font-weight: 700;
@@ -58,6 +59,22 @@
     word-wrap: break-word;
     display: flex;
     flex-direction: column;
+}
+
+.contentContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-image: url('/images/infoTexture.JPG');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 0;
+    pointer-events: none;
 }
 
 /* Custom scrollbar styling */
@@ -90,7 +107,7 @@
     width: 94%;
     font-size: 16px;
     padding: 10px;
-    border: 2px solid #fff;
+    border: 2px solid rgba(255, 245, 230, 0.904);;
     border-radius: 5px;
 }
 
@@ -116,8 +133,8 @@
 
 .sendMessageButton {
     background: transparent;
-    border: 2px solid #fff;
-    color: #fff;
+    border: 2px solid rgba(255, 245, 230, 0.904);;
+    color: rgba(255, 245, 230, 0.904);    
     padding: 12px 30px;
     font-size: 16px;
     font-family: "Space Grotesk", sans-serif;

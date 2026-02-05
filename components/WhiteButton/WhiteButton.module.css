@@ -26,3 +26,10 @@
         color: #fff;
     }
 }
+
+/* Smaller mobile devices */
+@media (max-width: 400px) {
+    .whiteButton {
+        font-size: 0.9rem;
+    }
+}

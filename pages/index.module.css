@@ -4,17 +4,15 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
-    opacity: 0.85;
 }
 
 .sonatoreBlurb {
     position: relative;
-    color: #fff;
+    color: rgba(255, 245, 230, 0.904);
     padding: 2rem;
-    background-color: hotpink;
-    background-image: url('/images/infoTexture.JPG');
+    background: hotpink;
     background-size: cover;
-    background-blend-mode: overlay;
+    background-position: center;
     border-radius: 5px;
     font-family: "Space Grotesk", sans-serif;
     font-weight: 700;
@@ -22,10 +20,25 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    color: rgba(255, 245, 230, 0.904);
     max-width: 40%;
     aspect-ratio: 3 / 4;
     height: 51vh;
+}
+
+.sonatoreBlurb::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-image: url('/images/infoTexture.JPG');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .photoGalleryLink {
@@ -57,7 +70,90 @@
     border-radius: 4px;
 }
 
-/* Media query specifically for iPads (Mini, Air, Pro) in portrait */
+/* ===== MOBILE PORTRAIT ===== */
+@media (max-width: 450px) and (orientation: portrait) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        min-height: auto;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .photoGalleryLink {
+        max-width: 95%;
+        width: 95%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+
+    .sonatoreBlurb {
+        max-width: 80%;
+        width: 78.5%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+}
+
+@media (max-width: 380px) {
+    .sonatoreBlurb {
+        width: 76.5%;
+    }
+}
+
+/* ===== MOBILE LANDSCAPE ===== */
+@media (max-width: 767px) and (orientation: landscape) {
+    .container {
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        min-height: calc(100vh - 4rem);
+    }
+
+    .photoGalleryLink {
+        height: 70vh;
+        aspect-ratio: 3 / 4;
+    }
+
+    .sonatoreBlurb {
+        height: 70vh;
+        aspect-ratio: 3 / 4;
+    }
+}
+
+/* ===== SMALLER PHONES ===== */
+@media (max-width: 400px) and (orientation: portrait) {
+    .sonatoreBlurb::before {
+        height: 150%;
+    }
+}
+
+/* ===== SMALL TABLETS / NARROW DESKTOPS / BIGGER PHONES ===== */
+@media (min-width: 450px) and (max-width: 861px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .sonatoreBlurb {
+        width: 50%;
+        max-width: 50%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+
+    .photoGalleryLink {
+        width: 50%;
+        max-width: 50%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+}
+
+/* ===== TABLETS PORTRAIT (iPad) ===== */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     .container {
         flex-direction: column;
@@ -83,7 +179,7 @@
     }
 }
 
-/* Media query specifically for iPads in landscape */
+/* ===== TABLETS LANDSCAPE (iPad) ===== */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     .container {
         flex-direction: row;
@@ -103,7 +199,26 @@
     }
 }
 
-/* Media query specifically for iPad Mini in landscape (1024 x 768) */
+/* ===== SMALL LAPTOP ===== */
+@media (min-width: 862px) and (max-width: 1024px) and (hover: hover) {
+    .container {
+        gap: 30px;
+        margin-top: 30px;
+        flex-direction: row;
+    }
+
+    .sonatoreBlurb {
+        height: 48.5vh;
+        aspect-ratio: 3 / 4;
+    }
+
+    .photoGalleryLink {
+        height: 60vh;
+        aspect-ratio: 3 / 4;
+    }
+}
+
+/* ===== SHORT SCREENS (iPad Mini landscape) ===== */
 @media (min-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
     .container {
         flex-direction: row;
@@ -119,101 +234,6 @@
 
     .photoGalleryLink {
         height: 72.5vh;
-        aspect-ratio: 3 / 4;
-    }
-}
-
-/* Media query for mobile screens in landscape mode */
-@media (max-width: 767px) and (orientation: landscape) {
-    .container {
-        flex-direction: row;
-        gap: 20px;
-        align-items: center;
-        min-height: calc(100vh - 4rem);
-    }
-
-    .photoGalleryLink {
-        height: 70vh;
-        aspect-ratio: 3 / 4;
-    }
-
-    .sonatoreBlurb {
-        height: 70vh;
-        aspect-ratio: 3 / 4;
-    }
-}
-
-/* Media query for mobile screens in portrait mode */
-@media (max-width: 450px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-        min-height: auto;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    .photoGalleryLink {
-        max-width: 95%;
-        width: 95%;
-        height: auto;
-        aspect-ratio: 3 / 4;
-    }
-
-    .sonatoreBlurb {
-        max-width: 80%;
-        width: 78.5%;
-        height: auto;
-        aspect-ratio: 3 / 4;
-    }
-}
-
-@media (max-width: 380px) { 
-    .sonatoreBlurb {
-        width: 76.5%;
-    }
-}
-
-/* Media queries for narrow desktop/small laptop screens */
-@media (min-width: 450px) and (max-width: 861px) {    
-    .container {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-        margin-top: 30px;
-    }
-
-    .sonatoreBlurb {
-        width: 50%;
-        max-width: 50%;
-        height: auto;
-        aspect-ratio: 3 / 4;
-        box-sizing: border-box;
-    }
-
-    .photoGalleryLink {
-        width: 50%;
-        max-width: 50%;
-        height: auto;
-        aspect-ratio: 3 / 4;
-    }
-}
-
-@media (min-width: 862px) and (max-width: 1024px) and (hover: hover) {
-    .container {
-        gap: 30px;
-        margin-top: 30px;
-        flex-direction: row;
-    }
-
-    .sonatoreBlurb {
-        height: 45vh;
-        aspect-ratio: 3 / 4;
-    }
-
-    .photoGalleryLink {
-        height: 60vh;
         aspect-ratio: 3 / 4;
     }
 }
