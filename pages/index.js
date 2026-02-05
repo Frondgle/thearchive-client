@@ -7,6 +7,7 @@ import RandomArtCard from '@/components/RandomArtCard/RandomArtCard';
 import { getArt } from '@/api/artData';
 import WhiteButton from '@/components/WhiteButton/WhiteButton';
 import IndexBlurbContent from '@/content/indexBlurbContent';
+import DimensionDisplay from '@/components/DimensionDisplay/DimensionDisplay';
 
 export default function Home({ randomArt }) {
     const router = useRouter();
@@ -28,6 +29,7 @@ export default function Home({ randomArt }) {
                 <title>The Sonatore Archive</title>
             </Head>
             <div className={styles.container}>
+                <DimensionDisplay />
                 <div className={styles.sonatoreBlurb}>
                     <IndexBlurbContent />
                     <WhiteButton onClick={handleGoToArchive}>
