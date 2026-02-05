@@ -6,20 +6,17 @@
     align-items: center;
     margin: 25px auto 3rem;
     position: relative;
-    padding-top: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 2.5rem;
+    color: #fff;
+    padding: 2rem 2rem 2.5rem;
     background-color: hotpink;
     border-radius: 5px;
     font-family: "Space Grotesk", sans-serif;
     font-weight: 700;
     opacity: 0.85;
     margin-bottom: 50px;
-    width: 100%;
+    width: calc(100% - 3rem);
     max-width: 550px;
     height: auto;
-    color: rgba(255, 245, 230, 0.904);
     box-sizing: border-box;
 }
 
