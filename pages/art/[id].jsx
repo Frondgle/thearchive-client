@@ -55,6 +55,8 @@ export default function ViewArtPage() {
                         height={1333} 
                         sizes="(max-width: 768px) 95vw, 50vw"
                         unoptimized
+                        onContextMenu={(e) => e.preventDefault()}
+                        onDragStart={(e) => e.preventDefault()}
                     />
                     <div className={styles.detailsColumn}>
                         {/* Pagination */}
