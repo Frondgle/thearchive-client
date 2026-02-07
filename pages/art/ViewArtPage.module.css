@@ -15,9 +15,10 @@
 }
 
 .artImage {
-    height: 75vh !important;
-    width: auto !important;
     max-width: 50%;
+    height: auto;
+    max-height: 80vh;
+    aspect-ratio: 1000 / 1333 !important;
     filter: drop-shadow(0 0 10px rgb(11, 20, 13));
     border-radius: 2.5px;
     object-fit: contain;
@@ -42,7 +43,6 @@
     opacity: 0.85;
     z-index: 1;
     overflow: hidden;
-    /* Ensures background doesn't spill out */
     margin-bottom: 20px;
 }
 
@@ -50,13 +50,11 @@
     content: "";
     position: absolute;
     inset: 0;
-    /* shorthand for top: 0; right: 0; bottom: 0; left: 0 */
     background-image: url('/images/infoTexture.JPG');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0.3;
-    /* Adjust this value for transparency */
     z-index: 0;
 }
 
@@ -130,6 +128,7 @@
         max-width: 50%;
         height: auto;
         max-height: 75vh;
+        aspect-ratio: 1000 / 1333;
     }
 }
 
@@ -147,6 +146,7 @@
         width: 90% !important;
         max-width: 400px !important;
         height: auto !important;
+        aspect-ratio: 1000 / 1333 !important;
         margin: 0;
     }
 
@@ -173,6 +173,7 @@
         width: 90% !important;
         max-width: 400px !important;
         height: auto !important;
+        aspect-ratio: 1000 / 1333 !important;
         margin: 0;
     }
 
@@ -199,6 +200,7 @@
         max-width: 50%;
         height: auto;
         max-height: 100%;
+        aspect-ratio: 1000 / 1333 !important;
         filter: drop-shadow(0 0 10px rgb(11, 20, 13));
         border-radius: 2.5px;
         object-fit: contain;
