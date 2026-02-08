@@ -6,8 +6,8 @@ import styles from './about.module.css';
 import WhiteButton from '@/components/WhiteButton/WhiteButton';
 import { useRouter } from 'next/router';
 import { usePagination } from '@/context/PaginationContext';
-import Blurb from '@/components/Blurb/Blurb';
 import AboutBlurbContent from '@/content/aboutBlurbContent';
+import DimensionDisplay from '@/components/DimensionDisplay/DimensionDisplay';
 const SOCIAL_LINKS = [
     { href: 'https://www.instagram.com/thesonatorearchive', label: 'Instagram', icon: '/images/instagramIcon2.png' },
     { href: 'https://www.youtube.com/@sonatore1525', label: 'YouTube', icon: '/images/youTubeIcon13.png' },
