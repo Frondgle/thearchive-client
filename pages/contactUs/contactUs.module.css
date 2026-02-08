@@ -42,6 +42,7 @@
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
     position: relative;
     color: #fff;
     padding: 2rem;
@@ -51,11 +52,7 @@
     font-weight: 700;
     opacity: 0.85;
     z-index: 1;
-    overflow-y: scroll;
     width: 400px;
-    height: 500px;
-    min-height: 500px;
-    max-height: 500px;
     word-wrap: break-word;
     display: flex;
     flex-direction: column;
@@ -67,7 +64,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 120%;
+    height: 100%;
     background-image: url('/images/infoTexture.JPG');
     background-size: cover;
     background-repeat: no-repeat;
@@ -75,26 +72,6 @@
     opacity: 0.3;
     z-index: 0;
     pointer-events: none;
-}
-
-/* Custom scrollbar styling */
-.contentContainer::-webkit-scrollbar {
-    width: 4px;
-}
-
-.contentContainer::-webkit-scrollbar-track {
-    background: hotpink;
-    border-radius: 4px;
-}
-
-.contentContainer::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 4px;
-}
-
-.contentContainer::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 4px;
 }
 
 .contactBlurb {
@@ -183,11 +160,8 @@
     .contentContainer {
         width: 75%;
         max-width: 350px;
-        height: 545px;
-        max-height: 5450px;
         padding: 1.5rem;
         margin-bottom: 30px;
-        overflow-y: auto;
     }
 
     .formContainer input,
@@ -221,7 +195,6 @@
         width: 85%;
         max-width: 400px;
         height: auto;
-        max-height: 475px;
     }
 
     .formContainer input,
