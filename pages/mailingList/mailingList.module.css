@@ -46,34 +46,10 @@
     font-weight: 700;
     opacity: 0.85;
     z-index: 1;
-    overflow-y: scroll;
     width: 400px;
-    height: 385px;
-    min-height: 385px;
-    max-height: 385px;
     word-wrap: break-word;
     display: flex;
     flex-direction: column;
-}
-
-/* Custom scrollbar styling */
-.contentContainer::-webkit-scrollbar {
-    width: 4px;
-}
-
-.contentContainer::-webkit-scrollbar-track {
-    background: hotpink;
-    border-radius: 4px;
-}
-
-.contentContainer::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 4px;
-}
-
-.contentContainer::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 4px;
 }
 
 .contentContainer::before {
@@ -82,7 +58,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 110%;
+    height: 100%;
     background-image: url('/images/infoTexture.JPG');
     background-size: cover;
     background-repeat: no-repeat;
@@ -121,6 +97,7 @@
 .message {
     margin-top: 15px;
     padding: 10px;
+    margin-bottom: -10px;
     text-align: center;
     border-radius: 5px;
     font-family: "Space Grotesk", sans-serif;
@@ -133,11 +110,8 @@
     .contentContainer {
         width: 75%;
         max-width: 350px;
-        height: 450px;
-        max-height: 500px;
         padding: 1.5rem;
         margin-bottom: 30px;
-        overflow-y: auto;
     }
 
     .formContainer input {
@@ -169,8 +143,6 @@
     .contentContainer {
         width: 85%;
         max-width: 400px;
-        height: auto;
-        max-height: 450px;
     }
 
     .formContainer input {
