@@ -125,6 +125,22 @@
     visibility: hidden;
 }
 
+/* Smaller Desktop Screens */
+@media (max-width: 595px) {
+    .icon {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+/* Smaller Desktop Screens */
+@media (max-width: 545px) {
+    .icon {
+        width: 55px;
+        height: 55px;
+    }
+}
+
 /* Mobile Screens */
 @media (max-width: 500px) {
     .container {
