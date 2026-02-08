@@ -185,7 +185,7 @@
 }
 
 /* Media query for mobile screens in landscape mode */
-@media (max-width: 935px) and (orientation: landscape) {
+@media (max-width: 935px) and (orientation: landscape) and (hover: none) {
     .artContent {
         display: flex;
         flex-direction: row;
@@ -212,5 +212,18 @@
         justify-content: space-between;
         width: 50%;
         margin-left: 1rem;
+    }
+}
+
+/* Media query for desktop screens at 935px wide (hover devices) */
+@media (max-width: 935px) and (orientation: landscape) and (hover: hover) {
+    .artImage {
+        max-width: 50%;
+        /* Bigger on desktop */
+        max-height: 80vh;
+    }
+
+    .detailsColumn {
+        width: 50%;
     }
 }
