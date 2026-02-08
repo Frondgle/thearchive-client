@@ -5,6 +5,7 @@ import styles from './ViewArtPage.module.css';
 import Image from 'next/image';
 import Head from 'next/head';
 import { usePagination } from '../../context/PaginationContext';
+import DimensionDisplay from '@/components/DimensionDisplay/DimensionDisplay';
 
 export default function ViewArtPage() {
     const [artObj, setArtObj] = useState({});
@@ -13,8 +14,10 @@ export default function ViewArtPage() {
     const router = useRouter();
     const { id } = router.query;
     const cloudinaryURL = process.env.NEXT_PUBLIC_CLOUDINARY_URL;
+    const imagePath = artObj.pic ? artObj.pic.split('image/upload/')[1] : '';
+
     const optimizedImageUrl = artObj.pic
-        ? `${cloudinaryURL}image/upload/w_1000,h_1333,c_fit,q_auto,f_auto,fl_progressive/${artObj.pic.split('image/upload/')[1]}`
+        ? `${cloudinaryURL}image/upload/w_1000,h_1210,q_auto:good,f_auto,fl_progressive/${imagePath}`
         : '';
 
     useEffect(() => {
@@ -53,8 +56,7 @@ export default function ViewArtPage() {
                         className={styles.artImage}
                         width={1000}  
                         height={1333} 
-                        sizes="(max-width: 768px) 95vw, 50vw"
-                        unoptimized
+                        sizes="(max-width: 450px) 300px, (max-width: 1024px) 600px, 1000px"
                         onContextMenu={(e) => e.preventDefault()}
                         onDragStart={(e) => e.preventDefault()}
                     />
