@@ -73,7 +73,7 @@
 
     .sonatoreBlurb {
         width: 78%;
-        height: 380px;
+        height: 390px;
         aspect-ratio: 3 / 4;
     }
 }
@@ -91,7 +91,7 @@
 
     .sonatoreBlurb {
         width: 76%;
-        height: 420px;
+        height: 450px;
         aspect-ratio: 3 / 4;
     }
 }
@@ -109,7 +109,7 @@
 
     .sonatoreBlurb {
         width: 41% !important;
-        height: 475px !important;
+        height: 505px !important;
         aspect-ratio: 3 / 4 !important;
     }
 }
@@ -131,7 +131,7 @@
 
     .sonatoreBlurb {
         width: 50% !important;
-        height: 410px !important;
+        height: 440px !important;
         aspect-ratio: 3 / 4 !important;
     }
 }
@@ -153,7 +153,7 @@
 
     .sonatoreBlurb {
         width: 42.5% !important;
-        height: 410px !important;
+        height: 440px !important;
         aspect-ratio: 3 / 4 !important;
     }
 }
@@ -175,7 +175,7 @@
 
     .sonatoreBlurb {
         width: 50% !important;
-        height: 420px !important;
+        height: 450px !important;
         aspect-ratio: 3 / 4 !important;
     }
 }
@@ -192,7 +192,7 @@
 
     .sonatoreBlurb {
         width: 42.5%;
-        height: 350px !important;
+        height: 380px !important;
         padding-bottom: 50px !important;
     }
 
@@ -225,7 +225,7 @@
     .sonatoreBlurb {
         max-width: 42.5%;
         width: 42.5%;
-        height: 350px;
+        height: 380px;
         aspect-ratio: 3 / 4;
     }
 }
