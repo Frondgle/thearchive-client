@@ -1,6 +1,6 @@
 /* Blurb Content styles */
 .paragraph {
-    margin-bottom: 20px;
+    margin-bottom: 0.75rem;
 }
 
 .highlight {
@@ -10,9 +10,8 @@
 .signature {
     display: block;
     text-align: right;
-    margin-top: 1rem;
     color: #edef87;
-    margin-bottom: 2rem;
+    margin-bottom: 0.75rem;
     font-style: italic;
 }
 

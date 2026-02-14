@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { usePagination } from '@/context/PaginationContext';
@@ -7,6 +7,7 @@ import RandomArtCard from '@/components/RandomArtCard/RandomArtCard';
 import { getArt } from '@/api/artData';
 import WhiteButton from '@/components/WhiteButton/WhiteButton';
 import IndexBlurbContent from '@/content/indexBlurbContent';
+import DimensionDisplay from '@/components/DimensionDisplay/DimensionDisplay';
 
 export default function Home({ randomArt }) {
     const router = useRouter();
@@ -22,11 +23,34 @@ export default function Home({ randomArt }) {
         router.push('/photoGallery/photoGallery');
     };
 
+    useEffect(() => {
+        const adjustFontSize = () => {
+            const blurb = document.querySelector(`.${styles.sonatoreBlurb}`);
+            
+            if (!blurb) return;  // ← Add this check
+            
+            let fontSize = 16;
+            blurb.style.fontSize = `${fontSize}px`;
+            
+            while (blurb.scrollHeight > blurb.clientHeight && fontSize > 10) {
+                fontSize -= 0.5;
+                blurb.style.fontSize = `${fontSize}px`;
+            }
+        };
+        
+        adjustFontSize();
+        window.addEventListener('resize', adjustFontSize);
+        
+        return () => window.removeEventListener('resize', adjustFontSize);
+    }, []);
+
     return (
         <>
             <Head>
                 <title>The Sonatore Archive</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
             </Head>
+            <DimensionDisplay />
             <div className={styles.container}>
                 <div className={styles.sonatoreBlurb}>
                     <IndexBlurbContent />
@@ -50,7 +74,6 @@ export default function Home({ randomArt }) {
     );
 }
 
-// Fetch data on the server side
 export async function getServerSideProps() {
     const data = await getArt();
 
