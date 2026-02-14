@@ -4,6 +4,10 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
+    margin: 20px 0;
+    --photo-height: 65vh;
+    --blurb-height: 51vh;
+    --blurb-width: 500px;
 }
 
 .sonatoreBlurb {
@@ -17,12 +21,19 @@
     font-family: "Space Grotesk", sans-serif;
     font-weight: 700;
     z-index: 1;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    max-width: 40%;
+    width: var(--blurb-width);
+    height: var(--blurb-height);
+}
+
+.photoGalleryLink {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--photo-height);
     aspect-ratio: 3 / 4;
-    height: 51vh;
 }
 
 .sonatoreBlurb::before {
@@ -31,7 +42,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 120%;
+    height: 100%;
     background-image: url('/images/infoTexture.JPG');
     background-size: cover;
     background-repeat: no-repeat;
@@ -39,35 +50,6 @@
     opacity: 0.3;
     z-index: 0;
     pointer-events: none;
-}
-
-.photoGalleryLink {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 65vh;
-    aspect-ratio: 3 / 4;
-}
-
-/* Custom scrollbar styling */
-.sonatoreBlurb::-webkit-scrollbar {
-    width: 4px;
-}
-
-.sonatoreBlurb::-webkit-scrollbar-track {
-    background: hotpink;
-    border-radius: 4px;
-}
-
-.sonatoreBlurb::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 4px;
-}
-
-.sonatoreBlurb::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 4px;
 }
 
 /* ===== MOBILE PORTRAIT ===== */
@@ -79,6 +61,7 @@
         min-height: auto;
         gap: 10px;
         margin-top: 10px;
+        --element-width: 78.5%;
     }
 
     .photoGalleryLink {
@@ -89,65 +72,133 @@
     }
 
     .sonatoreBlurb {
-        max-width: 80%;
-        width: 78.5%;
-        height: auto;
+        width: 78%;
+        height: 360px;
         aspect-ratio: 3 / 4;
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 400px) and (orientation: portrait) { 
     .sonatoreBlurb {
-        width: 76.5%;
+        height: 400px;
+    }
+}
+
+@media (max-width: 380px) and (orientation: portrait) {
+    .container {
+        --element-width: 76.5%;
+    }
+
+    .sonatoreBlurb {
+        width: 76%;
+        height: 420px;
+        aspect-ratio: 3 / 4;
     }
 }
 
 /* ===== MOBILE LANDSCAPE ===== */
-@media (max-width: 767px) and (orientation: landscape) {
+@media (max-width: 667px) and (max-height: 375px) and (orientation: landscape) {
     .container {
-        flex-direction: row;
-        gap: 20px;
-        align-items: center;
-        min-height: calc(100vh - 4rem);
+        margin-bottom: 20px;
     }
-
     .photoGalleryLink {
-        height: 70vh;
-        aspect-ratio: 3 / 4;
+        width: 60% !important;
+        height: auto !important;
+        aspect-ratio: 3 / 4 !important;
     }
 
     .sonatoreBlurb {
-        height: 70vh;
-        aspect-ratio: 3 / 4;
+        width: 41% !important;
+        height: 475px !important;
+        aspect-ratio: 3 / 4 !important;
     }
 }
 
-/* ===== SMALLER PHONES ===== */
-@media (max-width: 400px) and (orientation: portrait) {
-    .sonatoreBlurb::before {
-        height: 150%;
+/* ===== iPHONE XR, 11 LANDSCAPE ===== */
+@media (max-width: 896px) and (max-height: 414px) and (orientation: landscape) {
+    .container {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    .photoGalleryLink {
+        margin-top: -40px;
+        width: 57.5% !important;
+        height: auto !important;
+        aspect-ratio: 3 / 4 !important;
+    }
+
+    .sonatoreBlurb {
+        width: 50% !important;
+        height: 410px !important;
+        aspect-ratio: 3 / 4 !important;
+    }
+}
+
+/* ===== iPHONE 12, 13, 14 LANDSCAPE ===== */
+@media (max-width: 844px) and (max-height: 390px) and (orientation: landscape) {
+    .container {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    .photoGalleryLink {
+        margin-top: 5px;
+        width: 57.5% !important;
+        height: auto !important;
+        aspect-ratio: 3 / 4 !important;
+    }
+
+    .sonatoreBlurb {
+        width: 42.5% !important;
+        height: 410px !important;
+        aspect-ratio: 3 / 4 !important;
+    }
+}
+
+/* ===== iPHONE 14/15/16 PRO MAX LANDSCAPE ===== */
+@media (max-width: 932px) and (max-height: 430px) and (orientation: landscape) {
+    .container {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    .photoGalleryLink {
+        margin-top: -40px;
+        width: 57.5% !important;
+        height: auto !important;
+        aspect-ratio: 3 / 4 !important;
+    }
+
+    .sonatoreBlurb {
+        width: 50% !important;
+        height: 420px !important;
+        aspect-ratio: 3 / 4 !important;
     }
 }
 
 /* ===== SMALL TABLETS / NARROW DESKTOPS / BIGGER PHONES ===== */
-@media (min-width: 450px) and (max-width: 861px) {
+@media (min-width: 450px) and (max-width: 838px) {
     .container {
         flex-direction: column;
         gap: 20px;
         align-items: center;
         margin-top: 30px;
+        --element-width: 50%;
     }
 
     .sonatoreBlurb {
-        width: 50%;
-        max-width: 50%;
-        height: auto;
-        aspect-ratio: 3 / 4;
+        width: 42.5%;
+        height: 350px !important;
+        padding-bottom: 50px !important;
     }
 
     .photoGalleryLink {
-        width: 50%;
-        max-width: 50%;
+        width: var(--element-width);
+        max-width: var(--element-width);
         height: auto;
         aspect-ratio: 3 / 4;
     }
@@ -174,27 +225,7 @@
     .sonatoreBlurb {
         max-width: 42.5%;
         width: 42.5%;
-        height: auto;
-        aspect-ratio: 3 / 4;
-    }
-}
-
-/* ===== TABLETS LANDSCAPE (iPad) ===== */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    .container {
-        flex-direction: row;
-        gap: 30px;
-        align-items: center;
-        min-height: auto;
-    }
-
-    .photoGalleryLink {
-        height: 65vh;
-        aspect-ratio: 3 / 4;
-    }
-
-    .sonatoreBlurb {
-        height: 65vh;
+        height: 350px;
         aspect-ratio: 3 / 4;
     }
 }
@@ -205,15 +236,18 @@
         gap: 30px;
         margin-top: 30px;
         flex-direction: row;
+        --photo-height: 60vh;
+        --blurb-width: 450px;
     }
 
     .sonatoreBlurb {
+        width: var(--blurb-width);
         height: 48.5vh;
         aspect-ratio: 3 / 4;
     }
 
     .photoGalleryLink {
-        height: 60vh;
+        height: var(--photo-height);
         aspect-ratio: 3 / 4;
     }
 }
@@ -225,6 +259,7 @@
         gap: 50px;
         margin-top: 20px;
         align-items: center;
+        --photo-height: 72.5vh;
     }
 
     .sonatoreBlurb {
@@ -233,7 +268,29 @@
     }
 
     .photoGalleryLink {
-        height: 72.5vh;
+        height: var(--photo-height);
         aspect-ratio: 3 / 4;
+    }
+}
+
+@media (min-width: 839px) and (max-width: 861px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        margin-top: 30px;
+        --element-width: 50%;
+    }
+    
+    .sonatoreBlurb {
+        width: 42.5%;
+    }
+
+    .photoGalleryLink {
+        width: var(--element-width);
+        max-width: var(--element-width);
+        height: auto;
+        aspect-ratio: 3 / 4;
+        color: blue;
     }
 }
