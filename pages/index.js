@@ -50,7 +50,6 @@ export default function Home({ randomArt }) {
                 <title>The Sonatore Archive</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
             </Head>
-            <DimensionDisplay />
             <div className={styles.container}>
                 <div className={styles.sonatoreBlurb}>
                     <IndexBlurbContent />
